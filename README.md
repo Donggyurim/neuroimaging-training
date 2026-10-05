@@ -34,13 +34,13 @@ Use `quarto render` to check the full website. The website build intentionally d
 
 Create one issue per bounded task, assign it to the student, and link the pull request with `Closes #<issue-number>`. Use draft PRs for ongoing feedback. For a cross-student tracker, create a GitHub Project with Todo, In progress, In review, and Done columns; add these issues, a student field, and a target date. Repository issues remain the source of truth.
 
-**Planned protection (not yet enforced):** `main` will require a successful **Build site** check, resolved conversations, and approval from code owner @Donggyurim. New commits invalidate prior approval. Students must use branches or forks. Once protection is enabled, direct pushes, force pushes, and deletion of `main` will be blocked. The repository owner retains an administrative bypass for maintenance because GitHub does not allow authors to approve their own PRs. Use it sparingly.
+`main` requires a successful **Build site** check, resolved conversations, and approval from code owner @Donggyurim. New commits invalidate prior approval. Students must use branches or forks. Direct student pushes, force pushes, and deletion of `main` are blocked. The repository owner retains an administrative bypass for maintenance because GitHub does not allow authors to approve their own PRs. Use it sparingly.
 
-**Current setup:** this repository is private. The current GitHub plan does not support private branch protection or private GitHub Pages. Supervisor review is therefore a convention until protection is enabled.
+**Current setup:** this repository is public, main branch protection is enabled, and GitHub Pages is deployed through GitHub Actions. The repository Actions variable `PAGES_ENABLED` enables deployment.
 
-To finish setup, make the repository public or upgrade to a plan supporting these features. Configure the main protection described above, enable Pages with GitHub Actions as the source, then set the repository Actions variable `PAGES_ENABLED` to `true` and rerun the Website workflow.
+Approved merges trigger the GitHub Pages deployment. Review all published content as public material.
 
-Once enabled, approved merges trigger the GitHub Pages deployment. Review published content as public material if the repository is public.
+Website: https://donggyurim.github.io/neuroimaging-training/
 
 ## Data and attribution
 
