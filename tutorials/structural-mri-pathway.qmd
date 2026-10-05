@@ -1,0 +1,38 @@
+---
+title: "Structural MRI: your first supervised project"
+---
+
+Welcome to Donggyurim’s placement programme. Your goal is to explain and reproduce a small analysis well enough that the next student can build on it. Start with one scan and one question; a large batch is a later milestone.
+
+::: {.callout-warning}
+## Teaching draft — practical validation pending
+These lessons were newly written for Donggyurim’s placement programme. The MRI workflow has not been run end to end in this repository. Review the commands, environment, and scientific choices with your supervisor before processing a cohort.
+:::
+
+## The placement milestones
+
+| Milestone | What you produce | Supervisor checkpoint |
+|---|---|---|
+| Define | Question, dataset version, inclusion criteria | Is the scope achievable? |
+| Inspect | Input manifest and scan-quality notes | Is the input suitable? |
+| Process | One segmentation, environment record, logs | Do the labels look plausible? |
+| Measure | Region table with units and provenance | What exactly is being measured? |
+| Analyse | Audited participant join, model plan, effect table | Are assumptions and conclusions justified? |
+| Communicate | Figures, limitations, reproducibility handover | Is the public report accurate? |
+
+## Follow the lessons
+
+1. [Choose and inspect OpenNeuro data](../datasets/openneuro-t1w.qmd).
+2. [Pilot segmentation and plan your compute](../techniques/fastsurfer-pilot.qmd).
+3. [Build an analysis table and interpret it](../techniques/regional-volume-analysis.qmd).
+4. [Make figures that match the evidence](../techniques/brain-visualisation.qmd).
+5. [Explore brainlife as another compute route](brainlife-first-run.qmd).
+6. Use the [project handover checklist](../projects/structural-mri-handover.qmd).
+
+## Your first issue
+
+Open a Student task issue titled “Pilot one structural MRI scan”. Include the proposed question, dataset accession and snapshot, one selected scan, compute route, and acceptance criteria. Share a draft PR containing your manifest and inspection notes before scaling up.
+
+## How previous placement work informs this programme
+
+A previous placement student created the [Neuroimaging Guide](https://neuroimaging-guide.netlify.app/), covering these broad topics. That work helped identify a useful teaching direction. These lessons use a new milestone structure and independently written explanations with official sources. We have not imported the student’s text, implementation, images, interactive viewer, or findings. See [sources and contributions](../sources-and-contributions.qmd).

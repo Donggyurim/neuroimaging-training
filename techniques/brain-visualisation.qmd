@@ -1,0 +1,41 @@
+---
+title: "Figures that communicate what was actually tested"
+---
+
+::: {.callout-warning}
+## Teaching draft — practical validation pending
+These lessons were newly written for Donggyurim’s placement programme. The MRI workflow has not been run end to end in this repository. Review the commands, environment, and scientific choices with your supervisor before processing a cohort.
+:::
+
+## Begin with the effect table
+
+Make a table or interval plot first. Show the contrast direction, units, sample size, effect estimate, and uncertainty. A colourful brain image should add anatomical context rather than replace these details.
+
+For scatterplots, show individual observations when permitted, identify group coding, and explain whether lines are descriptive or model-based. Do not infer a group-by-age interaction from different-looking lines alone.
+
+## Use a brain atlas deliberately
+
+Participant-native segmentations and standard-space atlases have different geometries and anatomical definitions. Matching anatomical names is not evidence that two parcels are identical. Use an explicit, reviewed correspondence table with atlas version, numeric label IDs, laterality, and unmatched regions.
+
+Painting a regional statistic into a template parcel creates a schematic regional display. It is not voxelwise inference and does not establish a spatially localised effect throughout that parcel. Label the map accordingly.
+
+## Check the display
+
+- Verify orientation, affine, resolution, and image alignment.
+- Confirm left/right labels and inspect each mapped region.
+- Distinguish untested or missing regions from estimated zero effects.
+- Use an appropriate colour scale and state what the colours represent.
+- State whether the image is unthresholded, thresholded for display, or corrected for statistical testing.
+- Include the model, covariates, correction family, and limitations in the caption.
+
+Do not substitute a tiny display threshold for a statistical significance threshold. If no region meets the pre-specified corrected criterion, report that fact directly; an exploratory map can still show estimates with clear labels.
+
+## Optional interactive view
+
+Nilearn offers an HTML image viewer through [view_img](https://nilearn.github.io/stable/modules/generated/nilearn.plotting.view_img.html). Consult its current API for your chosen version. A shared viewer can expose image arrays and accompanying labels, so review its contents before publication.
+
+Generate new figures from your validated workflow. The previous student’s images and interactive widget are not embedded here. Preserve a figure-generation script, approved inputs, and a clear caption before adding a public gallery.
+
+## Supervisor checkpoint
+
+Submit the effect table, atlas correspondence, one static figure, caption, and a regeneration record. Check that the figure communicates the same claim as the numerical analysis.

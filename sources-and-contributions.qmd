@@ -1,0 +1,23 @@
+---
+title: "Sources, credit, and student contributions"
+---
+
+## Previous placement work
+
+The [Neuroimaging Guide](https://neuroimaging-guide.netlify.app/) was created by a previous placement student and helped identify topics for this programme. Donggyurim’s training pathway has new explanations, a different learning structure, and supervisor checkpoints. We recognise the earlier student’s contribution without claiming authorship of their guide.
+
+No text, code implementation, screenshots, research figures, interactive viewer, or numerical findings from that guide have been imported. No explicit reuse licence was found on the inspected public pages on 5 October 2026; that does not establish who owns the rights or whether permission exists elsewhere.
+
+The new lessons cite official tool documentation. Source verification and successful website rendering do not amount to end-to-end practical validation.
+
+## Adding earlier work later
+
+Confirm the rights holder and the relevant placement/institutional agreement. Obtain written permission or an applicable licence before importing protected material. Agree the scope of reuse, edits, public hosting, onward contributions, and credit. Check separately for third-party content and dataset restrictions.
+
+Attribution does not replace permission. Do not describe paraphrasing as a guarantee against copyright claims. General ideas and methods can inform independently written teaching, but copying substantial protected expression may still raise issues even without identical wording. See [IP Australia’s copyright guidance](https://ipfirstresponse.ipaustralia.gov.au/options/infringement-101-copyright-infringement) and [ownership guidance](https://www.ipaustralia.gov.au/understanding-ip/who-owns-ip). Ask your institution to resolve uncertain ownership or agreement terms.
+
+## New student contributions
+
+Before substantial work begins, agree how contributions may be used, edited, published, and credited. Record consent through the institution’s approved process. A commit or pull request alone should not be treated as a blanket copyright transfer. This repository currently has no blanket content licence; do not apply one retrospectively to other contributors’ material without authority.
+
+Keep signed agreements and personal correspondence out of the public repository. The supervisor may add an agreed public credit once the student has confirmed their preferred name and wording.

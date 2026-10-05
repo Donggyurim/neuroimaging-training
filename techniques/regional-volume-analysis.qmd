@@ -1,0 +1,38 @@
+---
+title: "From anatomical labels to an auditable analysis"
+---
+
+::: {.callout-warning}
+## Teaching draft — practical validation pending
+These lessons were newly written for Donggyurim’s placement programme. The MRI workflow has not been run end to end in this repository. Review the commands, environment, and scientific choices with your supervisor before processing a cohort.
+:::
+
+## Define the measure first
+
+For a labelled image, counting voxels assigned to a region and multiplying by voxel volume produces a discrete regional volume. This may differ from a pipeline statistic that accounts for partial-volume effects. Record the image geometry, label dictionary, method, and units; do not combine methods without checking equivalence.
+
+Name each column for what it actually measures. FreeSurfer distinguishes brain segmentation volume, mask volume, and estimated total intracranial volume (eTIV). These quantities are not interchangeable. In particular, summing non-background segmentation voxels does not reproduce the transform-based eTIV measure. See [FreeSurfer volume definitions](https://freesurfer.net/fswiki/MorphometryStats) and [eTIV methodology](https://freesurfer.net/fswiki/eTIV).
+
+If a validated head-size measure is unavailable, report that limitation and agree an alternative analysis with the supervisor. Do not choose whichever denominator happens to exist, relabel it eTIV, or claim that a ratio removes all confounding. Ratios and covariate adjustment make different assumptions.
+
+## Audit the participant join
+
+Keep a participant/session/scan key in each input table. Confirm the clinical identifier mapping from dataset documentation; numerical identifiers with similar values are not sufficient evidence of correspondence. Never assume which group a numeric code represents.
+
+Before analysing, record duplicate keys, unmatched participants, missing measures, exclusions, and the number of observations retained. Do not silently drop records through an inner join. Repeated scans require an explicit repeated-measures strategy or a justified single-scan selection.
+
+## Agree the model before looking for interesting results
+
+Specify the primary question, selected regions, outcome units, group coding, potential covariates, handling of missing data, and the family of statistical tests. Check whether the available sample can support the proposed model. Consider acquisition differences and plausible confounding with the supervisor.
+
+Inspect distributions, outliers, residuals, and influential observations. Choose a method based on the scientific design and assumptions rather than a single normality-test threshold. A rank correlation can describe a monotonic association; neither it nor adjustment for age establishes a mechanism or causality.
+
+For each comparison report the direction of the contrast, effect estimate, uncertainty, analysed sample size, and test method. Where multiple testing is relevant, state which tests belong to the correction family and the selected method. Distinguish exploratory analyses from pre-specified tests.
+
+## Interpret cautiously
+
+A result that fails a corrected threshold does not demonstrate absence of an effect or prove that sample size was the reason. Inspect the estimate and uncertainty. Visual differences between two fitted slopes do not themselves establish an interaction; evaluate the interaction in an appropriate model if it is your question.
+
+## Supervisor checkpoint
+
+Submit a measure dictionary, a join audit, a model specification, and an effect table. Explain exclusions and every adjustment. No clinical spreadsheet, numeric findings, or previous student result table has been imported into this programme.

@@ -1,0 +1,45 @@
+---
+title: "Pilot segmentation before processing a cohort"
+---
+
+::: {.callout-warning}
+## Teaching draft — practical validation pending
+These lessons were newly written for Donggyurim’s placement programme. The MRI workflow has not been run end to end in this repository. Review the commands, environment, and scientific choices with your supervisor before processing a cohort.
+:::
+
+## What segmentation contributes
+
+A segmentation assigns anatomical labels to image voxels. FastSurfer offers volumetric segmentation and a separate surface-processing pathway. Choose the output needed for your question; a segmentation-only run is not a substitute for a cortical-thickness workflow. Use the [official project documentation](https://github.com/Deep-MI/FastSurfer) and [output descriptions](https://github.com/Deep-MI/FastSurfer/blob/stable/doc/overview/OUTPUT_FILES.md) for the selected version.
+
+## Choose your environment
+
+| Route | Useful starting point | What to document |
+|---|---|---|
+| Local or institutional compute | A container or installation approved by the supervisor | Release, image digest, hardware, storage, parameters |
+| Google Colab | The official FastSurfer tutorial for a small pilot | Notebook revision, package versions, actual GPU, persistent output location |
+| brainlife | A suitable App with inspectable provenance | App revision, inputs, settings, output identifiers |
+
+For Colab, begin with the upstream [QuickSeg tutorial](https://colab.research.google.com/github/Deep-MI/FastSurfer/blob/stable/Tutorial/Tutorial_FastSurferCNN_QuickSeg.ipynb), rather than importing the previous student’s setup and batch code. Save the revision used. The [Colab FAQ](https://research.google.com/colaboratory/faq.html) explains that resources and runtime limits vary; a paid account does not guarantee a particular GPU or session duration.
+
+## Run one scan
+
+1. Confirm the selected input is suitable and its metadata matches any acquisition-specific options.
+2. Choose a fixed FastSurfer release or commit and follow that release’s installation instructions.
+3. Record the precise command or notebook cells executed, package environment, and relevant licence requirements.
+4. Process one scan. Save the full log and exit status, not only a success message.
+5. Open the segmentation over its corresponding anatomical image. Check alignment and boundaries in all three planes.
+6. Inspect the expected statistics and outputs for the chosen release. Review abnormalities before accepting this pilot.
+
+Do not apply historical dependency fixes automatically. In particular, installing CPU-only libraries is inconsistent with assuming GPU processing unless explicitly justified. Verify the actual device being used.
+
+## Scale with explicit completion records
+
+Use unique identifiers that retain session/acquisition information. A robust batch record should include input hash, processing version, parameters, start/end time, exit status, expected outputs, and QC status.
+
+File existence alone is not proof of a completed run. Reuse an output only when its input and settings match, processing finished successfully, files are readable, and the planned checks passed. Keep failed and interrupted runs distinguishable. Avoid silently mixing software versions within a cohort.
+
+Colab’s local disk is temporary. Write a coherent output set and logs to approved persistent storage, then verify them from a fresh session or independent storage view. Reading a file back through the same mount is not proof that remote synchronisation completed.
+
+## Supervisor checkpoint
+
+Present one input, overlay screenshots with safe labels, processing logs, and a version record. Agree on QC criteria and exclusion handling before launching the cohort. No complete batch notebook is supplied here yet; the pilot is the first validation task.

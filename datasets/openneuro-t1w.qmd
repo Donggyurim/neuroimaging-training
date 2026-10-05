@@ -1,0 +1,53 @@
+---
+title: "Choose and inspect OpenNeuro data"
+---
+
+::: {.callout-warning}
+## Teaching draft — practical validation pending
+These lessons were newly written for Donggyurim’s placement programme. The MRI workflow has not been run end to end in this repository. Review the commands, environment, and scientific choices with your supervisor before processing a cohort.
+:::
+
+## Decide before downloading
+
+Browse [OpenNeuro](https://openneuro.org/) with your supervisor. Choose a public dataset containing T1-weighted anatomical MRI and the metadata needed for your question. Public access alone does not establish that every clinical file or downstream use is permitted: inspect the dataset’s terms and any separately supplied material.
+
+Create a dataset record with accession, snapshot/version, study citation, access date, licence, download route, and selection rules. Record the actual participant and scan counts after applying those rules. A previous student used `ds004144`; it is a candidate to investigate, rather than a pre-approved cohort or a guarantee that clinical measures are available.
+
+## Keep the original organisation
+
+BIDS gives scans structured names and directories. Participants may have multiple sessions, acquisitions, runs, or scans. Preserve these distinctions; flattening everything into one participant filename can overwrite data. Read the [BIDS MRI specification](https://bids-specification.readthedocs.io/en/stable/modality-specific-files/magnetic-resonance-imaging-data.html) for the relevant entities and metadata.
+
+Store data in approved storage outside this repository. Keep the original dataset unchanged and write derivatives to a separate directory. Record any exclusions and conversions.
+
+## Acquire a reproducible copy
+
+Follow the dataset’s current download instructions and the [OpenNeuro documentation](https://docs.openneuro.org/). For a DataLad workflow, distinguish cloning the dataset metadata from obtaining the file content, and save the dataset commit corresponding to the snapshot you selected. Consult [DataLad clone](https://docs.datalad.org/en/stable/generated/man/datalad-clone.html) and [get](https://docs.datalad.org/en/stable/generated/man/datalad-get.html).
+
+Do not treat an unversioned cloud-bucket copy as a pinned snapshot. If transferring files between machines, confirm the destination contains real readable image bytes rather than broken annex links. Keep filenames and sidecars together.
+
+## Inventory your local inputs
+
+This new example lists both session and non-session T1w paths without changing files. Run it from an environment with Python, editing the dataset root first.
+
+```python
+from pathlib import Path
+import csv
+
+root = Path('/replace/with/local/dataset').resolve()
+scans = sorted(root.glob('sub-*/anat/*_T1w.nii*'))
+scans += sorted(root.glob('sub-*/ses-*/anat/*_T1w.nii*'))
+with Path('t1w-manifest.csv').open('w', newline='') as handle:
+    writer = csv.writer(handle)
+    writer.writerow(['participant_id', 'session_id', 'relative_path', 'bytes'])
+    for scan in scans:
+        relative = scan.relative_to(root)
+        session = next((part for part in relative.parts if part.startswith('ses-')), '')
+        writer.writerow([relative.parts[0], session, relative.as_posix(), scan.stat().st_size])
+print(f'Inventoried {len(scans)} scans; inspect the manifest before selecting inputs.')
+```
+
+Run this in a working directory outside the public repository. The manifest is an inventory, not a BIDS validator or a scan-quality assessment. Check for unexpected files, duplicate scans, missing participants, zero-length files, and unwanted acquisitions. Select inputs explicitly; do not automatically call every matching scan an independent participant.
+
+## Acceptance criteria
+
+You can identify the frozen source version, explain your inclusion rules, open one selected scan in a viewer, and reconcile your inventory with the dataset metadata. Review image contrast, orientation, motion/artifacts, and suitability for your chosen segmentation tool. Submit the dataset record and non-sensitive QC notes for supervisor review.

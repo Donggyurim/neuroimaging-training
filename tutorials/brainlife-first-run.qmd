@@ -1,0 +1,29 @@
+---
+title: "A first processing run on brainlife"
+---
+
+::: {.callout-warning}
+## Teaching draft — practical validation pending
+These lessons were newly written for Donggyurim’s placement programme. The MRI workflow has not been run end to end in this repository. Review the commands, environment, and scientific choices with your supervisor before processing a cohort.
+:::
+
+## Use the platform as another route to a documented pilot
+
+Begin with the [official introduction](https://brainlife.io/docs/tutorial/introduction-to-brainlife/) and [platform documentation](https://brainlife.io/docs/). Check current access arrangements and select a suitable App with the supervisor. A browser interface changes how you submit work; it does not remove input checks or scientific review.
+
+Use this exercise:
+
+1. Create a study workspace with appropriate collaborators and visibility.
+2. Stage one approved scan and inspect the input metadata.
+3. Read the selected App’s requirements, version, parameters, and output definitions.
+4. Submit one job, record its identifier, and inspect its status and logs.
+5. Review the anatomical output and record QC.
+6. Save the input identifiers, App revision, settings, and output identifiers in your task issue or approved record.
+
+Consult the [pipeline documentation](https://brainlife.io/docs/user/pipeline/) if you later chain steps. Verify compatibility between each step rather than assuming all Apps accept the same data.
+
+Containerisation helps capture the software environment but does not guarantee identical results across every hardware configuration or scientific correctness. Compare outputs with the same QC criteria used for your other compute route.
+
+## Supervisor checkpoint
+
+Demonstrate that another student can identify your exact inputs and processing settings. Explain any difference from the local or Colab pilot; do not assume the workflows are equivalent because both produce a segmentation.

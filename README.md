@@ -47,3 +47,7 @@ Website: https://donggyurim.github.io/neuroimaging-training/
 Do not commit participant data, raw imaging files, secrets, or restricted material. Record dataset identifiers, versions, licenses, download commands, and citations instead. Check consent and data-use conditions before publishing results. Avoid identifiable participant information in issues and reports.
 
 The [existing student guide](https://neuroimaging-guide.netlify.app/01-data) is a learning reference. Its content has not been copied; obtain permission and preserve attribution before importing material. No project-wide license is assigned yet; the supervisor should choose one before broader reuse.
+
+## Structural MRI teaching pathway
+
+New, independently written lessons cover OpenNeuro input selection, a FastSurfer pilot, volume-measure definitions, analysis planning, visualisation, brainlife, and project handover. These are practical-validation drafts. See [sources and contributions](sources-and-contributions.qmd) for attribution and permission boundaries. No previous student implementation or outputs have been imported.

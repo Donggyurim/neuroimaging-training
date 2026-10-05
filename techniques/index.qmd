@@ -5,3 +5,9 @@ title: "Techniques"
 Method guides will explain assumptions, implementation, quality checks, and interpretation.
 
 To add a contribution, copy a template from `templates/`, add the new page to `_quarto.yml`, and submit a pull request.
+
+## Available lessons
+
+- [Pilot segmentation](fastsurfer-pilot.qmd)
+- [Regional-volume analysis](regional-volume-analysis.qmd)
+- [Brain visualisation](brain-visualisation.qmd)

@@ -7,3 +7,8 @@ Step-by-step tutorials will help students build skills and contribute reproducib
 [Start with Getting started](getting-started.qmd).
 
 To add a contribution, copy a template from `templates/`, add the new page to `_quarto.yml`, and submit a pull request.
+
+## Available lessons
+
+- [Supervised structural MRI pathway](structural-mri-pathway.qmd)
+- [First brainlife run](brainlife-first-run.qmd)
