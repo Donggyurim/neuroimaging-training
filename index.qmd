@@ -2,7 +2,7 @@
 title: "Learn together. Build reproducible research."
 ---
 
-This is a growing neuroimaging training and research guide for placement students supervised by Donggyurim. Each student learns from previous work and contributes improvements for the next cohort.
+Welcome to Donggyurim’s placement programme. This is a growing neuroimaging training and research guide for placement students supervised by Donggyurim. Each student learns from previous work and contributes improvements for the next cohort.
 
 ## Your first steps
 
@@ -18,4 +18,8 @@ This is a growing neuroimaging training and research guide for placement student
 - [Techniques](techniques/index.qmd): methods, assumptions, and quality checks.
 - [Student projects](projects/index.qmd): reproducible questions, findings, and lessons.
 
-The sections currently provide a scaffold for future contributions; they do not yet contain validated analysis protocols.
+## Start a structural MRI project
+
+The [supervised structural MRI pathway](tutorials/structural-mri-pathway.qmd) takes you from dataset selection to segmentation, analysis, figures, and handover. Lessons are teaching drafts awaiting practical validation. Your first milestone is one inspected scan, not an entire cohort.
+
+Read [sources and contributions](sources-and-contributions.qmd) for acknowledgement of earlier placement work and our approach to permissions.

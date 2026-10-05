@@ -9,7 +9,7 @@ project:
     - "projects/**/*.qmd"
 
 website:
-  title: "Neuroimaging Training"
+  title: "Donggyurim’s Neuroimaging Training"
   navbar:
     left:
       - href: index.qmd
@@ -32,9 +32,23 @@ website:
         contents:
           - tutorials/index.qmd
           - tutorials/getting-started.qmd
-      - datasets/index.qmd
-      - techniques/index.qmd
-      - projects/index.qmd
+          - tutorials/structural-mri-pathway.qmd
+          - tutorials/brainlife-first-run.qmd
+      - section: Datasets
+        contents:
+          - datasets/index.qmd
+          - datasets/openneuro-t1w.qmd
+      - section: Techniques
+        contents:
+          - techniques/index.qmd
+          - techniques/fastsurfer-pilot.qmd
+          - techniques/regional-volume-analysis.qmd
+          - techniques/brain-visualisation.qmd
+      - section: Student projects
+        contents:
+          - projects/index.qmd
+          - projects/structural-mri-handover.qmd
+      - sources-and-contributions.qmd
   repo-url: https://github.com/Donggyurim/neuroimaging-training
   repo-actions: [edit, issue]
 

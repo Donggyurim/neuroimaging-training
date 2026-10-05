@@ -1,0 +1,28 @@
+---
+title: "Your structural MRI project handover"
+---
+
+A future student should be able to understand what you tried, reproduce the accepted parts, and recognise what remains unresolved. Use this checklist with the student-project template.
+
+## Project record
+
+- Research question and whether the analysis was exploratory or pre-specified.
+- Dataset accession, frozen version, access conditions, study citation, and inclusion rules.
+- Input manifest, approved storage location, and provenance.
+- Environment, hardware, tool versions, commands, and parameters.
+- Run ledger, failed jobs, QC decisions, exclusions, and participant-join audit.
+- Measure dictionary, statistical plan, effect table, and uncertainty.
+- New figures with captions and a regeneration record.
+- Known limitations, unsuccessful approaches, and recommended next task.
+
+## Publishable material
+
+Review privacy, data-use terms, attribution, and permissions before including images, notebooks, or outputs. A public GitHub repository is not the right place for restricted clinical data. Keep private approval records in approved institutional storage.
+
+## Completion decision
+
+Record what was actually tested, by whom, and on which environment/version. Link the task issue and reviewed PR. A passing site build confirms that the documentation renders; it does not validate the MRI analysis.
+
+## Earlier placement work
+
+The [earlier student guide](https://neuroimaging-guide.netlify.app/results) provides an external example of a research presentation. Its figures and reported findings have not been transferred or independently reproduced here. Permission and validation should precede any later import.
