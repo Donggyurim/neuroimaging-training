@@ -1,0 +1,21 @@
+---
+title: "Replace with a clear title"
+---
+
+## Purpose
+
+## Prerequisites
+
+## Dataset and provenance
+
+Record accession, version, license/access terms, citation, and selection criteria.
+
+## Environment and steps
+
+Record software versions, installation instructions, exact commands, parameters, and seeds.
+
+## Expected outputs and quality checks
+
+## Limitations and troubleshooting
+
+## References and attribution

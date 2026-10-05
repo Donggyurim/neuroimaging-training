@@ -1,0 +1,7 @@
+---
+title: "Student Projects"
+---
+
+Student reports will connect research questions, reproducible workflows, quality checks, and findings.
+
+To add a contribution, copy a template from `templates/`, add the new page to `_quarto.yml`, and submit a pull request.

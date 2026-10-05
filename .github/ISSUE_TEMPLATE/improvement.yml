@@ -1,0 +1,20 @@
+name: Guide improvement or problem
+description: Suggest content or report an error in the guide.
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or proposed improvement
+    validations:
+      required: true
+  - type: input
+    id: page
+    attributes:
+      label: Page or file
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence and expected outcome
+      description: Include reproduction steps for errors, or sources for a proposed addition.
+    validations:
+      required: true

@@ -1,0 +1,24 @@
+---
+title: "Project title"
+author: "Student name (with permission)"
+---
+
+## Question and scope
+
+## Dataset, access terms, and selection
+
+## Environment and reproducible workflow
+
+## Quality checks
+
+## Results
+
+## Interpretation and limitations
+
+## Next steps
+
+## References and attribution
+
+## Handover
+
+Link the task issue and PR; record where approved outputs are stored and what was verified.

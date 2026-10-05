@@ -1,0 +1,9 @@
+---
+title: "Tutorials"
+---
+
+Step-by-step tutorials will help students build skills and contribute reproducible work.
+
+[Start with Getting started](getting-started.qmd).
+
+To add a contribution, copy a template from `templates/`, add the new page to `_quarto.yml`, and submit a pull request.

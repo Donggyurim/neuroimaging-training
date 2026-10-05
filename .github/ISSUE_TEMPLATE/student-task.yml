@@ -1,0 +1,35 @@
+name: Student task
+description: Plan and track a placement learning or research task.
+title: "[Task] "
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: Question and purpose
+      description: What will you learn or investigate?
+    validations:
+      required: true
+  - type: textarea
+    id: plan
+    attributes:
+      label: Dataset and approach
+      description: Include dataset version, access terms, and proposed methods.
+    validations:
+      required: true
+  - type: textarea
+    id: done
+    attributes:
+      label: Acceptance criteria
+      description: List observable outputs and quality checks that define completion.
+    validations:
+      required: true
+  - type: input
+    id: date
+    attributes:
+      label: Target date
+      placeholder: YYYY-MM-DD
+  - type: textarea
+    id: progress
+    attributes:
+      label: Progress and blockers
+      description: Add updates in issue comments and link your draft PR.

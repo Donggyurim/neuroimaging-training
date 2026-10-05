@@ -1,0 +1,14 @@
+/_site/
+/.quarto/
+.env
+.env.*
+!.env.example
+.DS_Store
+__pycache__/
+.ipynb_checkpoints/
+.venv/
+/data/
+/outputs/
+*.nii
+*.nii.gz
+*.dcm

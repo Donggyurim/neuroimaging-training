@@ -1,0 +1,21 @@
+---
+title: "Learn together. Build reproducible research."
+---
+
+This is a growing neuroimaging training and research guide for placement students supervised by Donggyurim. Each student learns from previous work and contributes improvements for the next cohort.
+
+## Your first steps
+
+1. Follow [Getting started](tutorials/getting-started.qmd).
+2. Agree on a small research question and dataset with your supervisor.
+3. Track your task in a GitHub issue and share work through a draft pull request.
+4. Document the workflow and submit it for supervisor review.
+
+## Explore the guide
+
+- [Tutorials](tutorials/index.qmd): practical learning pathways.
+- [Datasets](datasets/index.qmd): data access, provenance, and dataset limitations.
+- [Techniques](techniques/index.qmd): methods, assumptions, and quality checks.
+- [Student projects](projects/index.qmd): reproducible questions, findings, and lessons.
+
+The sections currently provide a scaffold for future contributions; they do not yet contain validated analysis protocols.

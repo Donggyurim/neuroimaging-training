@@ -1,0 +1,21 @@
+---
+title: "Getting started"
+---
+
+## Set up
+
+Create a GitHub account and ask the supervisor for repository access, or use a fork. Install Git and [Quarto](https://quarto.org/docs/get-started/). Clone the repository and run `quarto preview` to view it locally.
+
+## Learn the workflow
+
+Read [CONTRIBUTING](https://github.com/Donggyurim/neuroimaging-training/blob/main/CONTRIBUTING.md). Make your first task a small documentation improvement so you can practise branching, committing, pushing, and requesting review.
+
+## Plan your research
+
+With the supervisor, choose an accessible dataset and a question suitable for your placement. Before analysis, record the dataset identifier and version, access terms, selection criteria, proposed method, expected output, and quality checks in a Student task issue.
+
+Use the [previous student's guide](https://neuroimaging-guide.netlify.app/01-data) as a learning reference. Ask the supervisor to confirm which steps fit your dataset and question. This repository has not imported or independently validated that guide.
+
+## Make a reproducible contribution
+
+Copy the relevant template from `templates/`, document your environment and commands, and keep data outside the repository. Run and inspect your analysis separately; the website only renders documentation. Add your page to the navigation and open a draft PR early.

@@ -1,0 +1,48 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - "*.qmd"
+    - "datasets/**/*.qmd"
+    - "techniques/**/*.qmd"
+    - "tutorials/**/*.qmd"
+    - "projects/**/*.qmd"
+
+website:
+  title: "Neuroimaging Training"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: tutorials/index.qmd
+        text: Tutorials
+      - href: datasets/index.qmd
+        text: Datasets
+      - href: techniques/index.qmd
+        text: Techniques
+      - href: projects/index.qmd
+        text: Student projects
+    right:
+      - href: https://github.com/Donggyurim/neuroimaging-training
+        text: GitHub
+  sidebar:
+    style: docked
+    contents:
+      - section: Tutorials
+        contents:
+          - tutorials/index.qmd
+          - tutorials/getting-started.qmd
+      - datasets/index.qmd
+      - techniques/index.qmd
+      - projects/index.qmd
+  repo-url: https://github.com/Donggyurim/neuroimaging-training
+  repo-actions: [edit, issue]
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    code-copy: true
+
+execute:
+  enabled: false
