@@ -1,13 +1,17 @@
 ---
 title: "Techniques"
+description: ""
+toc: false
+page-layout: full
 ---
 
-Method guides will explain assumptions, implementation, quality checks, and interpretation.
+::: {.launch-list}
 
-To add a contribution, copy a template from `templates/`, add the new page to `_quarto.yml`, and submit a pull request.
+[<i class="bi bi-cpu" aria-hidden="true"></i> Segment one scan →](fastsurfer-pilot.qmd){.launch-row}
 
-## Available lessons
+[<i class="bi bi-table" aria-hidden="true"></i> Measure brain volumes →](regional-volume-analysis.qmd){.launch-row}
 
-- [Pilot segmentation](fastsurfer-pilot.qmd)
-- [Regional-volume analysis](regional-volume-analysis.qmd)
-- [Brain visualisation](brain-visualisation.qmd)
+[<i class="bi bi-bar-chart" aria-hidden="true"></i> Make clear figures →](brain-visualisation.qmd){.launch-row}
+:::
+
+[← Library](../library.qmd)

@@ -11,6 +11,7 @@ project:
     - "tutorials/**/*.qmd"
     - "projects/**/*.qmd"
     - "!notebooks/**"
+    - "!templates/**"
 
 website:
   title: "Neuroimaging Training"
@@ -23,7 +24,7 @@ website:
       - href: supervisor.qmd
         text: Supervisors
       - href: library.qmd
-        text: Lesson library
+        text: Library
     right:
       - href: https://github.com/Donggyurim/neuroimaging-training
         text: GitHub
@@ -32,18 +33,18 @@ website:
     location: navbar
     type: overlay
   page-footer:
-    left: "Donggyurim’s placement programme · Learn together. Build reproducible research."
+    left: "Neuroimaging Training · Donggyurim"
     right:
       - href: sources-and-contributions.qmd
-        text: Sources & contributions
+        text: About
   repo-url: https://github.com/Donggyurim/neuroimaging-training
-  repo-actions: [edit, issue]
 
 format:
   html:
     theme: cosmo
     css: assets/styles.css
-    toc: true
+    toc: false
+    include-after-body: _includes/details.html
     code-copy: true
 
 execute:

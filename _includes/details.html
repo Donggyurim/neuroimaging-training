@@ -1,0 +1,21 @@
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const menu = document.querySelector('.navbar-toggler');
+  if (menu) menu.removeAttribute('role');
+  const revealTarget = () => {
+    if (!location.hash) return;
+    let id;
+    try { id = decodeURIComponent(location.hash.slice(1)); } catch { return; }
+    const target = document.getElementById(id);
+    if (!target) return;
+    let parent = target.closest('details');
+    while (parent) {
+      parent.open = true;
+      parent = parent.parentElement.closest('details');
+    }
+    requestAnimationFrame(() => target.scrollIntoView({block: 'start'}));
+  };
+  revealTarget();
+  window.addEventListener('hashchange', revealTarget);
+});
+</script>

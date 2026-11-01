@@ -32,11 +32,11 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       if (!storageAvailable) {
         document.getElementById('storage-note').textContent =
-          'Browser storage is unavailable. Checks last only for this visit. They do not record supervisor approval.';
+          'Storage unavailable · checks last this visit.';
       }
       const count = checks.filter(check => check.checked).length;
       document.getElementById('progress-label').textContent =
-        `${count} of ${checks.length} personal steps checked`;
+        `${count} / ${checks.length} prepared`;
       const progress = document.getElementById('learning-progress');
       progress.max = checks.length;
       progress.value = count;
@@ -46,11 +46,12 @@ document.addEventListener('DOMContentLoaded', () => {
       });
       const next = checks.find(check => !check.checked);
       const link = document.getElementById('next-step-link');
-      link.textContent = next ? next.dataset.title : 'Prepare for your final review';
+      link.textContent = next ? next.dataset.title : 'Ready for review';
       link.href = next ? next.dataset.href : 'projects/structural-mri-handover.html';
+      document.getElementById('continue-lesson').href = link.href;
       document.getElementById('next-step-description').textContent = next
         ? next.dataset.description
-        : 'Your personal checklist is complete. Confirm outstanding feedback and handover with your supervisor.';
+        : 'Bring the pilot to your supervisor.';
     };
 
     const revealCurrentStep = () => {
@@ -94,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
       const count = cards.filter(card => !card.hidden).length;
       document.getElementById('lesson-count').textContent =
-        `${count} ${count === 1 ? 'guide' : 'guides'} ${words.length ? 'found' : 'available'}`;
+        `${count} ${count === 1 ? 'guide' : 'guides'}`;
       document.getElementById('no-lessons').hidden = count !== 0;
     };
     search.addEventListener('input', filterLessons);
@@ -109,14 +110,16 @@ document.addEventListener('DOMContentLoaded', () => {
       const status = document.getElementById('copy-status');
       try {
         await navigator.clipboard.writeText(template.textContent);
-        status.textContent = 'Copied. Paste the template into the task issue or PR and fill it in.';
+        status.textContent = 'Copied. Paste into the task.';
       } catch {
+        const disclosure = template.closest('details');
+        if (disclosure) disclosure.open = true;
         const selection = window.getSelection();
         const range = document.createRange();
         range.selectNodeContents(template);
         selection.removeAllRanges();
         selection.addRange(range);
-        status.textContent = 'Copy is unavailable in this browser. The template is selected; use your browser’s Copy command.';
+        status.textContent = 'Template selected. Use your browser’s Copy command.';
       }
     });
   }

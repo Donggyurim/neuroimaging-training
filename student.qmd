@@ -1,148 +1,94 @@
 ---
-title: "Your student workspace"
-pagetitle: "Student workspace | Neuroimaging Training"
+title: "My workspace"
+description: "One step at a time."
+toc: false
+page-layout: full
 include-after-body:
   - text: |
       <script src="assets/workspace.js" defer></script>
-toc: false
-page-layout: full
 ---
 
-::: {.eyebrow}
-LEARN / PRACTISE / ASK FOR FEEDBACK
-:::
-
-Work on one small output at a time. Use this checklist to find your next step, then share the evidence in your task issue.
 
 ::: {.workspace-grid}
 ::: {.workspace-main}
 ::: {.next-step}
-::: {.eyebrow}
-YOUR NEXT STEP
+<span class="eyebrow">UP NEXT</span>
+
+## [Set up & contribute](tutorials/getting-started.qmd){#next-step-link}
+
+<p id="next-step-description">Set up your workspace.</p>
+<a class="action-link primary-action" id="continue-lesson" href="tutorials/getting-started.html">Continue <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
 :::
 
-## [Set up and make your first contribution](tutorials/getting-started.qmd){#next-step-link}
-
-<p id="next-step-description">Get the site running and practise the review workflow with one small edit.</p>
-:::
-
-## Your project milestones
-
-<p class="progress-caption" id="progress-label" aria-live="polite">0 of 7 personal steps checked</p>
+<div class="section-top"><h2>Your path</h2><span id="progress-label" role="status">0 / 7 prepared</span></div>
 <progress id="learning-progress" value="0" max="7" aria-label="Personal checklist progress">0 of 7</progress>
-
-<p class="small-note" id="storage-note">Checks are saved only in this browser. They are personal reminders, not supervisor approval or a shared progress record.</p>
-
+<p id="storage-note" class="small-note">Saved in this browser · not supervisor approval.</p>
 <div class="milestone-list">
-<details class="milestone" open>
-<summary><span class="step-number">00</span><span><strong>Set up & contribute</strong><small>Get the site running and practise the review workflow with one small edit.</small></span></summary>
+<details class="milestone" open><summary><span class="step-number">00</span><strong>Set up &amp; contribute</strong></summary>
 <div class="milestone-body">
-<p><strong>Your output:</strong> A small documentation PR and a successful local site render.</p>
-<p><strong>Review together:</strong> Can you explain your change and respond to feedback?</p>
-<a class="lesson-link" href="tutorials/getting-started.html">Open the first-session guide →</a>
-<label class="step-check"><input type="checkbox" disabled data-step="0" data-href="tutorials/getting-started.html" data-title="Set up & contribute" data-description="Get the site running and practise the review workflow with one small edit." aria-label="Prepared: Set up &amp; contribute"> I have prepared this output</label>
-</div>
-</details>
-<details class="milestone" >
-<summary><span class="step-number">01</span><span><strong>Define your question</strong><small>Agree on a small question, a dataset, and a realistic finish line.</small></span></summary>
+<p><strong>Prepare:</strong> A small documentation PR.<br><strong>Review:</strong> Check the edit and build.</p>
+<a class="lesson-link" href="tutorials/getting-started.html">Open setup guide →</a>
+<label class="step-check"><input type="checkbox" disabled data-step="0" data-title="Set up &amp; contribute" data-description="Set up your workspace." data-href="tutorials/getting-started.html" aria-label="Prepared: Set up &amp; contribute"> Prepared</label>
+</div></details>
+<details class="milestone" ><summary><span class="step-number">01</span><strong>Define your question</strong></summary>
 <div class="milestone-body">
-<p><strong>Your output:</strong> A task issue with the question, dataset version, selection rules, and acceptance criteria.</p>
-<p><strong>Review together:</strong> Is the question achievable with the available data and compute?</p>
+<p><strong>Prepare:</strong> Question, dataset version, and acceptance criteria.<br><strong>Review:</strong> Confirm scope and access.</p>
 <a class="lesson-link" href="tutorials/structural-mri-pathway.html">Plan your project →</a>
-<label class="step-check"><input type="checkbox" disabled data-step="1" data-href="tutorials/structural-mri-pathway.html" data-title="Define your question" data-description="Agree on a small question, a dataset, and a realistic finish line." aria-label="Prepared: Define your question"> I have prepared this output</label>
-</div>
-</details>
-<details class="milestone" >
-<summary><span class="step-number">02</span><span><strong>Inspect one scan</strong><small>Check the input before investing in processing.</small></span></summary>
+<label class="step-check"><input type="checkbox" disabled data-step="1" data-title="Define your question" data-description="Agree one achievable question." data-href="tutorials/structural-mri-pathway.html" aria-label="Prepared: Define your question"> Prepared</label>
+</div></details>
+<details class="milestone" ><summary><span class="step-number">02</span><strong>Inspect one scan</strong></summary>
 <div class="milestone-body">
-<p><strong>Your output:</strong> An input manifest and inspection notes for one selected scan.</p>
-<p><strong>Review together:</strong> Are acquisition details, access terms, and scan quality suitable?</p>
-<a class="lesson-link" href="datasets/openneuro-t1w.html">Choose and inspect data →</a>
-<label class="step-check"><input type="checkbox" disabled data-step="2" data-href="datasets/openneuro-t1w.html" data-title="Inspect one scan" data-description="Check the input before investing in processing." aria-label="Prepared: Inspect one scan"> I have prepared this output</label>
-</div>
-</details>
-<details class="milestone" >
-<summary><span class="step-number">03</span><span><strong>Process a pilot</strong><small>Run one segmentation and inspect the result.</small></span></summary>
+<p><strong>Prepare:</strong> Input manifest and quality notes.<br><strong>Review:</strong> Confirm the scan is suitable.</p>
+<a class="lesson-link" href="datasets/openneuro-t1w.html">Inspect a scan →</a>
+<label class="step-check"><input type="checkbox" disabled data-step="2" data-title="Inspect one scan" data-description="Check one input scan." data-href="datasets/openneuro-t1w.html" aria-label="Prepared: Inspect one scan"> Prepared</label>
+</div></details>
+<details class="milestone" ><summary><span class="step-number">03</span><strong>Process a pilot</strong></summary>
 <div class="milestone-body">
-<p><strong>Your output:</strong> Exact software versions, commands, logs, and overlay screenshots in approved storage.</p>
-<p><strong>Review together:</strong> Do the labels align with the anatomy? Agree QC criteria before scaling.</p>
-<a class="lesson-link" href="techniques/fastsurfer-pilot.html">Open the segmentation guide →</a>
-<label class="step-check"><input type="checkbox" disabled data-step="3" data-href="techniques/fastsurfer-pilot.html" data-title="Process a pilot" data-description="Run one segmentation and inspect the result." aria-label="Prepared: Process a pilot"> I have prepared this output</label>
-</div>
-</details>
-<details class="milestone" >
-<summary><span class="step-number">04</span><span><strong>Measure your regions</strong><small>Make a table whose numbers you can explain.</small></span></summary>
+<p><strong>Prepare:</strong> Versions, command, logs, and overlays.<br><strong>Review:</strong> Review labels before scaling.</p>
+<a class="lesson-link" href="techniques/fastsurfer-pilot.html">Run a pilot →</a>
+<label class="step-check"><input type="checkbox" disabled data-step="3" data-title="Process a pilot" data-description="Run one segmentation." data-href="techniques/fastsurfer-pilot.html" aria-label="Prepared: Process a pilot"> Prepared</label>
+</div></details>
+<details class="milestone" ><summary><span class="step-number">04</span><strong>Measure your regions</strong></summary>
 <div class="milestone-body">
-<p><strong>Your output:</strong> A region table with units, processing provenance, and a measure dictionary.</p>
-<p><strong>Review together:</strong> What does each measure mean? Are identifiers and joins correct?</p>
-<a class="lesson-link" href="techniques/regional-volume-analysis.html">Build your analysis table →</a>
-<label class="step-check"><input type="checkbox" disabled data-step="4" data-href="techniques/regional-volume-analysis.html" data-title="Measure your regions" data-description="Make a table whose numbers you can explain." aria-label="Prepared: Measure your regions"> I have prepared this output</label>
-</div>
-</details>
-<details class="milestone" >
-<summary><span class="step-number">05</span><span><strong>Analyse & visualise</strong><small>Match the figures and conclusions to the evidence.</small></span></summary>
+<p><strong>Prepare:</strong> Region table, units, and provenance.<br><strong>Review:</strong> Check measures and participant joins.</p>
+<a class="lesson-link" href="techniques/regional-volume-analysis.html">Define measurements →</a>
+<label class="step-check"><input type="checkbox" disabled data-step="4" data-title="Measure your regions" data-description="Build a traceable volume table." data-href="techniques/regional-volume-analysis.html" aria-label="Prepared: Measure your regions"> Prepared</label>
+</div></details>
+<details class="milestone" ><summary><span class="step-number">05</span><strong>Analyse &amp; visualise</strong></summary>
 <div class="milestone-body">
-<p><strong>Your output:</strong> An analysis plan, assumption checks, results, and labelled figures.</p>
-<p><strong>Review together:</strong> Are uncertainty, exclusions, and interpretation justified?</p>
-<a class="lesson-link" href="techniques/brain-visualisation.html">Prepare your figures →</a>
-<label class="step-check"><input type="checkbox" disabled data-step="5" data-href="techniques/brain-visualisation.html" data-title="Analyse & visualise" data-description="Match the figures and conclusions to the evidence." aria-label="Prepared: Analyse &amp; visualise"> I have prepared this output</label>
-</div>
-</details>
-<details class="milestone" >
-<summary><span class="step-number">06</span><span><strong>Share & hand over</strong><small>Leave the next student a reproducible starting point.</small></span></summary>
+<p><strong>Prepare:</strong> Analysis plan, checks, and figures.<br><strong>Review:</strong> Review assumptions and uncertainty.</p>
+<a class="lesson-link" href="techniques/brain-visualisation.html">Make figures →</a>
+<label class="step-check"><input type="checkbox" disabled data-step="5" data-title="Analyse &amp; visualise" data-description="Explain what your results show." data-href="techniques/brain-visualisation.html" aria-label="Prepared: Analyse &amp; visualise"> Prepared</label>
+</div></details>
+<details class="milestone" ><summary><span class="step-number">06</span><strong>Share &amp; hand over</strong></summary>
 <div class="milestone-body">
-<p><strong>Your output:</strong> A reviewed report, environment record, output locations, and known limitations.</p>
-<p><strong>Review together:</strong> What was actually tested, and can someone else repeat it?</p>
-<a class="lesson-link" href="projects/structural-mri-handover.html">Prepare your handover →</a>
-<label class="step-check"><input type="checkbox" disabled data-step="6" data-href="projects/structural-mri-handover.html" data-title="Share & hand over" data-description="Leave the next student a reproducible starting point." aria-label="Prepared: Share &amp; hand over"> I have prepared this output</label>
+<p><strong>Prepare:</strong> Reviewed report and reproduction steps.<br><strong>Review:</strong> Agree what was tested and accepted.</p>
+<a class="lesson-link" href="projects/structural-mri-handover.html">Prepare handover →</a>
+<label class="step-check"><input type="checkbox" disabled data-step="6" data-title="Share &amp; hand over" data-description="Make the work reproducible." data-href="projects/structural-mri-handover.html" aria-label="Prepared: Share &amp; hand over"> Prepared</label>
+</div></details>
 </div>
-</details>
-</div>
-
-<button type="button" id="reset-progress" hidden class="quiet-button">Clear personal checks</button>
-<noscript><p>Your checklist works as a reading guide. Enable JavaScript to save checks in this browser and update the next-step suggestion.</p></noscript>
+<button type="button" id="reset-progress" class="quiet-button" hidden>Reset checklist</button>
+<noscript><p class="small-note">Enable JavaScript to save checks. Guides remain available.</p></noscript>
 :::
-
 ::: {.workspace-aside}
-::: {.side-panel}
-### Your first MRI notebook
+<div class="side-panel notebook-card"><span class="icon-tile"><i class="bi bi-journal-code" aria-hidden="true"></i></span><h2>First brain volumes</h2><p>One scan. Eight steps.</p><a class="action-link primary-action" href="tutorials/first-regional-brain-volumes.html" aria-label="Start notebook">Start notebook →</a></div>
+<div class="side-panel"><h2>My tasks</h2><a class="quick-link" href="https://github.com/Donggyurim/neuroimaging-training/issues?q=is%3Aissue+is%3Aopen+assignee%3A%40me"><i class="bi bi-check2-square" aria-hidden="true"></i> View tasks <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a><a class="quick-link" href="https://github.com/Donggyurim/neuroimaging-training/issues/new?template=student-task.yml"><i class="bi bi-plus-lg" aria-hidden="true"></i> New task <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a><p class="small-note">GitHub sign-in required.</p></div>
+<details class="guide-section"><summary>Meeting checklist</summary>
 
-[Open the eight-step tutorial →](tutorials/first-regional-brain-volumes.qmd){.action-link .primary-action}
+- What changed?
+- What evidence?
+- Any blockers?
+- What next?
 
-One scan, segmentation, overlay QC, and a volume table. Agree your scope with your supervisor first.
+</details>
+
+<details class="guide-section"><summary>Before MRI work</summary>
+
+Teaching pilot: review inputs and outputs with your supervisor before scaling up. Keep participant data in approved storage.
+
+[Get help](tutorials/getting-started.qmd#when-something-goes-wrong) · [All guides](library.qmd)
+
+</details>
+
 :::
-
-::: {.side-panel}
-### Keep your work together
-
-[Create a task issue →](https://github.com/Donggyurim/neuroimaging-training/issues/new?template=student-task.yml){.action-link .primary-action}
-
-[Find my assigned tasks →](https://github.com/Donggyurim/neuroimaging-training/issues?q=is%3Aissue+is%3Aopen+assignee%3A%40me)
-
-GitHub sign-in and repository access may be needed. Assign the issue to yourself and link your draft PR.
-:::
-
-::: {.side-panel}
-### Before your next meeting
-
-- What did you try?
-- What evidence do you have?
-- What is blocking you?
-- What decision do you need?
-
-Add a short update to your task issue. Keep participant data and private feedback in approved storage.
-:::
-
-::: {.side-panel .soft-panel}
-### Stuck? Start small.
-
-Share the command, error message, software version, and what you expected. Remove sensitive details first.
-
-[Get setup help](tutorials/getting-started.qmd#when-something-goes-wrong) · [Browse lessons](library.qmd)
-:::
-:::
-:::
-
-::: {.notice-strip}
-**Before MRI processing:** these lessons are practical-validation drafts. The personal checklist does not validate the science or replace supervisor review.
 :::

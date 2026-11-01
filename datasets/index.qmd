@@ -1,11 +1,13 @@
 ---
 title: "Datasets"
+description: ""
+toc: false
+page-layout: full
 ---
 
-Dataset descriptions will document access, versions, provenance, selection, and limitations.
+::: {.launch-list}
 
-To add a contribution, copy a template from `templates/`, add the new page to `_quarto.yml`, and submit a pull request.
+[<i class="bi bi-database" aria-hidden="true"></i> Choose a scan →](openneuro-t1w.qmd){.launch-row}
+:::
 
-## Available lessons
-
-- [Choose and inspect OpenNeuro data](openneuro-t1w.qmd)
+[← Library](../library.qmd)

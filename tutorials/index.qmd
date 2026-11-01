@@ -1,16 +1,19 @@
 ---
 title: "Tutorials"
+description: ""
+toc: false
+page-layout: full
 ---
 
-Step-by-step tutorials will help students build skills and contribute reproducible work.
+::: {.launch-list}
 
-[Start with Getting started](getting-started.qmd).
+[<i class="bi bi-rocket-takeoff" aria-hidden="true"></i> Get started →](getting-started.qmd){.launch-row}
 
-To add a contribution, copy a template from `templates/`, add the new page to `_quarto.yml`, and submit a pull request.
+[<i class="bi bi-journal-code" aria-hidden="true"></i> First brain volumes →](first-regional-brain-volumes.qmd){.launch-row}
 
-## Available lessons
+[<i class="bi bi-signpost-split" aria-hidden="true"></i> Your MRI project →](structural-mri-pathway.qmd){.launch-row}
 
-- [Your first regional brain volumes — guided Colab notebook](first-regional-brain-volumes.qmd)
+[<i class="bi bi-cloud" aria-hidden="true"></i> Run on brainlife →](brainlife-first-run.qmd){.launch-row}
+:::
 
-- [Supervised structural MRI pathway](structural-mri-pathway.qmd)
-- [First brainlife run](brainlife-first-run.qmd)
+[← Library](../library.qmd)
