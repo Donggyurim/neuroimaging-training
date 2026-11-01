@@ -3,12 +3,14 @@ project:
   output-dir: _site
   resources:
     - assets/
+    - notebooks/*.ipynb
   render:
     - "*.qmd"
     - "datasets/**/*.qmd"
     - "techniques/**/*.qmd"
     - "tutorials/**/*.qmd"
     - "projects/**/*.qmd"
+    - "!notebooks/**"
 
 website:
   title: "Neuroimaging Training"

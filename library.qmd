@@ -15,10 +15,16 @@ Follow the [student milestones](student.qmd), or jump straight to a topic. MRI m
 
 <label for="lesson-search" class="search-label">Search lessons</label>
 <input id="lesson-search" disabled type="search" placeholder="Try “segmentation”, “setup”, or “handover”…" aria-describedby="lesson-count" autocomplete="off">
-<p id="lesson-count" class="small-note" role="status">10 guides available</p>
+<p id="lesson-count" class="small-note" role="status">11 guides available</p>
 <noscript><p>Use your browser’s Find command to search this list.</p></noscript>
 
 <div class="library-grid" id="lesson-library">
+<article class="lesson-card" data-search="jupyter ipynb colab notebook structural imaging first regional brain volumes segmentation">
+<span class="card-label">GUIDED NOTEBOOK</span>
+<h2><a href="tutorials/first-regional-brain-volumes.html">Your first regional brain volumes <span aria-hidden="true">→</span></a></h2>
+<p>Run the eight-step Colab exercise: one scan, segmentation, QC, and a regional-volume CSV.</p>
+<span class="lesson-meta">Teaching pilot · full rerun pending</span>
+</article>
 <article class="lesson-card" data-search="setup git quarto first session beginner">
 <span class="card-label">START HERE</span>
 <h2><a href="tutorials/getting-started.html">Your first session <span aria-hidden="true">→</span></a></h2>

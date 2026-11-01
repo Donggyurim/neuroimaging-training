@@ -634,3 +634,8 @@ progress::-webkit-progress-value {
     font-size: .75rem;
   }
 }
+
+@media (max-width: 700px) {
+  .notebook-steps td:nth-child(2)::before { content: 'What you do'; }
+  .notebook-steps td:nth-child(3)::before { content: 'What to check'; }
+}

@@ -113,14 +113,14 @@ test('lesson search handles matches, empty results, and clearing', async t => {
   const { page } = await visit(t, 'library.html');
   const search = page.getByRole('searchbox', { name: 'Search lessons' });
   await search.fill('SEGMENTATION');
-  assert.equal(await page.locator('.lesson-card:visible').count(), 1);
+  assert.equal(await page.locator('.lesson-card:visible').count(), 2);
   await page.getByRole('link', { name: /Pilot a segmentation/ }).click();
   assert.equal(page.url(), base + 'techniques/fastsurfer-pilot.html');
   await page.goto(base + 'library.html');
   await search.fill('no-matching-guide');
   assert(await page.locator('#no-lessons').isVisible());
   await search.fill('');
-  assert.equal(await page.locator('.lesson-card:visible').count(), 10);
+  assert.equal(await page.locator('.lesson-card:visible').count(), 11);
 });
 
 test('supervisor feedback can be copied with a manual fallback', async t => {
@@ -141,7 +141,7 @@ test('mobile navigation and layouts work at 320px and 390px', async t => {
   const { page } = await visit(t, '', { viewport: { width: 320, height: 740 } });
   for (const width of [320, 390]) {
     await page.setViewportSize({ width, height: 844 });
-    for (const path of ['', 'student.html', 'supervisor.html', 'library.html', 'tutorials/getting-started.html']) {
+    for (const path of ['', 'student.html', 'supervisor.html', 'library.html', 'tutorials/getting-started.html', 'tutorials/first-regional-brain-volumes.html']) {
       await page.goto(base + path);
       assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), `${width}px: ${path}`);
     }
@@ -159,9 +159,30 @@ test('without JavaScript lessons and feedback remain readable', async t => {
   await page.locator('.milestone').nth(1).locator('summary').click();
   assert(await page.getByRole('link', { name: 'Plan your project' }).isVisible());
   await page.goto(base + 'library.html');
-  assert.equal(await page.locator('.lesson-card:visible').count(), 10);
+  assert.equal(await page.locator('.lesson-card:visible').count(), 11);
   assert(await page.getByRole('searchbox', { name: 'Search lessons' }).isDisabled());
   await page.goto(base + 'supervisor.html');
   assert.equal(await page.getByRole('button', { name: 'Copy review template' }).count(), 0);
   assert((await page.locator('#review-template').textContent()).includes('Next action'));
+});
+
+test('students can find, launch, and download the structural MRI notebook', async t => {
+  const { context, page } = await visit(t, 'student.html');
+  await page.getByRole('link', { name: 'Open the eight-step tutorial' }).click();
+  assert.equal(page.url(), base + 'tutorials/first-regional-brain-volumes.html');
+  const launch = page.getByRole('link', { name: 'Open the course notebook in Colab' });
+  assert.equal(await launch.getAttribute('href'),
+    'https://colab.research.google.com/github/Donggyurim/neuroimaging-training/blob/main/notebooks/First_regional_brain_volumes.ipynb');
+  const downloadLink = page.getByRole('link', { name: 'Download the Jupyter notebook' });
+  const response = await context.request.get(await downloadLink.evaluate(link => link.href));
+  assert.equal(response.status(), 200);
+  const notebook = await response.json();
+  assert.equal(notebook.nbformat, 4);
+  assert(notebook.cells.some(cell => cell.cell_type === 'code'));
+  assert(notebook.cells.every(cell => cell.cell_type !== 'code' || cell.outputs.length === 0));
+  await page.goto(base + 'library.html');
+  await page.getByRole('searchbox', { name: 'Search lessons' }).fill('jupyter');
+  assert.equal(await page.locator('.lesson-card:visible').count(), 1);
+  await page.getByRole('link', { name: 'Your first regional brain volumes' }).click();
+  assert.equal(page.url(), base + 'tutorials/first-regional-brain-volumes.html');
 });

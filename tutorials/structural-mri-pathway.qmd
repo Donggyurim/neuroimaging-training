@@ -9,6 +9,12 @@ Welcome to Donggyurim’s placement programme. Your goal is to explain and repro
 These lessons were newly written for Donggyurim’s placement programme. The MRI workflow has not been run end to end in this repository. Review the commands, environment, and scientific choices with your supervisor before processing a cohort.
 :::
 
+## Start with the guided notebook
+
+[Open Your first regional brain volumes →](first-regional-brain-volumes.qmd){.action-link .primary-action}
+
+Follow the eight-step Colab exercise from input download to segmentation, QC, and a regional-volume CSV. The publication copy has no saved outputs; complete a fresh run and supervisor review before scaling up.
+
 ## The placement milestones
 
 | Milestone | What you produce | Supervisor checkpoint |

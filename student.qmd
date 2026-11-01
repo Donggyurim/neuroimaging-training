@@ -105,6 +105,14 @@ YOUR NEXT STEP
 
 ::: {.workspace-aside}
 ::: {.side-panel}
+### Your first MRI notebook
+
+[Open the eight-step tutorial →](tutorials/first-regional-brain-volumes.qmd){.action-link .primary-action}
+
+One scan, segmentation, overlay QC, and a volume table. Agree your scope with your supervisor first.
+:::
+
+::: {.side-panel}
 ### Keep your work together
 
 [Create a task issue →](https://github.com/Donggyurim/neuroimaging-training/issues/new?template=student-task.yml){.action-link .primary-action}
