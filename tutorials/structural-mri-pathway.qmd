@@ -1,21 +1,32 @@
 ---
-title: "Structural MRI: your first supervised project"
+title: "Your MRI project"
+description: "One question. Six milestones."
+body-classes: guide-page
+toc: false
+page-layout: full
 ---
+
+<p class="pilot-note"><i class="bi bi-info-circle" aria-hidden="true"></i> Teaching pilot · supervisor review required</p>
+
+[Start the notebook →](first-regional-brain-volumes.qmd){.action-link .primary-action}
+
+<details class="guide-section"><summary>Overview</summary>
 
 Welcome to Donggyurim’s placement programme. Your goal is to explain and reproduce a small analysis well enough that the next student can build on it. Start with one scan and one question; a large batch is a later milestone.
 
-::: {.callout-warning}
-## Teaching draft — practical validation pending
-These lessons were newly written for Donggyurim’s placement programme. The MRI workflow has not been run end to end in this repository. Review the commands, environment, and scientific choices with your supervisor before processing a cohort.
-:::
+</details>
 
-## Start with the guided notebook
+<details class="guide-section" id="start-with-the-guided-notebook"><summary>Notebook guide</summary>
 
 [Open Your first regional brain volumes →](first-regional-brain-volumes.qmd){.action-link .primary-action}
 
 Follow the eight-step Colab exercise from input download to segmentation, QC, and a regional-volume CSV. The publication copy has no saved outputs; complete a fresh run and supervisor review before scaling up.
 
-## The placement milestones
+</details>
+
+<details class="guide-section" id="the-placement-milestones"><summary>Milestones</summary>
+
+::: {.table-responsive tabindex="0" role="region" aria-label="Reference table"}
 
 | Milestone | What you produce | Supervisor checkpoint |
 |---|---|---|
@@ -26,7 +37,12 @@ Follow the eight-step Colab exercise from input download to segmentation, QC, an
 | Analyse | Audited participant join, model plan, effect table | Are assumptions and conclusions justified? |
 | Communicate | Figures, limitations, reproducibility handover | Is the public report accurate? |
 
-## Follow the lessons
+:::
+
+
+</details>
+
+<details class="guide-section" id="follow-the-lessons"><summary>Lesson sequence</summary>
 
 1. [Choose and inspect OpenNeuro data](../datasets/openneuro-t1w.qmd).
 2. [Pilot segmentation and plan your compute](../techniques/fastsurfer-pilot.qmd).
@@ -35,15 +51,28 @@ Follow the eight-step Colab exercise from input download to segmentation, QC, an
 5. [Explore brainlife as another compute route](brainlife-first-run.qmd).
 6. Use the [project handover checklist](../projects/structural-mri-handover.qmd).
 
-## Your first issue
+</details>
+
+<details class="guide-section" id="your-first-issue"><summary>First task</summary>
 
 Open a Student task issue titled “Pilot one structural MRI scan”. Include the proposed question, dataset accession and snapshot, one selected scan, compute route, and acceptance criteria. Share a draft PR containing your manifest and inspection notes before scaling up.
 
-## How previous placement work informs this programme
+</details>
+
+<details class="guide-section" id="how-previous-placement-work-informs-this-programme"><summary>Background & credit</summary>
 
 A previous placement student created the [Neuroimaging Guide](https://neuroimaging-guide.netlify.app/), covering these broad topics. That work helped identify a useful teaching direction. These lessons use a new milestone structure and independently written explanations with official sources. We have not imported the student’s text, implementation, images, interactive viewer, or findings. See [sources and contributions](../sources-and-contributions.qmd).
 
+</details>
+
+<details class="guide-section" id="teaching-draft--practical-validation-pending"><summary>Validation status</summary>
+
+These lessons were newly written for Donggyurim’s placement programme. The MRI workflow has not been run end to end in this repository. Review the commands, environment, and scientific choices with your supervisor before processing a cohort.
+
+</details>
 
 ::: {.resource-strip}
 [← Student workspace](../student.qmd) · [Next: choose and inspect a scan →](../datasets/openneuro-t1w.qmd)
 :::
+
+[← Library](../library.qmd)

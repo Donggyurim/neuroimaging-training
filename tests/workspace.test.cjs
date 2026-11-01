@@ -62,16 +62,16 @@ test('students can follow their next step and resume their checklist', async t =
   await page.getByRole('checkbox', { name: 'Prepared: Set up & contribute' }).check();
   assert.equal(await page.locator('#next-step-link').textContent(), 'Define your question');
   await page.reload();
-  assert.equal(await page.locator('#progress-label').textContent(), '1 of 7 personal steps checked');
+  assert.equal(await page.locator('#progress-label').textContent(), '1 / 7 prepared');
   assert(await page.getByRole('checkbox', { name: 'Prepared: Set up & contribute', includeHidden: true }).isChecked());
   assert(await page.getByRole('checkbox', { name: 'Prepared: Define your question' }).isVisible());
   for (const details of await page.locator('.milestone').all()) {
     if (await details.getAttribute('open') === null) await details.locator('summary').click();
     await details.locator('input').check();
   }
-  assert.equal(await page.locator('#next-step-link').textContent(), 'Prepare for your final review');
-  await page.getByRole('button', { name: 'Clear personal checks' }).click();
-  assert.equal(await page.locator('#progress-label').textContent(), '0 of 7 personal steps checked');
+  assert.equal(await page.locator('#next-step-link').textContent(), 'Ready for review');
+  await page.getByRole('button', { name: 'Reset checklist' }).click();
+  assert.equal(await page.locator('#progress-label').textContent(), '0 / 7 prepared');
   await page.reload();
   assert.equal(await page.locator('#learning-progress').getAttribute('value'), '0');
 });
@@ -81,7 +81,7 @@ test('checklist changes are reflected in another open tab', async t => {
   const second = await context.newPage();
   await second.goto(base + 'student.html');
   await page.getByRole('checkbox', { name: 'Prepared: Set up & contribute' }).check();
-  await second.waitForFunction(() => document.getElementById('progress-label').textContent.startsWith('1 of'));
+  await second.waitForFunction(() => document.getElementById('progress-label').textContent.startsWith('1 /'));
   assert(await second.getByRole('checkbox', { name: 'Prepared: Define your question' }).isVisible());
 });
 
@@ -91,7 +91,7 @@ test('invalid saved state recovers and later progress still persists', async t =
   await page.reload();
   await page.getByRole('checkbox', { name: 'Prepared: Set up & contribute' }).check();
   await page.reload();
-  assert.equal(await page.locator('#progress-label').textContent(), '1 of 7 personal steps checked');
+  assert.equal(await page.locator('#progress-label').textContent(), '1 / 7 prepared');
   assert(!(await page.locator('#storage-note').textContent()).includes('unavailable'));
 });
 
@@ -105,7 +105,7 @@ test('blocked storage writes do not block the learning flow', async t => {
   });
   await page.goto(base + 'student.html');
   await page.getByRole('checkbox', { name: 'Prepared: Set up & contribute' }).check();
-  assert.equal(await page.locator('#progress-label').textContent(), '1 of 7 personal steps checked');
+  assert.equal(await page.locator('#progress-label').textContent(), '1 / 7 prepared');
   assert((await page.locator('#storage-note').textContent()).includes('unavailable'));
 });
 
@@ -114,7 +114,7 @@ test('lesson search handles matches, empty results, and clearing', async t => {
   const search = page.getByRole('searchbox', { name: 'Search lessons' });
   await search.fill('SEGMENTATION');
   assert.equal(await page.locator('.lesson-card:visible').count(), 2);
-  await page.getByRole('link', { name: /Pilot a segmentation/ }).click();
+  await page.getByRole('link', { name: /Segmentation pilot/ }).click();
   assert.equal(page.url(), base + 'techniques/fastsurfer-pilot.html');
   await page.goto(base + 'library.html');
   await search.fill('no-matching-guide');
@@ -141,7 +141,15 @@ test('mobile navigation and layouts work at 320px and 390px', async t => {
   const { page } = await visit(t, '', { viewport: { width: 320, height: 740 } });
   for (const width of [320, 390]) {
     await page.setViewportSize({ width, height: 844 });
-    for (const path of ['', 'student.html', 'supervisor.html', 'library.html', 'tutorials/getting-started.html', 'tutorials/first-regional-brain-volumes.html']) {
+    for (const path of [
+      '', 'student.html', 'supervisor.html', 'library.html',
+      'tutorials/getting-started.html', 'tutorials/first-regional-brain-volumes.html',
+      'tutorials/structural-mri-pathway.html', 'datasets/openneuro-t1w.html',
+      'techniques/fastsurfer-pilot.html', 'techniques/regional-volume-analysis.html',
+      'techniques/brain-visualisation.html', 'tutorials/brainlife-first-run.html',
+      'projects/structural-mri-handover.html', 'sources-and-contributions.html',
+      'tutorials/index.html', 'datasets/index.html', 'techniques/index.html', 'projects/index.html'
+    ]) {
       await page.goto(base + path);
       assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), `${width}px: ${path}`);
     }
@@ -155,7 +163,7 @@ test('mobile navigation and layouts work at 320px and 390px', async t => {
 test('without JavaScript lessons and feedback remain readable', async t => {
   const { page } = await visit(t, 'student.html', { javaScriptEnabled: false });
   assert(await page.getByRole('checkbox', { name: 'Prepared: Set up & contribute' }).isDisabled());
-  assert.equal(await page.getByRole('button', { name: 'Clear personal checks' }).count(), 0);
+  assert.equal(await page.getByRole('button', { name: 'Reset checklist' }).count(), 0);
   await page.locator('.milestone').nth(1).locator('summary').click();
   assert(await page.getByRole('link', { name: 'Plan your project' }).isVisible());
   await page.goto(base + 'library.html');
@@ -168,12 +176,12 @@ test('without JavaScript lessons and feedback remain readable', async t => {
 
 test('students can find, launch, and download the structural MRI notebook', async t => {
   const { context, page } = await visit(t, 'student.html');
-  await page.getByRole('link', { name: 'Open the eight-step tutorial' }).click();
+  await page.getByRole('link', { name: 'Start notebook' }).click();
   assert.equal(page.url(), base + 'tutorials/first-regional-brain-volumes.html');
-  const launch = page.getByRole('link', { name: 'Open the course notebook in Colab' });
+  const launch = page.getByRole('link', { name: 'Open in Colab' });
   assert.equal(await launch.getAttribute('href'),
     'https://colab.research.google.com/github/Donggyurim/neuroimaging-training/blob/main/notebooks/First_regional_brain_volumes.ipynb');
-  const downloadLink = page.getByRole('link', { name: 'Download the Jupyter notebook' });
+  const downloadLink = page.getByRole('link', { name: 'Download notebook' });
   const response = await context.request.get(await downloadLink.evaluate(link => link.href));
   assert.equal(response.status(), 200);
   const notebook = await response.json();
@@ -183,6 +191,45 @@ test('students can find, launch, and download the structural MRI notebook', asyn
   await page.goto(base + 'library.html');
   await page.getByRole('searchbox', { name: 'Search lessons' }).fill('jupyter');
   assert.equal(await page.locator('.lesson-card:visible').count(), 1);
-  await page.getByRole('link', { name: 'Your first regional brain volumes' }).click();
+  await page.getByRole('link', { name: 'First brain volumes' }).click();
   assert.equal(page.url(), base + 'tutorials/first-regional-brain-volumes.html');
+});
+
+test('lesson details work with keyboard navigation and direct section links', async t => {
+  const { page } = await visit(t, 'tutorials/getting-started.html');
+  const help = page.locator('details#when-something-goes-wrong');
+  assert.equal(await help.getAttribute('open'), null);
+  await help.locator('summary').focus();
+  await page.keyboard.press('Enter');
+  assert.notEqual(await help.getAttribute('open'), null);
+  assert(await help.getByRole('cell', { name: 'quarto: command not found' }).isVisible());
+  await page.goto(base + 'tutorials/getting-started.html#when-something-goes-wrong');
+  await page.waitForFunction(() => document.getElementById('when-something-goes-wrong').open);
+  assert.notEqual(await help.getAttribute('open'), null);
+  assert(await help.getByRole('cell', { name: 'quarto: command not found' }).isVisible());
+});
+
+test('continue follows the current milestone rather than the initial lesson', async t => {
+  const { page } = await visit(t, 'student.html');
+  await page.getByRole('checkbox', { name: 'Prepared: Set up & contribute' }).check();
+  await page.getByRole('link', { name: 'Continue', exact: false }).click();
+  assert.equal(page.url(), base + 'tutorials/structural-mri-pathway.html');
+  const notebookAction = page.getByRole('link', { name: 'Start the notebook' });
+  await notebookAction.waitFor({ state: 'visible' });
+  assert(await notebookAction.isVisible());
+});
+
+test('expanded reference material stays inside the viewport on phones', async t => {
+  const { page } = await visit(t, '', { viewport: { width: 320, height: 800 } });
+  for (const path of [
+    'tutorials/getting-started.html', 'tutorials/structural-mri-pathway.html',
+    'tutorials/first-regional-brain-volumes.html', 'datasets/openneuro-t1w.html',
+    'techniques/fastsurfer-pilot.html', 'techniques/regional-volume-analysis.html',
+    'techniques/brain-visualisation.html', 'tutorials/brainlife-first-run.html',
+    'projects/structural-mri-handover.html', 'sources-and-contributions.html'
+  ]) {
+    await page.goto(base + path);
+    await page.evaluate(() => document.querySelectorAll('details').forEach(section => { section.open = true; }));
+    assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), path);
+  }
 });

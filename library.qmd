@@ -1,89 +1,28 @@
 ---
-title: "Lesson library"
+title: "Library"
+description: "Find a guide."
+toc: false
+page-layout: full
 include-after-body:
   - text: |
       <script src="assets/workspace.js" defer></script>
-toc: false
-page-layout: full
 ---
 
-::: {.eyebrow}
-FIND THE GUIDE YOU NEED
-:::
 
-Follow the [student milestones](student.qmd), or jump straight to a topic. MRI method lessons are teaching drafts awaiting practical validation.
-
-<label for="lesson-search" class="search-label">Search lessons</label>
-<input id="lesson-search" disabled type="search" placeholder="Try “segmentation”, “setup”, or “handover”…" aria-describedby="lesson-count" autocomplete="off">
-<p id="lesson-count" class="small-note" role="status">11 guides available</p>
-<noscript><p>Use your browser’s Find command to search this list.</p></noscript>
-
+<div class="library-toolbar"><label for="lesson-search" class="visually-hidden">Search lessons</label><div class="search-field"><i class="bi bi-search" aria-hidden="true"></i><input id="lesson-search" disabled type="search" placeholder="Search guides…" aria-describedby="lesson-count" autocomplete="off"></div><span id="lesson-count" class="small-note" role="status">11 guides</span></div>
+<noscript><p class="small-note">Use your browser’s Find command.</p></noscript>
 <div class="library-grid" id="lesson-library">
-<article class="lesson-card" data-search="jupyter ipynb colab notebook structural imaging first regional brain volumes segmentation">
-<span class="card-label">GUIDED NOTEBOOK</span>
-<h2><a href="tutorials/first-regional-brain-volumes.html">Your first regional brain volumes <span aria-hidden="true">→</span></a></h2>
-<p>Run the eight-step Colab exercise: one scan, segmentation, QC, and a regional-volume CSV.</p>
-<span class="lesson-meta">Teaching pilot · full rerun pending</span>
-</article>
-<article class="lesson-card" data-search="setup git quarto first session beginner">
-<span class="card-label">START HERE</span>
-<h2><a href="tutorials/getting-started.html">Your first session <span aria-hidden="true">→</span></a></h2>
-<p>Set up the site and make your first small contribution.</p>
-<span class="lesson-meta">Setup & contribution</span>
-</article>
-<article class="lesson-card" data-search="define scope plan structural mri">
-<span class="card-label">PROJECT PLAN</span>
-<h2><a href="tutorials/structural-mri-pathway.html">The structural MRI pathway <span aria-hidden="true">→</span></a></h2>
-<p>Understand the milestones, outputs, and supervisor checkpoints.</p>
-<span class="lesson-meta">Teaching draft</span>
-</article>
-<article class="lesson-card" data-search="openneuro dataset input inspect t1w">
-<span class="card-label">DATA</span>
-<h2><a href="datasets/openneuro-t1w.html">Choose & inspect a scan <span aria-hidden="true">→</span></a></h2>
-<p>Record dataset provenance and inspect a suitable T1-weighted input.</p>
-<span class="lesson-meta">Teaching draft</span>
-</article>
-<article class="lesson-card" data-search="fastsurfer segmentation compute gpu qc process">
-<span class="card-label">PROCESS</span>
-<h2><a href="techniques/fastsurfer-pilot.html">Pilot a segmentation <span aria-hidden="true">→</span></a></h2>
-<p>Choose compute, run one scan, and review quality before scaling.</p>
-<span class="lesson-meta">Teaching draft</span>
-</article>
-<article class="lesson-card" data-search="statistics measure regions volume analysis table">
-<span class="card-label">MEASURE</span>
-<h2><a href="techniques/regional-volume-analysis.html">Regional-volume analysis <span aria-hidden="true">→</span></a></h2>
-<p>Define measures, audit joins, and plan a defensible analysis.</p>
-<span class="lesson-meta">Teaching draft</span>
-</article>
-<article class="lesson-card" data-search="visualisation visualization figures plots overlays">
-<span class="card-label">VISUALISE</span>
-<h2><a href="techniques/brain-visualisation.html">Make evidence-led figures <span aria-hidden="true">→</span></a></h2>
-<p>Present anatomy and results with clear labels and limitations.</p>
-<span class="lesson-meta">Teaching draft</span>
-</article>
-<article class="lesson-card" data-search="brainlife compute cloud app">
-<span class="card-label">COMPUTE</span>
-<h2><a href="tutorials/brainlife-first-run.html">Your first brainlife run <span aria-hidden="true">→</span></a></h2>
-<p>Explore another compute route and capture its provenance.</p>
-<span class="lesson-meta">Teaching draft</span>
-</article>
-<article class="lesson-card" data-search="handover report finish reproduce">
-<span class="card-label">HANDOVER</span>
-<h2><a href="projects/structural-mri-handover.html">Finish a reproducible project <span aria-hidden="true">→</span></a></h2>
-<p>Record what worked, what failed, and how to repeat the work.</p>
-<span class="lesson-meta">Project checklist</span>
-</article>
-<article class="lesson-card" data-search="student project template example">
-<span class="card-label">EXAMPLES</span>
-<h2><a href="projects/index.html">Student projects <span aria-hidden="true">→</span></a></h2>
-<p>Find the project template and contribution instructions.</p>
-<span class="lesson-meta">No completed example yet</span>
-</article>
-<article class="lesson-card" data-search="sources citations attribution permission">
-<span class="card-label">ABOUT</span>
-<h2><a href="sources-and-contributions.html">Sources & contributions <span aria-hidden="true">→</span></a></h2>
-<p>Understand attribution, permissions, and the guide’s origins.</p>
-<span class="lesson-meta">Programme information</span>
-</article>
+<article class="lesson-card" data-search="jupyter ipynb colab notebook structural imaging first regional brain volumes segmentation    GUIDED NOTEBOOK    Your first regional brain volumes  →     Run the eight-step Colab exercise: one scan, segmentation, QC, and a regional-volume CSV.   Teaching pilot · full rerun pending   "><span class="icon-tile"><i class="bi bi-journal-code" aria-hidden="true"></i></span><span class="card-label">Notebook</span><h2><a href="tutorials/first-regional-brain-volumes.html">First brain volumes</a></h2><p>One scan, eight steps.</p></article>
+<article class="lesson-card" data-search="setup git quarto first session beginner    START HERE    Your first session  →     Set up the site and make your first small contribution.   Setup &amp; contribution   "><span class="icon-tile"><i class="bi bi-rocket-takeoff" aria-hidden="true"></i></span><span class="card-label">Start</span><h2><a href="tutorials/getting-started.html">Get started</a></h2><p>Set up and contribute.</p></article>
+<article class="lesson-card" data-search="define scope plan structural mri    PROJECT PLAN    The structural MRI pathway  →     Understand the milestones, outputs, and supervisor checkpoints.   Teaching draft   "><span class="icon-tile"><i class="bi bi-signpost-split" aria-hidden="true"></i></span><span class="card-label">Plan</span><h2><a href="tutorials/structural-mri-pathway.html">Your MRI project</a></h2><p>Scope to handover.</p></article>
+<article class="lesson-card" data-search="openneuro dataset input inspect t1w    DATA    Choose &amp; inspect a scan  →     Record dataset provenance and inspect a suitable T1-weighted input.   Teaching draft   "><span class="icon-tile"><i class="bi bi-database" aria-hidden="true"></i></span><span class="card-label">Data</span><h2><a href="datasets/openneuro-t1w.html">Choose a scan</a></h2><p>Select and inspect.</p></article>
+<article class="lesson-card" data-search="fastsurfer segmentation compute gpu qc process    PROCESS    Pilot a segmentation  →     Choose compute, run one scan, and review quality before scaling.   Teaching draft   "><span class="icon-tile"><i class="bi bi-cpu" aria-hidden="true"></i></span><span class="card-label">Process</span><h2><a href="techniques/fastsurfer-pilot.html">Segmentation pilot</a></h2><p>Run and review labels.</p></article>
+<article class="lesson-card" data-search="statistics measure regions volume analysis table    MEASURE    Regional-volume analysis  →     Define measures, audit joins, and plan a defensible analysis.   Teaching draft   "><span class="icon-tile"><i class="bi bi-table" aria-hidden="true"></i></span><span class="card-label">Measure</span><h2><a href="techniques/regional-volume-analysis.html">Regional volumes</a></h2><p>Define your measurements.</p></article>
+<article class="lesson-card" data-search="visualisation visualization figures plots overlays    VISUALISE    Make evidence-led figures  →     Present anatomy and results with clear labels and limitations.   Teaching draft   "><span class="icon-tile"><i class="bi bi-bar-chart" aria-hidden="true"></i></span><span class="card-label">Visualise</span><h2><a href="techniques/brain-visualisation.html">Make figures</a></h2><p>Show the evidence.</p></article>
+<article class="lesson-card" data-search="brainlife compute cloud app    COMPUTE    Your first brainlife run  →     Explore another compute route and capture its provenance.   Teaching draft   "><span class="icon-tile"><i class="bi bi-cloud" aria-hidden="true"></i></span><span class="card-label">Compute</span><h2><a href="tutorials/brainlife-first-run.html">Run on brainlife</a></h2><p>Try another route.</p></article>
+<article class="lesson-card" data-search="handover report finish reproduce    HANDOVER    Finish a reproducible project  →     Record what worked, what failed, and how to repeat the work.   Project checklist   "><span class="icon-tile"><i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></span><span class="card-label">Finish</span><h2><a href="projects/structural-mri-handover.html">Project handover</a></h2><p>Make it reproducible.</p></article>
+<article class="lesson-card" data-search="student project template example    EXAMPLES    Student projects  →     Find the project template and contribution instructions.   No completed example yet   "><span class="icon-tile"><i class="bi bi-folder2" aria-hidden="true"></i></span><span class="card-label">Projects</span><h2><a href="projects/index.html">Student projects</a></h2><p>Templates and handover.</p></article>
+<article class="lesson-card" data-search="sources citations attribution permission    ABOUT    Sources &amp; contributions  →     Understand attribution, permissions, and the guide’s origins.   Programme information   "><span class="icon-tile"><i class="bi bi-info-circle" aria-hidden="true"></i></span><span class="card-label">About</span><h2><a href="sources-and-contributions.html">Sources & credit</a></h2><p>Attribution and permissions.</p></article>
 </div>
-<p id="no-lessons" class="notice-strip" hidden>No matching lessons. Try a broader word, or clear your search to see all guides.</p>
+<p id="no-lessons" class="empty-state" hidden>No guides found. Try another word.</p>
+<p class="small-note library-note">MRI lessons are teaching pilots. Supervisor review required.</p>

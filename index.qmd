@@ -1,92 +1,42 @@
 ---
 title: "Neuroimaging Training"
-pagetitle: "Start here | Neuroimaging Training"
-body-classes: home-page
+description: ""
 toc: false
 page-layout: full
+body-classes: home-page
 ---
 
+
 ::: {.home-hero}
-::: {.eyebrow}
-DONGGYURIM’S PLACEMENT PROGRAMME
+<span class="eyebrow">DONGGYURIM’S PLACEMENT PROGRAMME</span>
+
+# Learn neuroimaging.
+
+One scan. Clear steps. Useful research.
 :::
 
-# Your next step,<br>made clear.
+```{=html}
+<div class="role-grid">
+<a href="student.html" class="role-card" aria-label="Open student workspace">
+<span class="icon-tile"><i class="bi bi-mortarboard" aria-hidden="true"></i></span>
+<span><strong>Students</strong><small>Start or continue</small></span>
+<i class="bi bi-arrow-right" aria-hidden="true"></i>
+</a>
+<a href="supervisor.html" class="role-card" aria-label="Open supervisor guide">
+<span class="icon-tile"><i class="bi bi-clipboard-check" aria-hidden="true"></i></span>
+<span><strong>Supervisors</strong><small>Review and guide</small></span>
+<i class="bi bi-arrow-right" aria-hidden="true"></i>
+</a>
+</div>
+```
 
-Learn the methods, build a small reproducible project, and get feedback along the way. Start with the workspace that fits your role.
+<div class="feature-card">
+<div class="feature-art" aria-hidden="true"><i class="bi bi-journal-code" aria-hidden="true"></i><span>01 → 08</span></div>
+<div class="feature-copy"><span class="eyebrow">GUIDED NOTEBOOK</span>
+<h2>First brain volumes</h2>
+<p>Eight steps. One scan. Your first volume table.</p>
+<a class="action-link primary-action" href="tutorials/first-regional-brain-volumes.html" >Start notebook <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+</div>
+</div>
 
-::: {.hero-note}
-One scan. One question. A project the next student can build on.
-:::
-:::
-
-::: {.role-grid}
-::: {.role-card .student-card}
-::: {.card-label}
-01 / FOR STUDENTS
-:::
-
-## Make your first project happen
-
-Find your next lesson, work through the milestones, and know what to bring to your supervisor.
-
-[Open student workspace →](student.qmd){.action-link .primary-action}
-
-New here? Start with a small documentation contribution.
-:::
-
-::: {.role-card .supervisor-card}
-::: {.card-label}
-02 / FOR SUPERVISORS
-:::
-
-## Guide the work, at each checkpoint
-
-Set a manageable scope, review the evidence, and give students a concrete next action.
-
-[Open supervisor guide →](supervisor.qmd){.action-link .dark-action}
-
-Use GitHub issues and pull requests for shared progress.
-:::
-:::
-
-::: {.section-heading}
-## From a first question to a useful handover
-
-Six milestones. A clear output and a conversation at every step.
-:::
-
-::: {.journey-grid}
-::: {.journey-item}
-### 01 · Define
-Agree a question and dataset.
-:::
-::: {.journey-item}
-### 02 · Inspect
-Check one input scan.
-:::
-::: {.journey-item}
-### 03 · Process
-Pilot one segmentation.
-:::
-::: {.journey-item}
-### 04 · Measure
-Build a traceable region table.
-:::
-::: {.journey-item}
-### 05 · Analyse
-Check assumptions and figures.
-:::
-::: {.journey-item}
-### 06 · Share
-Explain, review, and hand over.
-:::
-:::
-
-::: {.notice-strip}
-**Learning material, with honest limits.** The MRI lessons are teaching drafts awaiting practical validation. Plan the first pilot with your supervisor before processing a cohort. [Read the pathway](tutorials/structural-mri-pathway.qmd).
-:::
-
-::: {.resource-strip}
-**Looking for a specific method?** [Browse the lesson library →](library.qmd)
-:::
+<div class="home-links"><a href="library.html"><i class="bi bi-collection" aria-hidden="true"></i> Browse guides</a><span class="status-note">Teaching pilots · supervisor review required</span></div>

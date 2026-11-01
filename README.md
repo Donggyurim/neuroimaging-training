@@ -56,6 +56,15 @@ to the `main` version, so a new notebook or update must be merged before student
 can launch that version. Drive authentication, MRI processing, and scientific QC
 remain separate from website checks.
 
+## Minimal interface
+
+The site uses Quarto’s Bootstrap components with one shared white-and-blue theme.
+Home and workspace pages show short actions; the full teaching guidance remains
+in native, keyboard-accessible disclosures. Existing section links open the target
+disclosure automatically. `_includes/details.html` supplies that small enhancement;
+reading and opening sections also work without JavaScript. Core flows retain the
+same notebook, task links, personal progress store, and review template.
+
 ## Check the interface
 
 The website remains a static Quarto site. Node.js 24 and Playwright are used only

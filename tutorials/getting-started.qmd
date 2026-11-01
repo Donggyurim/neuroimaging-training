@@ -1,19 +1,26 @@
 ---
-title: "Your first session"
-description: "Get the site running, make one small edit, and practise asking for review."
+title: "Get started"
+description: "Set up. Make one small change."
+body-classes: guide-page
+toc: false
+page-layout: full
 ---
 
-[← Student workspace](../student.qmd)
+<details class="guide-section"><summary>Overview</summary>
 
 Your first goal is a small documentation contribution. You do not need MRI data or a GPU for this session.
 
-## 1. Get access
+</details>
 
-Create a GitHub account. Ask your supervisor for repository access, or agree to use a fork. Read the [contribution workflow](../CONTRIBUTING.md) before making changes.
+<details class="guide-section" id="1-get-access"><summary>1 · Get access</summary>
+
+Create a GitHub account. Ask your supervisor for repository access, or agree to use a fork. Read the [contribution workflow](https://github.com/Donggyurim/neuroimaging-training/blob/main/CONTRIBUTING.md) before making changes.
 
 **Done when:** you can open the repository and know where your task will be tracked.
 
-## 2. Preview the guide
+</details>
+
+<details class="guide-section" id="2-preview-the-guide"><summary>2 · Preview the guide</summary>
 
 Install [Git](https://git-scm.com/downloads) and [Quarto 1.8.27](https://github.com/quarto-dev/quarto-cli/releases/tag/v1.8.27), the version used by this site’s build. If your supervisor has provided a prepared environment, use its existing checkout and Quarto installation.
 
@@ -30,7 +37,9 @@ Open the address printed by Quarto in your local browser. Stop the preview with 
 
 **Done when:** the homepage opens and you can navigate to a lesson.
 
-## 3. Make a small, useful change
+</details>
+
+<details class="guide-section" id="3-make-a-small-useful-change"><summary>3 · Make a change</summary>
 
 [Create a Student task issue](https://github.com/Donggyurim/neuroimaging-training/issues/new?template=student-task.yml) describing one unclear instruction or small documentation improvement. Agree the task with your supervisor. In your repository checkout:
 
@@ -50,13 +59,19 @@ The render should finish with `Output created: _site/index.html`. Review all cha
 
 **Done when:** your edit is visible and the full render completes successfully.
 
-## 4. Ask for feedback
+</details>
+
+<details class="guide-section" id="4-ask-for-feedback"><summary>4 · Ask for review</summary>
 
 Commit your intended changes, push your branch to the repository you have access to, and open a **draft pull request**. Link the task issue and explain what changed and how you checked it. Ask your supervisor for review, respond to feedback, and follow the repository’s merge process.
 
 **Bring to review:** the task issue, draft PR, and build result. Never push directly to `main`.
 
-## When something goes wrong
+</details>
+
+<details class="guide-section" id="when-something-goes-wrong"><summary>Troubleshooting</summary>
+
+::: {.table-responsive tabindex="0" role="region" aria-label="Reference table"}
 
 | What you see | What to try |
 |---|---|
@@ -66,8 +81,18 @@ Commit your intended changes, push your branch to the repository you have access
 | Git push is denied | Confirm the remote and your repository access with the supervisor. Use your agreed fork workflow if necessary. |
 | You are still stuck | Send the command, error, version, and expected result in your task issue, with sensitive details removed. |
 
-## Next: plan your research
+:::
+
+
+</details>
+
+<details class="guide-section" id="next-plan-your-research"><summary>Next steps</summary>
 
 [Return to your milestones →](../student.qmd)
 
 Agree a small question, a fixed dataset version, access terms, and a compute route with your supervisor. The [structural MRI pathway](structural-mri-pathway.qmd) explains the later stages. Analysis runs separately: a successful website render does not validate an MRI workflow.
+
+</details>
+
+
+[← Library](../library.qmd)
