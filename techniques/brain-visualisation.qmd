@@ -39,3 +39,8 @@ Generate new figures from your validated workflow. The previous student’s imag
 ## Supervisor checkpoint
 
 Submit the effect table, atlas correspondence, one static figure, caption, and a regeneration record. Check that the figure communicates the same claim as the numerical analysis.
+
+
+::: {.resource-strip}
+[← Student workspace](../student.qmd) · [Next: prepare your handover →](../projects/structural-mri-handover.qmd)
+:::

@@ -51,3 +51,8 @@ Run this in a working directory outside the public repository. The manifest is a
 ## Acceptance criteria
 
 You can identify the frozen source version, explain your inclusion rules, open one selected scan in a viewer, and reconcile your inventory with the dataset metadata. Review image contrast, orientation, motion/artifacts, and suitability for your chosen segmentation tool. Submit the dataset record and non-sensitive QC notes for supervisor review.
+
+
+::: {.resource-strip}
+[← Student workspace](../student.qmd) · [Next: pilot one segmentation →](../techniques/fastsurfer-pilot.qmd)
+:::

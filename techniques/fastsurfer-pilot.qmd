@@ -43,3 +43,8 @@ Colab’s local disk is temporary. Write a coherent output set and logs to appro
 ## Supervisor checkpoint
 
 Present one input, overlay screenshots with safe labels, processing logs, and a version record. Agree on QC criteria and exclusion handling before launching the cohort. No complete batch notebook is supplied here yet; the pilot is the first validation task.
+
+
+::: {.resource-strip}
+[← Student workspace](../student.qmd) · [Next: define your measurements →](regional-volume-analysis.qmd)
+:::

@@ -36,3 +36,8 @@ Open a Student task issue titled “Pilot one structural MRI scan”. Include th
 ## How previous placement work informs this programme
 
 A previous placement student created the [Neuroimaging Guide](https://neuroimaging-guide.netlify.app/), covering these broad topics. That work helped identify a useful teaching direction. These lessons use a new milestone structure and independently written explanations with official sources. We have not imported the student’s text, implementation, images, interactive viewer, or findings. See [sources and contributions](../sources-and-contributions.qmd).
+
+
+::: {.resource-strip}
+[← Student workspace](../student.qmd) · [Next: choose and inspect a scan →](../datasets/openneuro-t1w.qmd)
+:::

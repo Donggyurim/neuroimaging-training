@@ -23,6 +23,18 @@ jobs:
           version: 1.8.27
       - name: Render website
         run: quarto render
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - name: Install browser test dependencies
+        run: npm ci
+      - name: Install Chromium for browser checks
+        run: npx playwright install --with-deps chromium
+      - name: Check student and supervisor flows
+        run: npm test
+      - name: Check local site links
+        run: python3 scripts/check-site.py
       - name: Upload review artifact
         uses: actions/upload-artifact@v4
         with:

@@ -1,25 +1,92 @@
 ---
-title: "Learn together. Build reproducible research."
+title: "Neuroimaging Training"
+pagetitle: "Start here | Neuroimaging Training"
+body-classes: home-page
+toc: false
+page-layout: full
 ---
 
-Welcome to Donggyurim’s placement programme. This is a growing neuroimaging training and research guide for placement students supervised by Donggyurim. Each student learns from previous work and contributes improvements for the next cohort.
+::: {.home-hero}
+::: {.eyebrow}
+DONGGYURIM’S PLACEMENT PROGRAMME
+:::
 
-## Your first steps
+# Your next step,<br>made clear.
 
-1. Follow [Getting started](tutorials/getting-started.qmd).
-2. Agree on a small research question and dataset with your supervisor.
-3. Track your task in a GitHub issue and share work through a draft pull request.
-4. Document the workflow and submit it for supervisor review.
+Learn the methods, build a small reproducible project, and get feedback along the way. Start with the workspace that fits your role.
 
-## Explore the guide
+::: {.hero-note}
+One scan. One question. A project the next student can build on.
+:::
+:::
 
-- [Tutorials](tutorials/index.qmd): practical learning pathways.
-- [Datasets](datasets/index.qmd): data access, provenance, and dataset limitations.
-- [Techniques](techniques/index.qmd): methods, assumptions, and quality checks.
-- [Student projects](projects/index.qmd): reproducible questions, findings, and lessons.
+::: {.role-grid}
+::: {.role-card .student-card}
+::: {.card-label}
+01 / FOR STUDENTS
+:::
 
-## Start a structural MRI project
+## Make your first project happen
 
-The [supervised structural MRI pathway](tutorials/structural-mri-pathway.qmd) takes you from dataset selection to segmentation, analysis, figures, and handover. Lessons are teaching drafts awaiting practical validation. Your first milestone is one inspected scan, not an entire cohort.
+Find your next lesson, work through the milestones, and know what to bring to your supervisor.
 
-Read [sources and contributions](sources-and-contributions.qmd) for acknowledgement of earlier placement work and our approach to permissions.
+[Open student workspace →](student.qmd){.action-link .primary-action}
+
+New here? Start with a small documentation contribution.
+:::
+
+::: {.role-card .supervisor-card}
+::: {.card-label}
+02 / FOR SUPERVISORS
+:::
+
+## Guide the work, at each checkpoint
+
+Set a manageable scope, review the evidence, and give students a concrete next action.
+
+[Open supervisor guide →](supervisor.qmd){.action-link .dark-action}
+
+Use GitHub issues and pull requests for shared progress.
+:::
+:::
+
+::: {.section-heading}
+## From a first question to a useful handover
+
+Six milestones. A clear output and a conversation at every step.
+:::
+
+::: {.journey-grid}
+::: {.journey-item}
+### 01 · Define
+Agree a question and dataset.
+:::
+::: {.journey-item}
+### 02 · Inspect
+Check one input scan.
+:::
+::: {.journey-item}
+### 03 · Process
+Pilot one segmentation.
+:::
+::: {.journey-item}
+### 04 · Measure
+Build a traceable region table.
+:::
+::: {.journey-item}
+### 05 · Analyse
+Check assumptions and figures.
+:::
+::: {.journey-item}
+### 06 · Share
+Explain, review, and hand over.
+:::
+:::
+
+::: {.notice-strip}
+**Learning material, with honest limits.** The MRI lessons are teaching drafts awaiting practical validation. Plan the first pilot with your supervisor before processing a cohort. [Read the pathway](tutorials/structural-mri-pathway.qmd).
+:::
+
+::: {.resource-strip}
+**Looking for a specific method?** [Browse the lesson library →](library.qmd)
+:::

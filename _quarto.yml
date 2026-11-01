@@ -1,6 +1,8 @@
 project:
   type: website
   output-dir: _site
+  resources:
+    - assets/
   render:
     - "*.qmd"
     - "datasets/**/*.qmd"
@@ -9,52 +11,36 @@ project:
     - "projects/**/*.qmd"
 
 website:
-  title: "Donggyurim’s Neuroimaging Training"
+  title: "Neuroimaging Training"
   navbar:
     left:
       - href: index.qmd
         text: Home
-      - href: tutorials/index.qmd
-        text: Tutorials
-      - href: datasets/index.qmd
-        text: Datasets
-      - href: techniques/index.qmd
-        text: Techniques
-      - href: projects/index.qmd
-        text: Student projects
+      - href: student.qmd
+        text: Students
+      - href: supervisor.qmd
+        text: Supervisors
+      - href: library.qmd
+        text: Lesson library
     right:
       - href: https://github.com/Donggyurim/neuroimaging-training
         text: GitHub
-  sidebar:
-    style: docked
-    contents:
-      - section: Tutorials
-        contents:
-          - tutorials/index.qmd
-          - tutorials/getting-started.qmd
-          - tutorials/structural-mri-pathway.qmd
-          - tutorials/brainlife-first-run.qmd
-      - section: Datasets
-        contents:
-          - datasets/index.qmd
-          - datasets/openneuro-t1w.qmd
-      - section: Techniques
-        contents:
-          - techniques/index.qmd
-          - techniques/fastsurfer-pilot.qmd
-          - techniques/regional-volume-analysis.qmd
-          - techniques/brain-visualisation.qmd
-      - section: Student projects
-        contents:
-          - projects/index.qmd
-          - projects/structural-mri-handover.qmd
-      - sources-and-contributions.qmd
+        icon: github
+  search:
+    location: navbar
+    type: overlay
+  page-footer:
+    left: "Donggyurim’s placement programme · Learn together. Build reproducible research."
+    right:
+      - href: sources-and-contributions.qmd
+        text: Sources & contributions
   repo-url: https://github.com/Donggyurim/neuroimaging-training
   repo-actions: [edit, issue]
 
 format:
   html:
     theme: cosmo
+    css: assets/styles.css
     toc: true
     code-copy: true
 
