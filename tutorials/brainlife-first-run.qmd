@@ -27,3 +27,8 @@ Containerisation helps capture the software environment but does not guarantee i
 ## Supervisor checkpoint
 
 Demonstrate that another student can identify your exact inputs and processing settings. Explain any difference from the local or Colab pilot; do not assume the workflows are equivalent because both produce a segmentation.
+
+
+::: {.resource-strip}
+[← Student workspace](../student.qmd) · [Return to your milestones →](../student.qmd)
+:::

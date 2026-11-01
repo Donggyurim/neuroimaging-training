@@ -1,0 +1,97 @@
+---
+title: "Your supervisor guide"
+pagetitle: "Supervisor guide | Neuroimaging Training"
+include-after-body:
+  - text: |
+      <script src="assets/workspace.js" defer></script>
+toc: false
+page-layout: full
+---
+
+::: {.eyebrow}
+SET SCOPE / REVIEW EVIDENCE / AGREE THE NEXT STEP
+:::
+
+Keep each student focused on one achievable output. Use the checkpoints below to turn a progress update into a clear decision.
+
+::: {.review-actions}
+[Open student tasks →](https://github.com/Donggyurim/neuroimaging-training/issues){.action-link .primary-action}
+[Review open pull requests →](https://github.com/Donggyurim/neuroimaging-training/pulls){.action-link .secondary-action}
+:::
+
+::: {.notice-strip}
+**Shared progress lives in GitHub.** This page is a review guide, not a live cohort dashboard. Student checkboxes are private to their browser and do not record your approval.
+:::
+
+::: {.section-heading}
+## A useful supervision meeting in three moves
+:::
+
+::: {.three-grid}
+::: {.instruction-card}
+### 01 · See the evidence
+Open the task issue and linked draft PR. Ask the student to show the actual output, version record, and anything that failed.
+:::
+::: {.instruction-card}
+### 02 · Make a decision
+Record “ready for next step”, “revise”, or “blocked”, with a short reason. Keep scientific review separate from a successful website build.
+:::
+::: {.instruction-card}
+### 03 · Set the next action
+Agree one output, an owner, and a target date. Add it to the issue so both of you leave with the same plan.
+:::
+:::
+
+## Review checkpoints
+
+::: {.checkpoint-table}
+
+| Stage | Ask to see | Decision to make |
+|---|---|---|
+| **Define** | Question, fixed dataset version, access conditions, acceptance criteria | Is the scope achievable and appropriate? |
+| **Inspect** | One-scan manifest, metadata, and quality notes | Is the input suitable for the proposed method? |
+| **Process** | Environment, command, exit status, logs, and overlays | Is the pilot acceptable? Agree QC rules before scaling. |
+| **Measure** | Region table, units, provenance, and identifier audit | Are the measures and participant joins correct? |
+| **Analyse** | Model plan, assumptions, exclusions, uncertainty, and figures | Are the claims supported and limitations clear? |
+| **Share** | Reproduction steps, output locations, permissions, and known failures | Can the next student reproduce the accepted work? |
+
+:::
+
+::: {.workspace-grid}
+::: {.workspace-main}
+## Leave feedback the student can act on
+
+Copy this into the task issue or PR. Put confidential feedback in your approved private channel.
+
+<pre id="review-template" class="review-template">Checkpoint:
+Evidence reviewed (link to PR/output/version):
+Decision: ready for next step / revise / blocked
+Reason and required changes:
+Next action:
+Owner:
+Target date:
+Next review:</pre>
+<button type="button" class="action-link secondary-action" id="copy-review" hidden>Copy review template</button>
+<p id="copy-status" role="status" class="small-note"></p>
+:::
+
+::: {.workspace-aside}
+::: {.side-panel}
+### Before the placement starts
+
+- Agree the question and first milestone.
+- Confirm repository and dataset access.
+- Choose one primary compute route.
+- Agree a meeting schedule and storage location.
+- Explain what can be shared publicly.
+
+[View the student experience →](student.qmd)
+:::
+:::
+:::
+
+## Keep the cohort organised
+
+Use one bounded GitHub issue per task. Assign a student, record the target date, and link the draft PR. A GitHub Project can group issues into **Todo → In progress → In review → Done**. Link your cohort’s Project from its coordination issue once created.
+
+Avoid participant identifiers, restricted outputs, and confidential student assessments in this public repository. [Review the contribution workflow](CONTRIBUTING.md) and [handover requirements](projects/structural-mri-handover.qmd).

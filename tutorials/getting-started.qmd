@@ -1,21 +1,73 @@
 ---
-title: "Getting started"
+title: "Your first session"
+description: "Get the site running, make one small edit, and practise asking for review."
 ---
 
-## Set up
+[← Student workspace](../student.qmd)
 
-Create a GitHub account and ask the supervisor for repository access, or use a fork. Install Git and [Quarto](https://quarto.org/docs/get-started/). Clone the repository and run `quarto preview` to view it locally.
+Your first goal is a small documentation contribution. You do not need MRI data or a GPU for this session.
 
-## Learn the workflow
+## 1. Get access
 
-Read [CONTRIBUTING](https://github.com/Donggyurim/neuroimaging-training/blob/main/CONTRIBUTING.md). Make your first task a small documentation improvement so you can practise branching, committing, pushing, and requesting review.
+Create a GitHub account. Ask your supervisor for repository access, or agree to use a fork. Read the [contribution workflow](../CONTRIBUTING.md) before making changes.
 
-## Plan your research
+**Done when:** you can open the repository and know where your task will be tracked.
 
-With the supervisor, choose an accessible dataset and a question suitable for your placement. Before analysis, record the dataset identifier and version, access terms, selection criteria, proposed method, expected output, and quality checks in a Student task issue.
+## 2. Preview the guide
 
-Use the [previous student's guide](https://neuroimaging-guide.netlify.app/01-data) as a learning reference. Ask the supervisor to confirm which steps fit your dataset and question. This repository has not imported or independently validated that guide.
+Install [Git](https://git-scm.com/downloads) and [Quarto 1.8.27](https://github.com/quarto-dev/quarto-cli/releases/tag/v1.8.27), the version used by this site’s build. If your supervisor has provided a prepared environment, use its existing checkout and Quarto installation.
 
-## Make a reproducible contribution
+For a new local checkout:
 
-Copy the relevant template from `templates/`, document your environment and commands, and keep data outside the repository. Run and inspect your analysis separately; the website only renders documentation. Add your page to the navigation and open a draft PR early.
+```sh
+git clone https://github.com/Donggyurim/neuroimaging-training.git
+cd neuroimaging-training
+quarto --version
+quarto preview
+```
+
+Open the address printed by Quarto in your local browser. Stop the preview with Ctrl+C when finished.
+
+**Done when:** the homepage opens and you can navigate to a lesson.
+
+## 3. Make a small, useful change
+
+[Create a Student task issue](https://github.com/Donggyurim/neuroimaging-training/issues/new?template=student-task.yml) describing one unclear instruction or small documentation improvement. Agree the task with your supervisor. In your repository checkout:
+
+```sh
+git switch -c student/first-contribution
+```
+
+Edit a relevant `.qmd` page, preview the change, then check the full site:
+
+```sh
+quarto render
+git status --short
+git diff
+```
+
+The render should finish with `Output created: _site/index.html`. Review all changed files before committing. Do not add generated `_site/` or `.quarto/` files.
+
+**Done when:** your edit is visible and the full render completes successfully.
+
+## 4. Ask for feedback
+
+Commit your intended changes, push your branch to the repository you have access to, and open a **draft pull request**. Link the task issue and explain what changed and how you checked it. Ask your supervisor for review, respond to feedback, and follow the repository’s merge process.
+
+**Bring to review:** the task issue, draft PR, and build result. Never push directly to `main`.
+
+## When something goes wrong
+
+| What you see | What to try |
+|---|---|
+| `quarto: command not found` | Reopen your terminal after installation, then check `quarto --version`. In a prepared environment, follow its activation instructions. |
+| Preview cannot start on its port | Stop your earlier preview, or run `quarto preview --port 4201`. |
+| Render fails | Read the first reported error. Check YAML indentation, file paths, and the page you just edited. |
+| Git push is denied | Confirm the remote and your repository access with the supervisor. Use your agreed fork workflow if necessary. |
+| You are still stuck | Send the command, error, version, and expected result in your task issue, with sensitive details removed. |
+
+## Next: plan your research
+
+[Return to your milestones →](../student.qmd)
+
+Agree a small question, a fixed dataset version, access terms, and a compute route with your supervisor. The [structural MRI pathway](structural-mri-pathway.qmd) explains the later stages. Analysis runs separately: a successful website render does not validate an MRI workflow.

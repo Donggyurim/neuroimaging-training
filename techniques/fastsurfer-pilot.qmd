@@ -21,6 +21,10 @@ A segmentation assigns anatomical labels to image voxels. FastSurfer offers volu
 
 For Colab, begin with the upstream [QuickSeg tutorial](https://colab.research.google.com/github/Deep-MI/FastSurfer/blob/stable/Tutorial/Tutorial_FastSurferCNN_QuickSeg.ipynb), rather than importing the previous student’s setup and batch code. Save the revision used. The [Colab FAQ](https://research.google.com/colaboratory/faq.html) explains that resources and runtime limits vary; a paid account does not guarantee a particular GPU or session duration.
 
+## Follow the course notebook
+
+[Your first regional brain volumes](../tutorials/first-regional-brain-volumes.qmd) provides the programme’s eight-step Colab exercise with a pinned FastSurfer source commit, input checks, overlays, and hard-label volume export. Complete its QC and supervisor review before scaling up.
+
 ## Run one scan
 
 1. Confirm the selected input is suitable and its metadata matches any acquisition-specific options.
@@ -43,3 +47,8 @@ Colab’s local disk is temporary. Write a coherent output set and logs to appro
 ## Supervisor checkpoint
 
 Present one input, overlay screenshots with safe labels, processing logs, and a version record. Agree on QC criteria and exclusion handling before launching the cohort. No complete batch notebook is supplied here yet; the pilot is the first validation task.
+
+
+::: {.resource-strip}
+[← Student workspace](../student.qmd) · [Next: define your measurements →](regional-volume-analysis.qmd)
+:::

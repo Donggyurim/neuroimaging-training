@@ -12,3 +12,5 @@ __pycache__/
 *.nii
 *.nii.gz
 *.dcm
+
+/node_modules/

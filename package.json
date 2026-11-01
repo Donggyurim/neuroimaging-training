@@ -1,0 +1,13 @@
+{
+  "name": "neuroimaging-training-site",
+  "private": true,
+  "scripts": {
+    "test": "node --test tests/workspace.test.cjs"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

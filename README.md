@@ -30,6 +30,54 @@ quarto preview
 
 Use `quarto render` to check the full website. The website build intentionally does not execute analysis code. Run analyses separately in a documented environment and commit only small, shareable results with provenance.
 
+## Student and supervisor workspaces
+
+The homepage routes students to `student.qmd` and supervisors to `supervisor.qmd`.
+The student workspace offers milestone outputs, review prompts, and a personal
+checklist stored in this browser only. It does not synchronise across devices or
+record supervisor approval. Task issues and linked PRs remain the shared record.
+The supervisor guide provides evidence checkpoints and a copyable feedback template.
+`library.qmd` offers searchable links to the existing lessons; Quarto search covers
+the full site. The interface uses `assets/styles.css` and `assets/workspace.js`
+without an additional build system. The lesson list and milestone links are curated;
+update them when adding or moving a guide.
+
+## Guided structural MRI notebook
+
+Students can open **Your first regional brain volumes** from their workspace,
+the lesson library, or the structural MRI pathway. The landing page links to the
+course notebook in Colab and provides a download. The notebook is kept in
+`notebooks/First_regional_brain_volumes.ipynb` as an output-free publication copy;
+its analysis code is unchanged from the supervisor-supplied upload. See
+`notebooks/README.md` for provenance and validation limits.
+
+The website copies the notebook as a resource and never executes it. Colab links
+to the `main` version, so a new notebook or update must be merged before students
+can launch that version. Drive authentication, MRI processing, and scientific QC
+remain separate from website checks.
+
+## Check the interface
+
+The website remains a static Quarto site. Node.js 24 and Playwright are used only
+for development checks; visitors do not need them.
+
+```sh
+quarto render
+npm ci
+npx playwright install chromium
+npm test
+python3 scripts/check-site.py
+python3 -m pip install -r requirements-dev.txt
+python3 scripts/check-notebooks.py
+```
+
+The browser suite serves the rendered `_site/` under the GitHub Pages subpath and
+checks student progress, storage recovery, cross-tab updates, supervisor feedback,
+lesson search, mobile navigation, and reading without JavaScript. It starts and
+stops its own local server. If using an existing Chromium installation, set
+`PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH` to its executable when running `npm test`.
+CI runs these checks after rendering, before uploading or deploying the site.
+
 ## Supervision and progress
 
 Create one issue per bounded task, assign it to the student, and link the pull request with `Closes #<issue-number>`. Use draft PRs for ongoing feedback. For a cross-student tracker, create a GitHub Project with Todo, In progress, In review, and Done columns; add these issues, a student field, and a target date. Repository issues remain the source of truth.

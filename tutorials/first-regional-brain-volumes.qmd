@@ -1,0 +1,63 @@
+---
+title: "Your first regional brain volumes"
+description: "An eight-step Colab notebook: one scan, segmentation, quality checks, and a regional-volume table."
+---
+
+[← Student workspace](../student.qmd) · [Structural MRI pathway](structural-mri-pathway.qmd)
+
+Use the course notebook **My first regional brain volumes** to work through one structural MRI scan. Run it in your own Google account and bring your results to a supervisor checkpoint.
+
+[Open the course notebook in Colab →](https://colab.research.google.com/github/Donggyurim/neuroimaging-training/blob/main/notebooks/First_regional_brain_volumes.ipynb){.action-link .primary-action}
+
+[Download the Jupyter notebook](../notebooks/First_regional_brain_volumes.ipynb){download="First_regional_brain_volumes.ipynb"} to keep a local copy.
+
+::: {.callout-warning}
+## Teaching pilot — supervisor review required
+The supplied notebook includes saved outputs through volume export. This publication copy removes saved outputs and runtime metadata; it has not been rerun end to end here. The final QC/handover cell had no saved output in the supplied file. Complete all steps, verify saved files from a fresh session, and review the pilot before scaling up.
+:::
+
+## Before you start
+
+- Complete [your first-session setup](getting-started.qmd) and agree a bounded [project question](structural-mri-pathway.qmd) with your supervisor.
+- Use a computer browser, a Google account, and Drive storage for the input and segmentation outputs. Colab must connect to your Drive to save them.
+- In Colab, choose **File → Save a copy in Drive**. Keep the course copy unchanged and work in your own copy.
+- Choose **Runtime → Change runtime type → T4 GPU**, if available. A GPU is not guaranteed; CPU is a slower fallback. The notebook does not require a paid Colab plan.
+- Read the dataset citation and access terms. The exercise uses one selected T1w scan from **OpenNeuro ds004144**; it does not establish a participant’s diagnosis or support group comparisons.
+
+## Follow the eight steps
+
+Run cells from top to bottom. Stop at a red error; later cells depend on the earlier results.
+
+::: {.checkpoint-table .notebook-steps}
+
+| Step | What you do | What to check |
+|---|---|---|
+| **1 · Connect Drive** | Create your input and uniquely named result folders. | Your results path is inside `MyDrive/Neuroimaging-Training`. |
+| **2 · Install tools** | Check out the pinned FastSurfer source and install dependencies. | Record the environment and the device actually available. |
+| **3 · Download one scan** | Fetch the selected image and metadata. | The expected size and checksum pass. Never bypass a failed check. |
+| **4 · Inspect the input** | View the MRI in three planes. | Coverage, contrast, and motion are suitable; three slices alone are not full QC. |
+| **5 · Segment** | Run the segmentation-only pilot and save logs and outputs. | The process completes and the expected segmentation exists. |
+| **6 · Review overlays** | Inspect the labels on the matching conformed MRI. | Grids match; scroll through all planes and discuss uncertain boundaries. |
+| **7 · Export volumes** | Count labelled voxels and convert to mm³ and mL. | Names map correctly, totals reconcile, and the CSV is saved. |
+| **8 · Record QC & hand over** | Add a QC decision, notes, hashes, and a handover record. | Explain the decision and verify the saved files after reconnecting. |
+
+:::
+
+## What you should finish with
+
+Look in **Drive → Neuroimaging-Training → results → your run folder** for:
+
+- `regional_volumes.csv`, `provenance.json`, and `environment.txt`.
+- `segmentation.log` and the participant’s segmentation output folder.
+- Input and overlay previews, plus the regional-volume chart.
+- `handover.md`, including QC status, notes, and the next review action.
+
+These are **hard-label volumes**: voxel count multiplied by voxel volume. They are not cortical thickness, partial-volume-corrected statistics, or head-size-normalised measurements. Keep measurement definitions explicit when using the [regional-volume analysis guide](../techniques/regional-volume-analysis.qmd).
+
+## Bring this to your supervisor
+
+Share your task issue, software/version record, logs, overlay QC, volume-table definitions, and outstanding errors. Keep imaging outputs in approved storage. Personal workspace checkboxes do not record supervisor approval.
+
+If a step fails, copy the cell heading, error message, and environment details into your task update, removing sensitive details. The notebook’s troubleshooting section covers common Drive, GPU, download, and processing problems.
+
+[Review the pilot checkpoints →](../supervisor.qmd) · [Prepare the full handover →](../projects/structural-mri-handover.qmd)

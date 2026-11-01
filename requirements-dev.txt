@@ -1,0 +1,2 @@
+# Notebook schema validation only; analysis runs separately in Colab.
+nbformat==5.10.4

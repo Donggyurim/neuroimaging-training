@@ -26,3 +26,8 @@ Record what was actually tested, by whom, and on which environment/version. Link
 ## Earlier placement work
 
 The [earlier student guide](https://neuroimaging-guide.netlify.app/results) provides an external example of a research presentation. Its figures and reported findings have not been transferred or independently reproduced here. Permission and validation should precede any later import.
+
+
+::: {.resource-strip}
+[← Student workspace](../student.qmd) · [Review: handover checkpoints →](../supervisor.qmd)
+:::
