@@ -14,6 +14,27 @@ in approved private storage, not this public repository.
 Create a Cloudflare account and enable Zero Trust. Choose a team name and enable
 One-time PIN for emailed verification codes, or select your identity provider.
 
+### Using the Cloudflare dashboard
+
+First merge the supervisor setup change into `main`. Cloudflare's import wizard
+uses `main` by default; it must contain `supervisor-app/` before deployment.
+
+Import `Donggyurim/neuroimaging-training` under **Workers & Pages → Create
+application** and name the Worker `neuroimaging-supervisor`. Use these commands
+from the repository root; a separate Root directory setting is unnecessary:
+
+| Field | Value |
+|---|---|
+| Build command | `npm --prefix supervisor-app ci` |
+| Deploy command | `npm --prefix supervisor-app run deploy` |
+| Preview command | `npm --prefix supervisor-app run preview` |
+
+After creation, Git branch and root-directory settings are available under
+**Worker → Settings → Build**. Leave the root at the repository root when using
+the folder-specific commands above.
+
+### Using a local terminal
+
 From this directory, using Node.js 24:
 
 ```sh
