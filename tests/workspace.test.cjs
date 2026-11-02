@@ -123,18 +123,15 @@ test('lesson search handles matches, empty results, and clearing', async t => {
   assert.equal(await page.locator('.lesson-card:visible').count(), 11);
 });
 
-test('supervisor feedback can be copied with a manual fallback', async t => {
-  const { context, page } = await visit(t, 'supervisor.html', {
-    permissions: ['clipboard-read', 'clipboard-write']
-  });
-  await page.getByRole('button', { name: 'Copy review template' }).click();
-  await page.waitForFunction(() => document.getElementById('copy-status').textContent.startsWith('Copied'));
-  assert((await page.evaluate(() => navigator.clipboard.readText())).includes('Evidence reviewed'));
-  await context.clearPermissions();
-  await page.evaluate(() => Object.defineProperty(navigator, 'clipboard', { value: undefined }));
-  await page.getByRole('button', { name: 'Copy review template' }).click();
-  assert((await page.locator('#copy-status').textContent()).includes('selected'));
-  assert((await page.evaluate(() => getSelection().toString())).includes('Next action'));
+test('the public supervisor entry contains no management content or client-side unlock', async t => {
+  const { page } = await visit(t, 'supervisor.html');
+  assert(await page.getByRole('heading', { name: 'Private workspace' }).isVisible());
+  assert.equal(await page.locator('#review-template').count(), 0);
+  assert.equal(await page.locator('#copy-review').count(), 0);
+  assert.equal(await page.getByRole('link', { name: 'Open tasks' }).count(), 0);
+  await page.evaluate(() => localStorage.setItem('supervisor', 'true'));
+  await page.goto(base + 'supervisor.html?role=supervisor');
+  assert.equal(await page.locator('#review-template').count(), 0);
 });
 
 test('mobile navigation and layouts work at 320px and 390px', async t => {
@@ -156,7 +153,7 @@ test('mobile navigation and layouts work at 320px and 390px', async t => {
   }
   await page.goto(base);
   await page.locator('.navbar-toggler').click();
-  await page.getByRole('link', { name: 'Supervisors', exact: true }).click();
+  await page.getByRole('link', { name: 'Supervisor', exact: true }).click();
   assert.equal(page.url(), base + 'supervisor.html');
 });
 
@@ -171,7 +168,8 @@ test('without JavaScript lessons and feedback remain readable', async t => {
   assert(await page.getByRole('searchbox', { name: 'Search lessons' }).isDisabled());
   await page.goto(base + 'supervisor.html');
   assert.equal(await page.getByRole('button', { name: 'Copy review template' }).count(), 0);
-  assert((await page.locator('#review-template').textContent()).includes('Next action'));
+  assert.equal(await page.locator('#review-template').count(), 0);
+  assert(await page.getByRole('heading', { name: 'Private workspace' }).isVisible());
 });
 
 test('students can find, launch, and download the structural MRI notebook', async t => {

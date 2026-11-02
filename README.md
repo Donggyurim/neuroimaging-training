@@ -32,15 +32,16 @@ Use `quarto render` to check the full website. The website build intentionally d
 
 ## Student and supervisor workspaces
 
-The homepage routes students to `student.qmd` and supervisors to `supervisor.qmd`.
-The student workspace offers milestone outputs, review prompts, and a personal
-checklist stored in this browser only. It does not synchronise across devices or
-record supervisor approval. Task issues and linked PRs remain the shared record.
-The supervisor guide provides evidence checkpoints and a copyable feedback template.
-`library.qmd` offers searchable links to the existing lessons; Quarto search covers
-the full site. The interface uses `assets/styles.css` and `assets/workspace.js`
-without an additional build system. The lesson list and milestone links are curated;
-update them when adding or moving a guide.
+The student workspace offers milestone outputs and a personal browser checklist.
+Shared task records remain in GitHub issues and PRs. `library.qmd` provides search
+and short links to lessons.
+
+The public Supervisor page contains a sign-in entry only. Review checkpoints and
+feedback are served by the separate `supervisor-app/` Worker, using Cloudflare
+Access and an exact owner-email allowlist. Access is denied until its identity
+configuration is supplied. Follow [supervisor-app/README.md](supervisor-app/README.md),
+then configure the GitHub Actions variable `SUPERVISOR_URL`. No client-side
+password is used. The link appears after its URL is configured during the build.
 
 ## Guided structural MRI notebook
 
@@ -62,8 +63,8 @@ The site uses Quarto’s Bootstrap components with one shared white-and-blue the
 Home and workspace pages show short actions; the full teaching guidance remains
 in native, keyboard-accessible disclosures. Existing section links open the target
 disclosure automatically. `_includes/details.html` supplies that small enhancement;
-reading and opening sections also work without JavaScript. Core flows retain the
-same notebook, task links, personal progress store, and review template.
+reading and opening sections also work without JavaScript. Student guides,
+notebooks, task links, and personal progress remain on the public site.
 
 ## Check the interface
 
@@ -76,6 +77,7 @@ npm ci
 npx playwright install chromium
 npm test
 python3 scripts/check-site.py
+python3 -m unittest discover -s tests -p "test_*.py"
 python3 -m pip install -r requirements-dev.txt
 python3 scripts/check-notebooks.py
 ```

@@ -2,8 +2,10 @@ project:
   type: website
   output-dir: _site
   resources:
-    - assets/
-    - notebooks/*.ipynb
+    - "/assets/**"
+    - "/notebooks/*.ipynb"
+    - "!/supervisor-app/**"
+    - "!/node_modules/**"
   render:
     - "*.qmd"
     - "datasets/**/*.qmd"
@@ -12,6 +14,7 @@ project:
     - "projects/**/*.qmd"
     - "!notebooks/**"
     - "!templates/**"
+    - "!supervisor-app/**"
 
 website:
   title: "Neuroimaging Training"
@@ -22,7 +25,7 @@ website:
       - href: student.qmd
         text: Students
       - href: supervisor.qmd
-        text: Supervisors
+        text: Supervisor
       - href: library.qmd
         text: Library
     right:

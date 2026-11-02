@@ -1,0 +1,8 @@
+name = "neuroimaging-supervisor"
+main = "worker.mjs"
+compatibility_date = "2026-10-01"
+workers_dev = true
+preview_urls = false
+
+# Set ACCESS_AUD and SUPERVISOR_EMAIL in the Worker's Variables and Secrets.
+# No Static Assets binding: the Worker must receive Cloudflare's native ctx.access.

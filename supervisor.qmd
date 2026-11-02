@@ -1,98 +1,21 @@
 ---
-title: "Review"
-description: "Check evidence. Agree the next step."
+title: "Supervisor access"
+description: "Owner-only workspace."
 toc: false
 page-layout: full
-include-after-body:
-  - text: |
-      <script src="assets/workspace.js" defer></script>
 ---
 
+::: {.side-panel .supervisor-gate}
+<i class="bi bi-shield-lock" aria-hidden="true"></i>
 
-::: {.review-actions}
-[Open tasks <i class="bi bi-arrow-up-right" aria-hidden="true"></i>](https://github.com/Donggyurim/neuroimaging-training/issues){.action-link .primary-action}
-[Pull requests <i class="bi bi-arrow-up-right" aria-hidden="true"></i>](https://github.com/Donggyurim/neuroimaging-training/pulls){.action-link .secondary-action}
-:::
+## Private workspace
 
-::: {.workspace-grid}
-::: {.workspace-main}
-## Checkpoints
+Sign in with your approved email.
 
-<details class="guide-section"><summary>01 · Scope</summary>
-
-**Evidence:** Question, dataset version, acceptance criteria.
-
-**Decide:** Is the scope achievable?
-
-</details>
-
-<details class="guide-section"><summary>02 · Inputs</summary>
-
-**Evidence:** Input manifest, metadata, quality notes.
-
-**Decide:** Is the scan suitable?
-
-</details>
-
-<details class="guide-section"><summary>03 · Segmentation</summary>
-
-**Evidence:** Versions, command, logs, anatomical overlays.
-
-**Decide:** Accept the pilot or request changes before scaling.
-
-</details>
-
-<details class="guide-section"><summary>04 · Measurements</summary>
-
-**Evidence:** Region table, units, provenance, participant joins.
-
-**Decide:** Are measures and joins correct?
-
-</details>
-
-<details class="guide-section"><summary>05 · Analysis</summary>
-
-**Evidence:** Model plan, assumptions, uncertainty, figures.
-
-**Decide:** Are the claims supported?
-
-</details>
-
-<details class="guide-section"><summary>06 · Handover</summary>
-
-**Evidence:** Reproduction steps, output locations, known failures.
-
-**Decide:** Can someone repeat the accepted work?
-
-</details>
+```{=html}
+<div id="supervisor-entry"><p class="small-note">Sign-in setup pending.</p></div>
+```
 
 :::
-::: {.workspace-aside}
-<div class="side-panel feedback-card">
-<h2>Leave feedback</h2>
-<p>Copy. Fill in. Post to the task.</p>
-<button type="button" class="action-link primary-action" id="copy-review" hidden>Copy review template</button>
-<p id="copy-status" role="status" class="small-note"></p>
-<details class="template-details"><summary>Preview template</summary>
-<pre id="review-template" class="review-template">Checkpoint:
-Evidence reviewed (link/version):
-Decision: ready / revise / blocked
-Reason and required changes:
-Next action:
-Owner:
-Target date:
-Next review:</pre></details>
-</div>
-<p class="small-note">Shared status lives in GitHub.</p>
-<details class="guide-section"><summary>Placement setup</summary>
 
-- Agree scope, compute, and access.
-- Set meeting dates and approved storage.
-- Keep confidential feedback private.
-
-[Student workspace](student.qmd) · [Contribution guide](https://github.com/Donggyurim/neuroimaging-training/blob/main/CONTRIBUTING.md)
-
-</details>
-
-:::
-:::
+[← Student workspace](student.qmd)

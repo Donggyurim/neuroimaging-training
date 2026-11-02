@@ -2,7 +2,7 @@
   "name": "neuroimaging-training-site",
   "private": true,
   "scripts": {
-    "test": "node --test tests/workspace.test.cjs"
+    "test": "node --test tests/workspace.test.cjs tests/supervisor-access.test.mjs"
   },
   "devDependencies": {
     "playwright": "1.62.1"

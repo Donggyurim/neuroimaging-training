@@ -102,25 +102,4 @@ document.addEventListener('DOMContentLoaded', () => {
     filterLessons();
   }
 
-  const copy = document.getElementById('copy-review');
-  if (copy) {
-    copy.hidden = false;
-    copy.addEventListener('click', async () => {
-      const template = document.getElementById('review-template');
-      const status = document.getElementById('copy-status');
-      try {
-        await navigator.clipboard.writeText(template.textContent);
-        status.textContent = 'Copied. Paste into the task.';
-      } catch {
-        const disclosure = template.closest('details');
-        if (disclosure) disclosure.open = true;
-        const selection = window.getSelection();
-        const range = document.createRange();
-        range.selectNodeContents(template);
-        selection.removeAllRanges();
-        selection.addRange(range);
-        status.textContent = 'Template selected. Use your browser’s Copy command.';
-      }
-    });
-  }
 });

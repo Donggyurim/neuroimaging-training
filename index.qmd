@@ -22,9 +22,9 @@ One scan. Clear steps. Useful research.
 <span><strong>Students</strong><small>Start or continue</small></span>
 <i class="bi bi-arrow-right" aria-hidden="true"></i>
 </a>
-<a href="supervisor.html" class="role-card" aria-label="Open supervisor guide">
-<span class="icon-tile"><i class="bi bi-clipboard-check" aria-hidden="true"></i></span>
-<span><strong>Supervisors</strong><small>Review and guide</small></span>
+<a href="supervisor.html" class="role-card" aria-label="Supervisor sign-in">
+<span class="icon-tile"><i class="bi bi-shield-lock" aria-hidden="true"></i></span>
+<span><strong>Supervisor</strong><small>Private access</small></span>
 <i class="bi bi-arrow-right" aria-hidden="true"></i>
 </a>
 </div>

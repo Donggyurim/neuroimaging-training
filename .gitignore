@@ -14,3 +14,9 @@ __pycache__/
 *.dcm
 
 /node_modules/
+
+/.wrangler/
+/supervisor-app/.wrangler/
+/supervisor-app/.dev.vars
+/supervisor-app/.dev.vars.*
+/supervisor-app/node_modules/

@@ -287,3 +287,6 @@ img { max-width: 100%; }
 
 .table-responsive { max-width: 100%; border-radius: 7px; overscroll-behavior-x: contain; }
 .table-responsive .table { min-width: 480px; }
+
+.supervisor-gate { max-width: 480px; }
+.supervisor-gate > p > .bi, .supervisor-gate > .bi { font-size: 1.8rem; color: var(--primary); }
