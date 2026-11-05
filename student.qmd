@@ -14,21 +14,21 @@ include-after-body:
 ::: {.next-step}
 <span class="eyebrow">UP NEXT</span>
 
-## [Set up & contribute](tutorials/getting-started.qmd){#next-step-link}
+## [Open your assigned task](https://github.com/Donggyurim/neuroimaging-training/issues?q=is%3Aissue+is%3Aopen+assignee%3A%40me){#next-step-link}
 
-<p id="next-step-description">Set up your workspace.</p>
-<a class="action-link primary-action" id="continue-lesson" href="tutorials/getting-started.html">Continue <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+<p id="next-step-description">Open your assigned task, then run its Colab notebook.</p>
+<a class="action-link primary-action" id="continue-lesson" href="tutorials/getting-started.html">Get started <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
 :::
 
 <div class="section-top"><h2>Your path</h2><span id="progress-label" role="status">0 / 7 prepared</span></div>
 <progress id="learning-progress" value="0" max="7" aria-label="Personal checklist progress">0 of 7</progress>
 <p id="storage-note" class="small-note">Saved in this browser · not supervisor approval.</p>
 <div class="milestone-list">
-<details class="milestone" open><summary><span class="step-number">00</span><strong>Set up &amp; contribute</strong></summary>
+<details class="milestone" open><summary><span class="step-number">00</span><strong>Task &amp; Drive setup</strong></summary>
 <div class="milestone-body">
-<p><strong>Prepare:</strong> A small documentation PR.<br><strong>Review:</strong> Check the edit and build.</p>
+<p><strong>Prepare:</strong> Assigned task, Colab link, and shared Drive folder.<br><strong>Review:</strong> Confirm the dataset and subject.</p>
 <a class="lesson-link" href="tutorials/getting-started.html">Open setup guide →</a>
-<label class="step-check"><input type="checkbox" disabled data-step="0" data-title="Set up &amp; contribute" data-description="Set up your workspace." data-href="tutorials/getting-started.html" aria-label="Prepared: Set up &amp; contribute"> Prepared</label>
+<label class="step-check"><input type="checkbox" disabled data-step="0" data-title="Task &amp; Drive setup" data-description="Open your assigned task and confirm Drive access." data-href="tutorials/getting-started.html" aria-label="Prepared: Set up &amp; contribute"> Prepared</label>
 </div></details>
 <details class="milestone" ><summary><span class="step-number">01</span><strong>Define your question</strong></summary>
 <div class="milestone-body">
@@ -72,7 +72,7 @@ include-after-body:
 :::
 ::: {.workspace-aside}
 <div class="side-panel notebook-card"><span class="icon-tile"><i class="bi bi-journal-code" aria-hidden="true"></i></span><h2>First brain volumes</h2><p>One scan. Eight steps.</p><a class="action-link primary-action" href="tutorials/first-regional-brain-volumes.html" aria-label="Start notebook">Start notebook →</a></div>
-<div class="side-panel"><h2>My tasks</h2><a class="quick-link" href="https://github.com/Donggyurim/neuroimaging-training/issues?q=is%3Aissue+is%3Aopen+assignee%3A%40me"><i class="bi bi-check2-square" aria-hidden="true"></i> View tasks <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a><a class="quick-link" href="https://github.com/Donggyurim/neuroimaging-training/issues/new?template=student-task.yml"><i class="bi bi-plus-lg" aria-hidden="true"></i> New task <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a><p class="small-note">GitHub sign-in required.</p></div>
+<div class="side-panel"><h2>My tasks</h2><a class="quick-link" href="https://github.com/Donggyurim/neuroimaging-training/issues?q=is%3Aissue+is%3Aopen+assignee%3A%40me"><i class="bi bi-check2-square" aria-hidden="true"></i> View assigned tasks <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a><p class="small-note">Sign in to the GitHub account your supervisor assigned to comment on your task.</p></div>
 <details class="guide-section"><summary>Meeting checklist</summary>
 
 - What changed?
@@ -84,7 +84,7 @@ include-after-body:
 
 <details class="guide-section"><summary>Before MRI work</summary>
 
-Teaching pilot: review inputs and outputs with your supervisor before scaling up. Keep participant data in approved storage.
+Run only the dataset and subject listed in your task. Review inputs and outputs with your supervisor before scaling up.
 
 [Get help](tutorials/getting-started.qmd#when-something-goes-wrong) · [All guides](library.qmd)
 
