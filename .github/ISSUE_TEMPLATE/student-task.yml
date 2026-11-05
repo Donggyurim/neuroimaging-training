@@ -1,26 +1,50 @@
 name: Student task
-description: Plan and track a placement learning or research task.
+description: Assign one bounded analysis task to a student.
 title: "[Task] "
 body:
-  - type: textarea
-    id: question
+  - type: input
+    id: dataset
     attributes:
-      label: Question and purpose
-      description: What will you learn or investigate?
+      label: Open dataset and fixed snapshot
+      description: "Include the OpenNeuro accession and immutable snapshot or commit. The current Colab pilot supports ds004144."
+      placeholder: "ds004144 @ <snapshot/commit>"
+    validations:
+      required: true
+  - type: input
+    id: subject
+    attributes:
+      label: Assigned subject ID
+      description: "Give the exact BIDS subject ID. The student should not select a replacement."
+      placeholder: "sub-002"
+    validations:
+      required: true
+  - type: input
+    id: notebook
+    attributes:
+      label: Colab notebook
+      description: Link to the notebook for this task.
+    validations:
+      required: true
+  - type: input
+    id: task_id
+    attributes:
+      label: Task ID
+      description: "Use a short unique value that the student enters in the notebook."
+      placeholder: "task-001"
     validations:
       required: true
   - type: textarea
-    id: plan
+    id: folder
     attributes:
-      label: Dataset and approach
-      description: Include dataset version, access terms, and proposed methods.
+      label: Shared output folder
+      description: "Share the folder directly with the student in Google Drive and give them its exact shortcut name. Do not paste a private Drive link here; this repository and its issues are public."
     validations:
       required: true
   - type: textarea
     id: done
     attributes:
       label: Acceptance criteria
-      description: List observable outputs and quality checks that define completion.
+      description: List the expected outputs and quality checks.
     validations:
       required: true
   - type: input
@@ -32,4 +56,4 @@ body:
     id: progress
     attributes:
       label: Progress and blockers
-      description: Add updates in issue comments and link your draft PR.
+      description: "The student should report the task ID, run ID, QC status, and blockers here. Do not include private Drive links or personal information."
