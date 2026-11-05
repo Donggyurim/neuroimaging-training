@@ -26,9 +26,9 @@ page-layout: full
 </ol></div><div class="notebook-help">
 <details class="guide-section" id="before-you-start"><summary>Before you start</summary>
 
-- Complete [your first-session setup](getting-started.qmd) and agree a bounded [project question](structural-mri-pathway.qmd) with your supervisor.
-- Use a computer browser, a Google account, and Drive storage for the input and segmentation outputs. Colab must connect to your Drive to save them.
-- In Colab, choose **File → Save a copy in Drive**. Keep the course copy unchanged and work in your own copy.
+- Open the task assigned by your supervisor and use its task ID and subject ID.
+- Use the Google account that has access to your supervisor-shared output folder. Add that folder as a shortcut in **My Drive**.
+- In Colab, choose **File → Save a copy in Drive**. Enter the exact shared-folder name, task ID, and subject ID in the first code cell. The scan runs in Colab's temporary workspace; results save to the shared folder.
 - Choose **Runtime → Change runtime type → T4 GPU**, if available. A GPU is not guaranteed; CPU is a slower fallback. The notebook does not require a paid Colab plan.
 - Read the dataset citation and access terms. The exercise uses one selected T1w scan from **OpenNeuro ds004144**; it does not establish a participant’s diagnosis or support group comparisons.
 
@@ -41,7 +41,7 @@ page-layout: full
 
 | Step | What you do | What to check |
 |---|---|---|
-| **1 · Connect Drive** | Create your input and uniquely named result folders. | Your results path is inside `MyDrive/Neuroimaging-Training`. |
+| **1 · Connect Drive** | Create your input and uniquely named result folders. | The exact shared-folder shortcut is selected and the result path includes your task ID, subject ID, and run ID. |
 | **2 · Install tools** | Check out the pinned FastSurfer source and install dependencies. | Record the environment and the device actually available. |
 | **3 · Download one scan** | Fetch the selected image and metadata. | The expected size and checksum pass. Never bypass a failed check. |
 | **4 · Inspect the input** | View the MRI in three planes. | Coverage, contrast, and motion are suitable; three slices alone are not full QC. |
@@ -56,7 +56,7 @@ page-layout: full
 
 <details class="guide-section" id="what-you-should-finish-with"><summary>Expected files</summary>
 
-Look in **Drive → Neuroimaging-Training → results → your run folder** for:
+Look in **your supervisor-shared folder → results → task ID → subject ID → run ID** for:
 
 - `regional_volumes.csv`, `provenance.json`, and `environment.txt`.
 - `segmentation.log` and the participant’s segmentation output folder.
@@ -69,7 +69,7 @@ These are **hard-label volumes**: voxel count multiplied by voxel volume. They a
 
 <details class="guide-section" id="bring-this-to-your-supervisor"><summary>Supervisor review</summary>
 
-Share your task issue, software/version record, logs, overlay QC, volume-table definitions, and outstanding errors. Keep imaging outputs in approved storage. Personal workspace checkboxes do not record supervisor approval.
+Update your assigned task with the run ID and QC status. Your supervisor can review the files in the shared folder; keep private Drive links out of public task issues. Personal workspace checkboxes do not record supervisor approval.
 
 If a step fails, copy the cell heading, error message, and environment details into your task update, removing sensitive details. The notebook’s troubleshooting section covers common Drive, GPU, download, and processing problems.
 
@@ -79,7 +79,7 @@ If a step fails, copy the cell heading, error message, and environment details i
 
 <details class="guide-section" id="teaching-pilot-supervisor-review-required"><summary>Validation status</summary>
 
-The supplied notebook includes saved outputs through volume export. This publication copy removes saved outputs and runtime metadata; it has not been rerun end to end here. The final QC/handover cell had no saved output in the supplied file. Complete all steps, verify saved files from a fresh session, and review the pilot before scaling up.
+The publication copy has no saved outputs and has not been rerun end to end here. Its task, subject, and shared-folder settings must be tested with the invited mock-student account. Complete all steps, verify saved files from a fresh session, and have the supervisor review the pilot before scaling up.
 
 </details>
 
