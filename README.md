@@ -2,14 +2,14 @@
 
 A living training and research guide for placement students, supervised by @Donggyurim. Each cohort improves shared documentation and contributes a reproducible project.
 
-## Start here
+## Student start
 
-1. Read [Getting started](tutorials/getting-started.qmd).
-2. Agree on a question and dataset with your supervisor and open a student task issue.
-3. Create a branch, make small commits, and open a draft pull request early.
-4. Request @Donggyurim's review. Respond to feedback before merging.
+1. Read [Get started](tutorials/getting-started.qmd).
+2. Your supervisor assigns a task with a dataset snapshot, subject ID, Colab notebook, and expected outputs.
+3. Open the notebook in Colab, connect the Google account shared on the output folder, and run only the assigned subject.
+4. Confirm the run folder and report its run ID and QC status on the task.
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for the complete workflow.
+Students do not need to install Git or Quarto for assigned analysis tasks. [CONTRIBUTING.md](CONTRIBUTING.md) covers optional changes to the training website.
 
 ## Repository structure
 
@@ -20,7 +20,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for the complete workflow.
 - `templates/`: reusable page and project templates (not published).
 - `.github/`: review templates, ownership, and automation.
 
-## Preview locally
+## Preview the training site locally (maintainers)
 
 Install [Quarto](https://quarto.org/docs/get-started/), clone this repository, and run:
 
@@ -33,10 +33,7 @@ Use `quarto render` to check the full website. The website build intentionally d
 ## Student and supervisor workspaces
 
 The homepage routes students to `student.qmd` and supervisors to `supervisor.qmd`.
-The student workspace offers milestone outputs, review prompts, and a personal
-checklist stored in this browser only. It does not synchronise across devices or
-record supervisor approval. Task issues and linked PRs remain the shared record.
-The supervisor guide provides evidence checkpoints and a copyable feedback template.
+The student workspace links to supervisor-assigned GitHub tasks and Colab lessons. Its checklist is saved in the current browser only; it does not synchronise across devices or record supervisor approval. GitHub issues track task status, and Google Drive holds the private analysis outputs. The public site itself does not provide student or supervisor logins.
 `library.qmd` offers searchable links to the existing lessons; Quarto search covers
 the full site. The interface uses `assets/styles.css` and `assets/workspace.js`
 without an additional build system. The lesson list and milestone links are curated;
@@ -45,11 +42,11 @@ update them when adding or moving a guide.
 ## Guided structural MRI notebook
 
 Students can open **Your first regional brain volumes** from their workspace,
-the lesson library, or the structural MRI pathway. The landing page links to the
-course notebook in Colab and provides a download. The notebook is kept in
-`notebooks/First_regional_brain_volumes.ipynb` as an output-free publication copy;
-its analysis code is unchanged from the supervisor-supplied upload. See
-`notebooks/README.md` for provenance and validation limits.
+the lesson library, or the structural MRI pathway. The output-free notebook is
+`notebooks/First_regional_brain_volumes.ipynb`. The first pilot is pinned to
+ds004144 and accepts an assigned subject ID, task ID, and shared-folder name.
+It writes the analysis outputs and handover into the supervisor-shared Drive folder.
+See `notebooks/README.md` for provenance and validation limits.
 
 The website copies the notebook as a resource and never executes it. Colab links
 to the `main` version, so a new notebook or update must be merged before students
@@ -89,7 +86,7 @@ CI runs these checks after rendering, before uploading or deploying the site.
 
 ## Supervision and progress
 
-Create one issue per bounded task, assign it to the student, and link the pull request with `Closes #<issue-number>`. Use draft PRs for ongoing feedback. For a cross-student tracker, create a GitHub Project with Todo, In progress, In review, and Done columns; add these issues, a student field, and a target date. Repository issues remain the source of truth.
+Create one issue per bounded task and assign it to the student. Include the dataset accession and fixed snapshot, exact subject ID, task ID, Colab notebook, expected outputs, and due date. Share a separate Drive output folder directly with that student; do not paste private Drive links or personal information into this public repository. Students report the run ID and QC status in the issue. Copy accepted files into supervisor-owned storage for retention. For an overall team tracker, a GitHub Project can show aggregate task status without publishing private Drive details.
 
 `main` requires a successful **Build site** check, resolved conversations, and approval from code owner @Donggyurim. New commits invalidate prior approval. Students must use branches or forks. Direct student pushes, force pushes, and deletion of `main` are blocked. The repository owner retains an administrative bypass for maintenance because GitHub does not allow authors to approve their own PRs. Use it sparingly.
 
