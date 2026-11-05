@@ -86,9 +86,11 @@ Next review:</pre></details>
 <p class="small-note">Shared status lives in GitHub.</p>
 <details class="guide-section"><summary>Placement setup</summary>
 
-- Agree scope, compute, and access.
-- Set meeting dates and approved storage.
-- Keep confidential feedback private.
+- Create one assigned task with the dataset accession and fixed snapshot, exact subject ID, task ID, Colab notebook, expected outputs, and due date.
+- Share a separate Google Drive output folder directly with that student. Give them the exact shortcut name; keep folders for different students separate.
+- GitHub issues in this public repository are public. Keep private Drive links and personal information out of issues and comments.
+- Review the run ID, QC status, provenance, logs, and outputs in Drive. Copy accepted outputs into supervisor-owned storage; the student owns files they upload to a My Drive folder.
+- The website checklist is local to each browser. It does not provide student/supervisor logins or shared progress.
 
 [Student workspace](student.qmd) · [Contribution guide](https://github.com/Donggyurim/neuroimaging-training/blob/main/CONTRIBUTING.md)
 
