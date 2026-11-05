@@ -1,88 +1,86 @@
 ---
 title: "Get started"
-description: "Set up. Make one small change."
+description: "Open your task. Run Colab. Save your outputs."
 body-classes: guide-page
 toc: false
 page-layout: full
 ---
 
-<details class="guide-section"><summary>Overview</summary>
+<p class="pilot-note"><i class="bi bi-info-circle" aria-hidden="true"></i> Assigned tasks · supervisor review required</p>
 
-Your first goal is a small documentation contribution. You do not need MRI data or a GPU for this session.
+<details class="guide-section" open><summary>Overview</summary>
 
-</details>
-
-<details class="guide-section" id="1-get-access"><summary>1 · Get access</summary>
-
-Create a GitHub account. Ask your supervisor for repository access, or agree to use a fork. Read the [contribution workflow](https://github.com/Donggyurim/neuroimaging-training/blob/main/CONTRIBUTING.md) before making changes.
-
-**Done when:** you can open the repository and know where your task will be tracked.
+Your supervisor assigns you a task with an OpenNeuro dataset, a subject, a Colab notebook, and expected outputs. For assigned analysis tasks, you do not need to install Git or Quarto. You need a browser, the Google account invited to the output folder, and the GitHub account used for your task.
 
 </details>
 
-<details class="guide-section" id="2-preview-the-guide"><summary>2 · Preview the guide</summary>
+<details class="guide-section" id="1-open-your-assigned-task"><summary>1 · Open your assigned task</summary>
 
-Install [Git](https://git-scm.com/downloads) and [Quarto 1.8.27](https://github.com/quarto-dev/quarto-cli/releases/tag/v1.8.27), the version used by this site’s build. If your supervisor has provided a prepared environment, use its existing checkout and Quarto installation.
+[View tasks assigned to me](https://github.com/Donggyurim/neuroimaging-training/issues?q=is%3Aissue+is%3Aopen+assignee%3A%40me){.action-link .primary-action}
 
-For a new local checkout:
+Check the task for its dataset accession and snapshot, assigned subject ID, Colab notebook, task ID, expected files, and due date. Ask your supervisor if any of these are missing; do not choose a different subject yourself.
 
-```sh
-git clone https://github.com/Donggyurim/neuroimaging-training.git
-cd neuroimaging-training
-quarto --version
-quarto preview
-```
+The training repository and its GitHub task issues are public. Keep personal information and private Drive links out of task descriptions and comments. Your supervisor shares the output folder with you separately through Google Drive.
 
-Open the address printed by Quarto in your local browser. Stop the preview with Ctrl+C when finished.
-
-**Done when:** the homepage opens and you can navigate to a lesson.
+**Done when:** you can open the assigned task and identify the exact dataset, subject, notebook, and expected output.
 
 </details>
 
-<details class="guide-section" id="3-make-a-small-useful-change"><summary>3 · Make a change</summary>
+<details class="guide-section" id="2-connect-the-shared-drive-folder"><summary>2 · Connect the shared output folder</summary>
 
-[Create a Student task issue](https://github.com/Donggyurim/neuroimaging-training/issues/new?template=student-task.yml) describing one unclear instruction or small documentation improvement. Agree the task with your supervisor. In your repository checkout:
+Sign in to the Google account your supervisor invited. In Drive, open **Shared with me**, right-click the output folder, then choose **Organize → Add shortcut** and place it in **My Drive**. Remember the shortcut's exact folder name; the notebook asks for it.
 
-```sh
-git switch -c student/first-contribution
-```
+For a cohort, the supervisor should share a separate folder with each student. Everyone with access to the same shared folder can see its contents.
 
-Edit a relevant `.qmd` page, preview the change, then check the full site:
-
-```sh
-quarto render
-git status --short
-git diff
-```
-
-The render should finish with `Output created: _site/index.html`. Review all changed files before committing. Do not add generated `_site/` or `.quarto/` files.
-
-**Done when:** your edit is visible and the full render completes successfully.
+**Done when:** you can open the folder from **My Drive** and can add a small test file.
 
 </details>
 
-<details class="guide-section" id="4-ask-for-feedback"><summary>4 · Ask for review</summary>
+<details class="guide-section" id="3-open-colab"><summary>3 · Open the assigned notebook</summary>
 
-Commit your intended changes, push your branch to the repository you have access to, and open a **draft pull request**. Link the task issue and explain what changed and how you checked it. Ask your supervisor for review, respond to feedback, and follow the repository’s merge process.
+Open the Colab link in your task. In Colab, choose **File → Save a copy in Drive** and use the Google account that has access to the shared folder. When the notebook asks to connect Drive, review the request and approve it for this course notebook.
 
-**Bring to review:** the task issue, draft PR, and build result. Never push directly to `main`.
+At the top of the notebook, enter the task ID, assigned subject ID, and exact shared-folder name from your task and Drive. The first pilot notebook is configured for **ds004144**; its dataset snapshot and integrity checks are fixed.
+
+**Done when:** the notebook confirms the assigned task and shows a results path inside the shared folder.
+
+</details>
+
+<details class="guide-section" id="4-run-the-assigned-scan"><summary>4 · Run the assigned scan</summary>
+
+Run the notebook cells in order. Stop at the first error and report the task ID, cell heading, and error to your supervisor. Do not substitute another subject or disable a checksum check.
+
+The scan is processed in Colab's temporary workspace. The notebook writes the segmentation, CSV, logs, provenance, quality-control images, and handover into your supervisor-shared folder. Colab can disconnect, so wait for each output to be saved before ending the session.
+
+**Done when:** the notebook finishes and records a QC status and notes.
+
+</details>
+
+<details class="guide-section" id="5-submit-your-handover"><summary>5 · Submit your handover</summary>
+
+Open the shared folder and confirm the run folder contains the expected files. Add a comment to your assigned GitHub task with the run ID, QC status, and any blocker. Do not paste the private Drive link into the public issue; your supervisor already has access to the shared folder.
+
+Your supervisor reviews the files and makes a supervisor-owned copy of accepted outputs for retention.
+
+**Done when:** your supervisor can identify the run and review its outputs.
 
 </details>
 
 <details class="guide-section" id="when-something-goes-wrong"><summary>Troubleshooting</summary>
 
-::: {.table-responsive tabindex="0" role="region" aria-label="Reference table"}
+::: {.table-responsive tabindex="0" role="region" aria-label="Troubleshooting table"}
 
 | What you see | What to try |
 |---|---|
-| `quarto: command not found` | Reopen your terminal after installation, then check `quarto --version`. In a prepared environment, follow its activation instructions. |
-| Preview cannot start on its port | Stop your earlier preview, or run `quarto preview --port 4201`. |
-| Render fails | Read the first reported error. Check YAML indentation, file paths, and the page you just edited. |
-| Git push is denied | Confirm the remote and your repository access with the supervisor. Use your agreed fork workflow if necessary. |
-| You are still stuck | Send the command, error, version, and expected result in your task issue, with sensitive details removed. |
+| The assigned task is missing | Check that you are signed into the GitHub account your supervisor assigned. Contact the supervisor if it is still missing. |
+| The shared folder is missing in Colab | Check the Google account, add the shared folder as a shortcut in My Drive, and enter its exact name. |
+| Colab cannot connect to Drive | Confirm you are signed into the invited Google account, then rerun the Drive connection cell. |
+| The subject has no matching scan | Stop and report the task ID and subject ID. Do not substitute another scan. |
+| A download or checksum check fails | Stop and report the exact cell. Do not bypass the check. |
+| GPU is unavailable | Try another session later or use CPU; processing will be slower. |
+| Segmentation fails | Read the saved log if present, report the error, and do not interpret partial outputs. |
 
 :::
-
 
 </details>
 
@@ -90,9 +88,8 @@ Commit your intended changes, push your branch to the repository you have access
 
 [Return to your milestones →](../student.qmd)
 
-Agree a small question, a fixed dataset version, access terms, and a compute route with your supervisor. The [structural MRI pathway](structural-mri-pathway.qmd) explains the later stages. Analysis runs separately: a successful website render does not validate an MRI workflow.
+The [structural MRI pathway](structural-mri-pathway.qmd) explains how a reviewed single-scan pilot leads to a larger research plan. Do not scale up until your supervisor reviews the input, segmentation, and measurements.
 
 </details>
-
 
 [← Library](../library.qmd)
