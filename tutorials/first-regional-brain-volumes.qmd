@@ -79,7 +79,7 @@ If a step fails, copy the cell heading, error message, and environment details i
 
 <details class="guide-section" id="teaching-pilot-supervisor-review-required"><summary>Validation status</summary>
 
-The publication copy has no saved outputs and has not been rerun end to end here. Its task, subject, and shared-folder settings must be tested with the invited mock-student account. Complete all steps, verify saved files from a fresh session, and have the supervisor review the pilot before scaling up.
+The publication copy has no saved outputs. A mock-student run of ds004144 sub-002 confirmed Drive access and saved outputs in the shared folder. Have the supervisor review the image QC and method, then verify the assigned subject and output path for each new task before scaling up.
 
 </details>
 
