@@ -1,6 +1,8 @@
 # Contributing
 
-## Student workflow
+Students completing assigned MRI tasks use the Colab and Drive workflow in [Get started](tutorials/getting-started.qmd); they do not need Git or Quarto installed. This guide is for optional changes to the training website.
+
+## Optional website contribution workflow
 
 1. Agree a small task with the supervisor. Open a **Student task** issue with a question, expected output, acceptance criteria, and target date; assign yourself.
 2. Clone the repository (or fork it if you have not been invited as a collaborator).
