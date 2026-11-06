@@ -1,88 +1,29 @@
 ---
 title: "First brain volumes"
-description: "One scan → segmentation → volumes."
+description: "One assigned scan in Google Colab."
 toc: false
 page-layout: full
 ---
 
-
 <div class="lesson-actions">
 <a class="action-link primary-action" href="https://colab.research.google.com/github/Donggyurim/neuroimaging-training/blob/main/notebooks/First_regional_brain_volumes.ipynb"><i class="bi bi-play-fill" aria-hidden="true"></i> Open in Colab</a>
-<a class="action-link secondary-action" href="../notebooks/First_regional_brain_volumes.ipynb" download="First_regional_brain_volumes.ipynb"><i class="bi bi-download" aria-hidden="true"></i> Download notebook</a>
 </div>
-<p class="small-note">Google account + Drive · GPU optional</p>
-<p class="pilot-note"><i class="bi bi-info-circle" aria-hidden="true"></i> Teaching pilot · supervisor review required</p>
+<p class="small-note">Use the Google account that has access to the supervisor-shared Drive folder.</p>
 
 <div class="notebook-layout">
-<div class="route-panel"><h2>Eight steps</h2><ol class="notebook-route">
-<li><span>Connect Drive</span></li>
-<li><span>Install tools</span></li>
-<li><span>Download a scan</span></li>
-<li><span>Inspect the MRI</span></li>
-<li><span>Segment</span></li>
-<li><span>Review labels</span></li>
-<li><span>Export volumes</span></li>
-<li><span>Record QC</span></li>
+<div class="route-panel"><h2>Run your assigned scan</h2><ol class="notebook-route">
+<li><span>Open the task in the portal.</span></li>
+<li><span>Use the assigned subject ID in Colab.</span></li>
+<li><span>Connect Drive and run the notebook cells in order.</span></li>
+<li><span>Check the saved segmentation alignment.</span></li>
 </ol></div><div class="notebook-help">
-<details class="guide-section" id="before-you-start"><summary>Before you start</summary>
+<details class="guide-section" open><summary>What the notebook produces</summary>
 
-- Complete [your first-session setup](getting-started.qmd) and agree a bounded [project question](structural-mri-pathway.qmd) with your supervisor.
-- Use a computer browser, a Google account, and Drive storage for the input and segmentation outputs. Colab must connect to your Drive to save them.
-- In Colab, choose **File → Save a copy in Drive**. Keep the course copy unchanged and work in your own copy.
-- Choose **Runtime → Change runtime type → T4 GPU**, if available. A GPU is not guaranteed; CPU is a slower fallback. The notebook does not require a paid Colab plan.
-- Read the dataset citation and access terms. The exercise uses one selected T1w scan from **OpenNeuro ds004144**; it does not establish a participant’s diagnosis or support group comparisons.
+The current notebook uses the ds004144 snapshot and one assigned subject. It saves the segmentation and regional-volume table to the shared Drive folder. If the notebook reports an error or the segmentation does not line up with the scan, stop and contact your supervisor.
 
 </details>
-
-<details class="guide-section" id="follow-the-eight-steps"><summary>Step-by-step checks</summary>
-
-::: {.checkpoint-table .notebook-steps}
-
-
-| Step | What you do | What to check |
-|---|---|---|
-| **1 · Connect Drive** | Create your input and uniquely named result folders. | Your results path is inside `MyDrive/Neuroimaging-Training`. |
-| **2 · Install tools** | Check out the pinned FastSurfer source and install dependencies. | Record the environment and the device actually available. |
-| **3 · Download one scan** | Fetch the selected image and metadata. | The expected size and checksum pass. Never bypass a failed check. |
-| **4 · Inspect the input** | View the MRI in three planes. | Coverage, contrast, and motion are suitable; three slices alone are not full QC. |
-| **5 · Segment** | Run the segmentation-only pilot and save logs and outputs. | The process completes and the expected segmentation exists. |
-| **6 · Review overlays** | Inspect the labels on the matching conformed MRI. | Grids match; scroll through all planes and discuss uncertain boundaries. |
-| **7 · Export volumes** | Count labelled voxels and convert to mm³ and mL. | Names map correctly, totals reconcile, and the CSV is saved. |
-| **8 · Record QC & hand over** | Add a QC decision, notes, hashes, and a handover record. | Explain the decision and verify the saved files after reconnecting. |
-
-:::
-
-</details>
-
-<details class="guide-section" id="what-you-should-finish-with"><summary>Expected files</summary>
-
-Look in **Drive → Neuroimaging-Training → results → your run folder** for:
-
-- `regional_volumes.csv`, `provenance.json`, and `environment.txt`.
-- `segmentation.log` and the participant’s segmentation output folder.
-- Input and overlay previews, plus the regional-volume chart.
-- `handover.md`, including QC status, notes, and the next review action.
-
-These are **hard-label volumes**: voxel count multiplied by voxel volume. They are not cortical thickness, partial-volume-corrected statistics, or head-size-normalised measurements. Keep measurement definitions explicit when using the [regional-volume analysis guide](../techniques/regional-volume-analysis.qmd).
-
-</details>
-
-<details class="guide-section" id="bring-this-to-your-supervisor"><summary>Supervisor review</summary>
-
-Share your task issue, software/version record, logs, overlay QC, volume-table definitions, and outstanding errors. Keep imaging outputs in approved storage. Personal workspace checkboxes do not record supervisor approval.
-
-If a step fails, copy the cell heading, error message, and environment details into your task update, removing sensitive details. The notebook’s troubleshooting section covers common Drive, GPU, download, and processing problems.
-
-[Review the pilot checkpoints →](../supervisor.qmd) · [Prepare the full handover →](../projects/structural-mri-handover.qmd)
-
-</details>
-
-<details class="guide-section" id="teaching-pilot-supervisor-review-required"><summary>Validation status</summary>
-
-The supplied notebook includes saved outputs through volume export. This publication copy removes saved outputs and runtime metadata; it has not been rerun end to end here. The final QC/handover cell had no saved output in the supplied file. Complete all steps, verify saved files from a fresh session, and review the pilot before scaling up.
-
-</details>
-
 </div></div>
 
-[← My workspace](../student.qmd)
+<div class="resource-strip">
+[← Back to the library](../library.qmd)
+</div>
