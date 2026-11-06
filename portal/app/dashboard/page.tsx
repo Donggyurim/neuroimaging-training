@@ -29,7 +29,16 @@ export default async function DashboardPage() {
             {role === "supervisor" ? "Supervisor workspace" : "Student workspace"}
           </span>
           <h1>{role === "supervisor" ? "Team overview." : "Your workspace."}</h1>
-          <p>Signed in as <strong>{username}</strong>.</p>
+          <p>
+            Signed in as <strong>{username}</strong>.{" "}
+            <a
+              href="https://donggyurim.github.io/neuroimaging-training/tutorials/getting-started.html"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Read the full Getting Started guide ↗
+            </a>
+          </p>
         </section>
 
         {role === "student" ? (
