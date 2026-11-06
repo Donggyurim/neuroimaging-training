@@ -32,9 +32,10 @@ function TeamProgress({ total, completed }: { total: number; completed: number }
   );
 }
 
-function StudentTask({ task }: { task: Task }) {
+function StudentTask({ task, isNext }: { task: Task; isNext: boolean }) {
   return (
-    <li className="task-item">
+    <li className={isNext ? "task-item next-task" : "task-item"}>
+      {isNext ? <span className="eyebrow">Up next</span> : null}
       <div className="task-heading">
         <div>
           <h3>{task.title}</h3>
@@ -145,7 +146,7 @@ export default async function DashboardPage({
               ) : tasks.length === 0 ? (
                 <p>No tasks have been assigned to you yet.</p>
               ) : (
-                <ul className="task-list">{tasks.map((task) => <StudentTask key={task.id} task={task} />)}</ul>
+                <ul className="task-list">{tasks.map((task) => <StudentTask key={task.id} task={task} isNext={task.id === (tasks.find((item) => item.status === "assigned")?.id ?? tasks[0]?.id)} />)}</ul>
               )}
             </section>
             <section className="panel">
@@ -172,10 +173,10 @@ export default async function DashboardPage({
                 <div className="panel-grid">
                   <section className="panel">
                     <h2>Assign a task</h2>
-                    <p>Enter the student’s portal username, OpenNeuro dataset, subject, and Colab notebook.</p>
+                    <p>For now, this notebook supports OpenNeuro ds004144. Enter the student’s username and assigned subject.</p>
                     <form className="portal-form" action={assignTask}>
                       <label>Student username<input name="studentUsername" autoComplete="off" placeholder="e.g. kong" required /></label>
-                      <label>OpenNeuro dataset<input name="datasetId" placeholder="e.g. ds004144" required /></label>
+                      <label>OpenNeuro dataset<input name="datasetId" value="ds004144" readOnly /></label>
                       <label>Subject ID<input name="subjectId" placeholder="e.g. sub-002" required /></label>
                       <label>Colab notebook URL<input name="notebookUrl" type="url" defaultValue="https://colab.research.google.com/github/Donggyurim/neuroimaging-training/blob/main/notebooks/First_regional_brain_volumes.ipynb" required /></label>
                       <label>Due date (optional)<input name="dueDate" type="date" /></label>

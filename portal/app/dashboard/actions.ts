@@ -26,16 +26,12 @@ export async function assignTask(formData: FormData) {
 
   if (
     !studentUsername ||
-    !/^[A-Za-z0-9_-]{1,40}$/.test(datasetId) ||
+    datasetId !== "ds004144" ||
     !/^[A-Za-z0-9_-]{1,80}$/.test(subjectId) ||
     !dueDate ||
     !/^\d{4}-\d{2}-\d{2}$/.test(dueDate)
   ) {
-    if (dueDate === null) {
-      // A missing due date is valid.
-    } else {
-      redirect("/dashboard?error=storage");
-    }
+    redirect("/dashboard?error=storage");
   }
 
   let notebook: URL;

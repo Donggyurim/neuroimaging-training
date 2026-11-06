@@ -445,6 +445,15 @@ input {
   border-radius: 10px;
   background: #fff;
 }
+.next-task {
+  border-color: var(--blue-line);
+  background: linear-gradient(135deg, #f7f9ff, #fff 70%);
+}
+.next-task > .eyebrow {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--primary);
+}
 .task-heading,
 .task-actions {
   display: flex;
