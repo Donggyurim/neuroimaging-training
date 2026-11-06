@@ -41,11 +41,11 @@ export default function SignInPage() {
                 appearance={{
                   variables: {
                     colorPrimary: "#2457d6",
-                    colorText: "#172033",
-                    colorTextSecondary: "#58657a",
+                    colorForeground: "#172033",
+                    colorMutedForeground: "#58657a",
                     colorBackground: "#ffffff",
-                    colorInputBackground: "#ffffff",
-                    colorInputText: "#172033",
+                    colorInput: "#ffffff",
+                    colorInputForeground: "#172033",
                     borderRadius: "10px",
                   },
                 }}
