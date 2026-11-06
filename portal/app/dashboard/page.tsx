@@ -179,7 +179,6 @@ export default async function DashboardPage({
                       <label>OpenNeuro dataset<input name="datasetId" value="ds004144" readOnly /></label>
                       <label>Subject ID<input name="subjectId" placeholder="e.g. sub-002" required /></label>
                       <label>Colab notebook URL<input name="notebookUrl" type="url" defaultValue="https://colab.research.google.com/github/Donggyurim/neuroimaging-training/blob/main/notebooks/First_regional_brain_volumes.ipynb" required /></label>
-                      <label>Due date (optional)<input name="dueDate" type="date" /></label>
                       <button className="action-link primary-action" type="submit">Assign task <span aria-hidden="true">→</span></button>
                     </form>
                   </section>

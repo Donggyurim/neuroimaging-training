@@ -22,14 +22,12 @@ export async function assignTask(formData: FormData) {
   const datasetId = requiredText(formData, "datasetId");
   const subjectId = requiredText(formData, "subjectId");
   const notebookUrl = requiredText(formData, "notebookUrl");
-  const dueDate = requiredText(formData, "dueDate") || null;
 
   if (
     !studentUsername ||
     datasetId !== "ds004144" ||
     !/^[A-Za-z0-9_-]{1,80}$/.test(subjectId) ||
-    !dueDate ||
-    !/^\d{4}-\d{2}-\d{2}$/.test(dueDate)
+
   ) {
     redirect("/dashboard?error=storage");
   }
@@ -57,7 +55,7 @@ export async function assignTask(formData: FormData) {
       dataset_id: datasetId,
       subject_id: subjectId,
       notebook_url: notebook.toString(),
-      due_date: dueDate,
+      due_date: null,
       created_by_user_id: userId,
     });
   } catch {
