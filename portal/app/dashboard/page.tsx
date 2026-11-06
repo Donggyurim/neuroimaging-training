@@ -17,7 +17,7 @@ export default async function DashboardPage() {
     <>
       <header className="portal-shell portal-header">
         <Link className="brand" href="/">
-          <span className="brand-mark" aria-hidden="true">NT</span>
+          <span className="brand-mark" aria-hidden="true">n.</span>
           <span>Neuroimaging Training</span>
         </Link>
         <UserButton />
