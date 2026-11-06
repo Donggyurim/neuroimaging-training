@@ -1,0 +1,769 @@
+:root {
+  color-scheme: light;
+  --ink: #172033;
+  --muted: #58657a;
+  --primary: #2457d6;
+  --primary-hover: #1945b5;
+  --surface: #ffffff;
+  --canvas: #f8fafc;
+  --line: #e1e6ee;
+  --soft: #eef4ff;
+  --blue-line: #d9e4fc;
+  --radius: 12px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(ellipse at 86% 10%, rgb(36 87 214 / 7%), transparent 32rem),
+    var(--canvas);
+  color: var(--ink);
+  font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+a {
+  color: var(--primary);
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  color: var(--primary-hover);
+}
+
+a,
+button,
+input {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid #9cbaff;
+  outline-offset: 4px;
+  border-radius: 5px;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.portal-shell {
+  width: min(1120px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.portal-header {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid var(--line);
+  background: rgb(255 255 255 / 70%);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 750;
+  letter-spacing: -0.025em;
+}
+
+.brand:hover {
+  color: var(--ink);
+}
+
+.brand-mark {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  border-radius: 8px;
+  background: var(--primary);
+  color: white;
+  font-size: 1.18rem;
+  font-weight: 750;
+  letter-spacing: -0.08em;
+}
+
+.header-context {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 550;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: #4e9d72;
+}
+
+.eyebrow {
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 750;
+  letter-spacing: 0.11em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.home-layout,
+.sign-in-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(380px, 1.05fr);
+  gap: clamp(40px, 7vw, 88px);
+  align-items: center;
+  padding-top: 64px;
+  padding-bottom: 76px;
+}
+
+.home-copy,
+.sign-in-copy {
+  max-width: 530px;
+}
+
+.home-copy h1,
+.sign-in-copy h1,
+.hero h1 {
+  margin: 12px 0 10px;
+  color: var(--ink);
+  font-size: clamp(42px, 6.2vw, 68px);
+  font-weight: 680;
+  line-height: 1.06;
+  letter-spacing: -0.055em;
+}
+
+.home-lead {
+  margin: 0 0 18px;
+  color: var(--ink);
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+.home-description,
+.hero p,
+.panel p {
+  max-width: 54ch;
+  margin: 0 0 24px;
+  color: var(--muted);
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+.action-link {
+  min-height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 18px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 650;
+  line-height: 1.4;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 140ms ease, transform 140ms ease;
+}
+
+.primary-action {
+  background: var(--primary);
+  color: #fff;
+}
+
+.primary-action:hover {
+  transform: translateY(-1px);
+  background: var(--primary-hover);
+  color: #fff;
+}
+
+.primary-action span {
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.login-hint {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.workflow-card {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: 0 18px 48px rgb(23 32 51 / 6%);
+}
+
+.workflow-card-band {
+  min-height: 128px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 22px;
+  position: relative;
+  overflow: hidden;
+  background-color: #edf3ff;
+  background-image:
+    linear-gradient(#dfe8fb 1px, transparent 1px),
+    linear-gradient(90deg, #dfe8fb 1px, transparent 1px);
+  background-size: 24px 24px;
+  color: var(--primary);
+  font-size: 0.67rem;
+  font-weight: 750;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.workflow-card-band::after {
+  content: "";
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  right: 34px;
+  bottom: -94px;
+  border: 1px solid #9db7ee;
+  border-radius: 50%;
+  box-shadow: 0 0 0 16px rgb(36 87 214 / 4%), 0 0 0 34px rgb(36 87 214 / 4%);
+}
+
+.workflow-mark {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #cad9f7;
+  border-radius: 8px;
+  background: #f8faff;
+  font-size: 1.15rem;
+  font-weight: 750;
+  letter-spacing: -0.08em;
+}
+
+.workflow-count {
+  margin-left: auto;
+  color: #66799f;
+  font-size: 0.65rem;
+}
+
+.workflow-card-content {
+  padding: 26px 28px 24px;
+}
+
+.workflow-card-content h2 {
+  margin: 6px 0 7px;
+  color: var(--ink);
+  font-size: 1.45rem;
+  font-weight: 650;
+  letter-spacing: -0.035em;
+  line-height: 1.3;
+}
+
+.workflow-card-content > p {
+  margin: 0 0 18px;
+  color: var(--muted);
+  font-size: 0.87rem;
+}
+
+.workflow-list,
+.signin-steps {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.workflow-list li,
+.signin-steps li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 0;
+  border-top: 1px solid #edf0f5;
+}
+
+.workflow-list li > span,
+.signin-steps li > span {
+  width: 27px;
+  height: 27px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  border-radius: 7px;
+  background: var(--soft);
+  color: var(--primary);
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+.workflow-list strong,
+.signin-steps strong {
+  display: block;
+  color: var(--ink);
+  font-size: 0.86rem;
+  font-weight: 650;
+  line-height: 1.4;
+}
+
+.workflow-list small,
+.signin-steps small {
+  display: block;
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 0.77rem;
+  line-height: 1.5;
+}
+
+.workflow-note {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 8px;
+  padding: 11px 12px;
+  border: 1px solid var(--blue-line);
+  border-radius: 8px;
+  background: #f7f9ff;
+  color: #465978;
+  font-size: 0.75rem;
+}
+
+.portal-main {
+  padding: 60px 0 80px;
+}
+
+.hero {
+  max-width: 760px;
+}
+
+.hero h1 {
+  max-width: 700px;
+}
+
+.panel-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.panel {
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.panel h2,
+.panel h3 {
+  margin: 0 0 8px;
+  color: var(--ink);
+  letter-spacing: -0.025em;
+}
+
+.panel p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.status-pill {
+  display: inline-flex;
+  margin-top: 18px;
+  padding: 6px 10px;
+  border: 1px solid var(--blue-line);
+  border-radius: 999px;
+  background: var(--soft);
+  color: var(--primary);
+  font-size: 0.72rem;
+  font-weight: 650;
+}
+
+.portal-form {
+  display: grid;
+  gap: 13px;
+  margin-top: 18px;
+}
+.portal-form label {
+  display: grid;
+  gap: 5px;
+  color: var(--ink);
+  font-size: 0.82rem;
+  font-weight: 620;
+}
+.portal-form input {
+  width: 100%;
+  min-height: 42px;
+  padding: 8px 11px;
+  border: 1px solid #cdd6e2;
+  border-radius: 8px;
+  background: #fff;
+  color: var(--ink);
+}
+.portal-form button {
+  justify-self: start;
+  margin-top: 4px;
+}
+.task-panel {
+  margin-top: 18px;
+}
+.task-list {
+  display: grid;
+  gap: 12px;
+  padding: 0;
+  margin: 16px 0 0;
+  list-style: none;
+}
+.task-item {
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+}
+.next-task {
+  border-color: var(--blue-line);
+  background: linear-gradient(135deg, #f7f9ff, #fff 70%);
+}
+.next-task > .eyebrow {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--primary);
+}
+.task-heading,
+.task-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+.task-heading h3 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 1rem;
+  letter-spacing: -0.02em;
+}
+.task-meta,
+.task-detail {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+.task-actions {
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+.task-actions form {
+  margin: 0;
+}
+.task-actions button {
+  min-height: 42px;
+  border-color: var(--blue-line);
+  background: #f7f9ff;
+  color: var(--primary);
+}
+.task-actions button:hover {
+  background: var(--soft);
+  color: var(--primary-hover);
+}
+.completion-note {
+  margin: 0;
+  color: #347153;
+  font-size: 0.82rem;
+}
+.is-complete {
+  border-color: #cfe7d8;
+  background: #f0faf4;
+  color: #28734b;
+}
+.team-progress-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 9px;
+  margin-top: 16px;
+}
+.team-progress-grid > div {
+  display: grid;
+  gap: 2px;
+  padding: 12px;
+  border: 1px solid var(--blue-line);
+  border-radius: 9px;
+  background: #f7f9ff;
+}
+.team-progress-grid strong {
+  color: var(--primary);
+  font-size: 1.35rem;
+  line-height: 1.25;
+}
+.team-progress-grid span {
+  color: var(--muted);
+  font-size: 0.7rem;
+  line-height: 1.35;
+}
+.notice-banner {
+  margin: 18px 0 0;
+  padding: 11px 14px;
+  border: 1px solid #cfe7d8;
+  border-radius: 8px;
+  background: #f0faf4;
+  color: #28734b;
+  font-size: 0.84rem;
+}
+.notice-banner.is-error {
+  border-color: #f0d0cc;
+  background: #fff7f5;
+  color: #9a352a;
+}
+.student-guide .hero {
+  margin: 24px 0 28px;
+}
+.student-guide .back-link {
+  margin-top: 0;
+}
+.guide-reminder {
+  margin-top: 18px;
+}
+.guide-reminder .action-link {
+  margin-top: 4px;
+}
+
+.setup-message {
+  border-color: #efe2bb;
+  background: #fffdf7;
+}
+
+.sign-in-copy h1 {
+  font-size: clamp(40px, 5vw, 58px);
+}
+
+.signin-steps {
+  margin-top: 28px;
+  border-bottom: 1px solid #edf0f5;
+}
+
+.signin-steps li {
+  padding: 14px 0;
+}
+
+.back-link {
+  display: inline-flex;
+  margin-top: 24px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 550;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  color: var(--primary);
+}
+
+.sign-in-card {
+  width: 100%;
+  max-width: 440px;
+  justify-self: end;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: 0 18px 48px rgb(23 32 51 / 6%);
+}
+
+.sign-in-card > h2 {
+  margin: 7px 0 2px;
+  color: var(--ink);
+  font-size: 1.65rem;
+  font-weight: 650;
+  letter-spacing: -0.04em;
+}
+
+.sign-in-intro {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+
+.sign-in-frame {
+  width: 100%;
+  padding-top: 16px;
+}
+
+.sign-in-frame > *,
+.cl-rootBox,
+.cl-cardBox {
+  width: 100% !important;
+}
+
+.cl-card {
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.cl-headerTitle {
+  color: var(--ink) !important;
+}
+
+.cl-headerSubtitle {
+  color: var(--muted) !important;
+}
+
+.cl-formFieldInput {
+  min-height: 46px !important;
+  border: 1px solid #cdd6e2 !important;
+  border-radius: 8px !important;
+  color: var(--ink) !important;
+}
+
+.cl-formFieldInput:focus {
+  border-color: #7ea0f1 !important;
+  box-shadow: 0 0 0 3px #e2ebff !important;
+}
+
+.cl-formButtonPrimary {
+  min-height: 44px !important;
+  border-radius: 8px !important;
+  background: var(--primary) !important;
+  box-shadow: none !important;
+}
+
+.cl-formButtonPrimary:hover {
+  background: var(--primary-hover) !important;
+}
+
+.cl-footerActionLink {
+  color: var(--primary) !important;
+}
+
+/* This portal uses supervisor-created username/password accounts only. */
+.cl-socialButtonsBlock,
+.cl-dividerRow {
+  display: none !important;
+}
+
+.auth-loading {
+  min-height: 118px;
+  display: grid;
+  place-items: center;
+  border: 1px dashed #cdd6e2;
+  border-radius: 8px;
+  background: #fbfcff;
+  color: var(--muted);
+  font-size: 0.84rem;
+  text-align: center;
+}
+
+.sign-in-help {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
+.portal-footer {
+  padding: 20px 0 30px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+@media (max-width: 760px) {
+  .portal-shell {
+    width: min(100% - 32px, 1120px);
+  }
+
+  .home-layout,
+  .sign-in-layout {
+    grid-template-columns: 1fr;
+    gap: 34px;
+    padding-top: 44px;
+    padding-bottom: 54px;
+  }
+
+  .home-copy,
+  .sign-in-copy {
+    max-width: 640px;
+  }
+
+  .workflow-card {
+    max-width: 640px;
+  }
+
+  .sign-in-card {
+    max-width: 640px;
+    justify-self: stretch;
+  }
+
+  .panel-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .portal-shell {
+    width: min(100% - 28px, 1120px);
+  }
+
+  .portal-header {
+    min-height: 66px;
+  }
+
+  .brand {
+    gap: 8px;
+    font-size: 0.84rem;
+  }
+
+  .header-context {
+    font-size: 0.7rem;
+  }
+
+  .home-copy h1,
+  .sign-in-copy h1 {
+    font-size: clamp(40px, 13vw, 54px);
+  }
+
+  .workflow-card-content,
+  .sign-in-card {
+    padding: 21px 18px;
+  }
+
+  .workflow-card-band {
+    min-height: 108px;
+    padding: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
