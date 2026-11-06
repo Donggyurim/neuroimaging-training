@@ -37,7 +37,7 @@ export default async function StudentGuidePage() {
           <section className="panel">
             <span className="eyebrow">02 · Your assignment</span>
             <h2>Use the task details</h2>
-            <p>Return to your workspace and use the dataset, subject ID, and Colab notebook shown in your assigned task. Do not substitute a different subject.</p>
+            <p>Return to your workspace and use the subject ID and Colab notebook shown in your assigned task. The current notebook uses OpenNeuro ds004144. Do not substitute a different subject.</p>
           </section>
           <section className="panel">
             <span className="eyebrow">03 · Google Colab</span>
