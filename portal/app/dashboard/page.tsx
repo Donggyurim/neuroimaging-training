@@ -178,7 +178,7 @@ export default async function DashboardPage({
                       <label>Student username<input name="studentUsername" autoComplete="off" placeholder="e.g. kong" required /></label>
                       <label>OpenNeuro dataset<input name="datasetId" value="ds004144" readOnly /></label>
                       <label>Subject ID<input name="subjectId" placeholder="e.g. sub-002" required /></label>
-                      <label>Colab notebook URL<input name="notebookUrl" type="url" defaultValue="https://colab.research.google.com/github/Donggyurim/neuroimaging-training/blob/main/notebooks/First_regional_brain_volumes.ipynb" required /></label>
+                      <label>Colab notebook URL<input name="notebookUrl" type="url" defaultValue="https://colab.research.google.com/github/Donggyurim/neuroimaging-training/blob/codex/student-colab-workflow/notebooks/First_regional_brain_volumes.ipynb" required /></label>
                       <button className="action-link primary-action" type="submit">Assign task <span aria-hidden="true">→</span></button>
                     </form>
                   </section>
