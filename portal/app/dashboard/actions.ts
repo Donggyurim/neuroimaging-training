@@ -54,7 +54,9 @@ export async function assignTask(formData: FormData) {
       due_date: null,
       created_by_user_id: userId,
     });
-  } catch {
+  } catch (error) {
+    const message = error instanceof Error ? error.message : "Unknown error";
+    console.error("[portal] task assignment storage failure:", message);
     redirect("/dashboard?error=storage");
   }
 
@@ -72,7 +74,9 @@ export async function markTaskComplete(formData: FormData) {
 
   try {
     await completeTask(taskId, userId);
-  } catch {
+  } catch (error) {
+    const message = error instanceof Error ? error.message : "Unknown error";
+    console.error("[portal] task completion storage failure:", message);
     redirect("/dashboard?error=storage");
   }
 
