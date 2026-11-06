@@ -29,14 +29,6 @@ export default async function HomePage() {
             Go to sign in <span aria-hidden="true">→</span>
           </Link>
           <p className="login-hint">Use the username and password provided by your supervisor.</p>
-          <a
-            className="back-link"
-            href="https://donggyurim.github.io/neuroimaging-training/tutorials/getting-started.html"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Read the full Getting Started guide <span aria-hidden="true">↗</span>
-          </a>
         </section>
 
         <section className="workflow-card" aria-labelledby="workflow-title">

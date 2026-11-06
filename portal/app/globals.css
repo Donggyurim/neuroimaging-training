@@ -404,6 +404,145 @@ input {
   font-weight: 650;
 }
 
+.portal-form {
+  display: grid;
+  gap: 13px;
+  margin-top: 18px;
+}
+.portal-form label {
+  display: grid;
+  gap: 5px;
+  color: var(--ink);
+  font-size: 0.82rem;
+  font-weight: 620;
+}
+.portal-form input {
+  width: 100%;
+  min-height: 42px;
+  padding: 8px 11px;
+  border: 1px solid #cdd6e2;
+  border-radius: 8px;
+  background: #fff;
+  color: var(--ink);
+}
+.portal-form button {
+  justify-self: start;
+  margin-top: 4px;
+}
+.task-panel {
+  margin-top: 18px;
+}
+.task-list {
+  display: grid;
+  gap: 12px;
+  padding: 0;
+  margin: 16px 0 0;
+  list-style: none;
+}
+.task-item {
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+}
+.task-heading,
+.task-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+.task-heading h3 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 1rem;
+  letter-spacing: -0.02em;
+}
+.task-meta,
+.task-detail {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+.task-actions {
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+.task-actions form {
+  margin: 0;
+}
+.task-actions button {
+  min-height: 42px;
+  border-color: var(--blue-line);
+  background: #f7f9ff;
+  color: var(--primary);
+}
+.task-actions button:hover {
+  background: var(--soft);
+  color: var(--primary-hover);
+}
+.completion-note {
+  margin: 0;
+  color: #347153;
+  font-size: 0.82rem;
+}
+.is-complete {
+  border-color: #cfe7d8;
+  background: #f0faf4;
+  color: #28734b;
+}
+.team-progress-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 9px;
+  margin-top: 16px;
+}
+.team-progress-grid > div {
+  display: grid;
+  gap: 2px;
+  padding: 12px;
+  border: 1px solid var(--blue-line);
+  border-radius: 9px;
+  background: #f7f9ff;
+}
+.team-progress-grid strong {
+  color: var(--primary);
+  font-size: 1.35rem;
+  line-height: 1.25;
+}
+.team-progress-grid span {
+  color: var(--muted);
+  font-size: 0.7rem;
+  line-height: 1.35;
+}
+.notice-banner {
+  margin: 18px 0 0;
+  padding: 11px 14px;
+  border: 1px solid #cfe7d8;
+  border-radius: 8px;
+  background: #f0faf4;
+  color: #28734b;
+  font-size: 0.84rem;
+}
+.notice-banner.is-error {
+  border-color: #f0d0cc;
+  background: #fff7f5;
+  color: #9a352a;
+}
+.student-guide .hero {
+  margin: 24px 0 28px;
+}
+.student-guide .back-link {
+  margin-top: 0;
+}
+.guide-reminder {
+  margin-top: 18px;
+}
+.guide-reminder .action-link {
+  margin-top: 4px;
+}
+
 .setup-message {
   border-color: #efe2bb;
   background: #fffdf7;

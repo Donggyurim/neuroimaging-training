@@ -8,8 +8,15 @@ This is a separate Next.js app for Vercel. The Quarto learning website remains o
 - The dashboard checks the signed-in account's server-managed `publicMetadata.role`.
 - Roles are `student` and `supervisor`. Accounts without one of these roles cannot see task content.
 - Public sign-up is not part of the app.
-- The task list, task assignment form, and overall team progress counts are the next implementation step.
+- Students see only their assigned tasks and can mark them complete. They see an overall team progress count, not other students’ task details.
+- Supervisors can assign tasks by student username, OpenNeuro dataset, subject ID, and Colab notebook, then see the team task list and completion summary.
 - Brain images and analysis outputs stay in Colab and the supervisor-shared Drive folder.
+
+## Configure Supabase task storage
+
+The portal uses the `tasks` table from `supabase/migrations/20261106000000_create_portal_tasks.sql`. The table has row-level security enabled with no browser-access policies. The portal reads and writes it only from authenticated server routes after checking the Clerk role and user ID.
+
+Set `SUPABASE_URL` and `SUPABASE_SECRET_KEY` in Vercel for the portal project, and in `portal/.env.local` for local development. Use the secret key from Supabase Settings → API Keys. Keep it server-side; never use a `NEXT_PUBLIC_` prefix or add the secret to Git. The project URL is public and the secret key is not.
 
 ## Configure Clerk
 
