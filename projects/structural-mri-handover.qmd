@@ -1,50 +1,19 @@
 ---
-title: "Project handover"
-description: "Make your work easy to repeat."
+title: "Finish your task"
+description: "Confirm the outputs and mark the task complete."
 body-classes: guide-page
 toc: false
 page-layout: full
 ---
 
-<details class="guide-section"><summary>Overview</summary>
+<details class="guide-section" open><summary>Task handover</summary>
 
-A future student should be able to understand what you tried, reproduce the accepted parts, and recognise what remains unresolved. Use this checklist with the student-project template.
-
-</details>
-
-<details class="guide-section" id="project-record"><summary>Project record</summary>
-
-- Research question and whether the analysis was exploratory or pre-specified.
-- Dataset accession, frozen version, access conditions, study citation, and inclusion rules.
-- Input manifest, approved storage location, and provenance.
-- Environment, hardware, tool versions, commands, and parameters.
-- Run ledger, failed jobs, QC decisions, exclusions, and participant-join audit.
-- Measure dictionary, statistical plan, effect table, and uncertainty.
-- New figures with captions and a regeneration record.
-- Known limitations, unsuccessful approaches, and recommended next task.
+1. Confirm the notebook saved its outputs in the supervisor-shared Drive folder.
+2. Check that the segmentation aligns with the scan. Tell your supervisor if it does not.
+3. Return to the portal and mark the task complete.
 
 </details>
 
-<details class="guide-section" id="publishable-material"><summary>Publishable material</summary>
-
-Review privacy, data-use terms, attribution, and permissions before including images, notebooks, or outputs. A public GitHub repository is not the right place for restricted clinical data. Keep private approval records in approved institutional storage.
-
-</details>
-
-<details class="guide-section" id="completion-decision"><summary>Completion decision</summary>
-
-Record what was actually tested, by whom, and on which environment/version. Link the task issue and reviewed PR. A passing site build confirms that the documentation renders; it does not validate the MRI analysis.
-
-</details>
-
-<details class="guide-section" id="earlier-placement-work"><summary>Earlier work</summary>
-
-The [earlier student guide](https://neuroimaging-guide.netlify.app/results) provides an external example of a research presentation. Its figures and reported findings have not been transferred or independently reproduced here. Permission and validation should precede any later import.
-
-</details>
-
-::: {.resource-strip}
-[← Student workspace](../student.qmd) · [Review: handover checkpoints →](../supervisor.qmd)
-:::
-
-[← Library](../library.qmd)
+<div class="resource-strip">
+[← Back to the library](../library.qmd)
+</div>

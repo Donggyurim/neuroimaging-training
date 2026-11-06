@@ -1,94 +1,24 @@
 ---
-title: "My workspace"
-description: "One step at a time."
+title: "Student workspace"
+description: "Your task is in the private portal."
 toc: false
 page-layout: full
-include-after-body:
-  - text: |
-      <script src="assets/workspace.js" defer></script>
 ---
-
 
 ::: {.workspace-grid}
 ::: {.workspace-main}
 ::: {.next-step}
 <span class="eyebrow">UP NEXT</span>
 
-## [Set up & contribute](tutorials/getting-started.qmd){#next-step-link}
+## Open your assigned task
 
-<p id="next-step-description">Set up your workspace.</p>
-<a class="action-link primary-action" id="continue-lesson" href="tutorials/getting-started.html">Continue <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+Use the student-portal sign-in link provided by your supervisor. Your assignment and the private Google Drive setup guide are available after sign-in.
+
+<p class="small-note">You do not need a GitHub account, Git, or Quarto for the student workflow.</p>
 :::
-
-<div class="section-top"><h2>Your path</h2><span id="progress-label" role="status">0 / 7 prepared</span></div>
-<progress id="learning-progress" value="0" max="7" aria-label="Personal checklist progress">0 of 7</progress>
-<p id="storage-note" class="small-note">Saved in this browser · not supervisor approval.</p>
-<div class="milestone-list">
-<details class="milestone" open><summary><span class="step-number">00</span><strong>Set up &amp; contribute</strong></summary>
-<div class="milestone-body">
-<p><strong>Prepare:</strong> A small documentation PR.<br><strong>Review:</strong> Check the edit and build.</p>
-<a class="lesson-link" href="tutorials/getting-started.html">Open setup guide →</a>
-<label class="step-check"><input type="checkbox" disabled data-step="0" data-title="Set up &amp; contribute" data-description="Set up your workspace." data-href="tutorials/getting-started.html" aria-label="Prepared: Set up &amp; contribute"> Prepared</label>
-</div></details>
-<details class="milestone" ><summary><span class="step-number">01</span><strong>Define your question</strong></summary>
-<div class="milestone-body">
-<p><strong>Prepare:</strong> Question, dataset version, and acceptance criteria.<br><strong>Review:</strong> Confirm scope and access.</p>
-<a class="lesson-link" href="tutorials/structural-mri-pathway.html">Plan your project →</a>
-<label class="step-check"><input type="checkbox" disabled data-step="1" data-title="Define your question" data-description="Agree one achievable question." data-href="tutorials/structural-mri-pathway.html" aria-label="Prepared: Define your question"> Prepared</label>
-</div></details>
-<details class="milestone" ><summary><span class="step-number">02</span><strong>Inspect one scan</strong></summary>
-<div class="milestone-body">
-<p><strong>Prepare:</strong> Input manifest and quality notes.<br><strong>Review:</strong> Confirm the scan is suitable.</p>
-<a class="lesson-link" href="datasets/openneuro-t1w.html">Inspect a scan →</a>
-<label class="step-check"><input type="checkbox" disabled data-step="2" data-title="Inspect one scan" data-description="Check one input scan." data-href="datasets/openneuro-t1w.html" aria-label="Prepared: Inspect one scan"> Prepared</label>
-</div></details>
-<details class="milestone" ><summary><span class="step-number">03</span><strong>Process a pilot</strong></summary>
-<div class="milestone-body">
-<p><strong>Prepare:</strong> Versions, command, logs, and overlays.<br><strong>Review:</strong> Review labels before scaling.</p>
-<a class="lesson-link" href="techniques/fastsurfer-pilot.html">Run a pilot →</a>
-<label class="step-check"><input type="checkbox" disabled data-step="3" data-title="Process a pilot" data-description="Run one segmentation." data-href="techniques/fastsurfer-pilot.html" aria-label="Prepared: Process a pilot"> Prepared</label>
-</div></details>
-<details class="milestone" ><summary><span class="step-number">04</span><strong>Measure your regions</strong></summary>
-<div class="milestone-body">
-<p><strong>Prepare:</strong> Region table, units, and provenance.<br><strong>Review:</strong> Check measures and participant joins.</p>
-<a class="lesson-link" href="techniques/regional-volume-analysis.html">Define measurements →</a>
-<label class="step-check"><input type="checkbox" disabled data-step="4" data-title="Measure your regions" data-description="Build a traceable volume table." data-href="techniques/regional-volume-analysis.html" aria-label="Prepared: Measure your regions"> Prepared</label>
-</div></details>
-<details class="milestone" ><summary><span class="step-number">05</span><strong>Analyse &amp; visualise</strong></summary>
-<div class="milestone-body">
-<p><strong>Prepare:</strong> Analysis plan, checks, and figures.<br><strong>Review:</strong> Review assumptions and uncertainty.</p>
-<a class="lesson-link" href="techniques/brain-visualisation.html">Make figures →</a>
-<label class="step-check"><input type="checkbox" disabled data-step="5" data-title="Analyse &amp; visualise" data-description="Explain what your results show." data-href="techniques/brain-visualisation.html" aria-label="Prepared: Analyse &amp; visualise"> Prepared</label>
-</div></details>
-<details class="milestone" ><summary><span class="step-number">06</span><strong>Share &amp; hand over</strong></summary>
-<div class="milestone-body">
-<p><strong>Prepare:</strong> Reviewed report and reproduction steps.<br><strong>Review:</strong> Agree what was tested and accepted.</p>
-<a class="lesson-link" href="projects/structural-mri-handover.html">Prepare handover →</a>
-<label class="step-check"><input type="checkbox" disabled data-step="6" data-title="Share &amp; hand over" data-description="Make the work reproducible." data-href="projects/structural-mri-handover.html" aria-label="Prepared: Share &amp; hand over"> Prepared</label>
-</div></details>
-</div>
-<button type="button" id="reset-progress" class="quiet-button" hidden>Reset checklist</button>
-<noscript><p class="small-note">Enable JavaScript to save checks. Guides remain available.</p></noscript>
 :::
 ::: {.workspace-aside}
-<div class="side-panel notebook-card"><span class="icon-tile"><i class="bi bi-journal-code" aria-hidden="true"></i></span><h2>First brain volumes</h2><p>One scan. Eight steps.</p><a class="action-link primary-action" href="tutorials/first-regional-brain-volumes.html" aria-label="Start notebook">Start notebook →</a></div>
-<div class="side-panel"><h2>My tasks</h2><a class="quick-link" href="https://github.com/Donggyurim/neuroimaging-training/issues?q=is%3Aissue+is%3Aopen+assignee%3A%40me"><i class="bi bi-check2-square" aria-hidden="true"></i> View tasks <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a><a class="quick-link" href="https://github.com/Donggyurim/neuroimaging-training/issues/new?template=student-task.yml"><i class="bi bi-plus-lg" aria-hidden="true"></i> New task <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a><p class="small-note">GitHub sign-in required.</p></div>
-<details class="guide-section"><summary>Meeting checklist</summary>
-
-- What changed?
-- What evidence?
-- Any blockers?
-- What next?
-
-</details>
-
-<details class="guide-section"><summary>Before MRI work</summary>
-
-Teaching pilot: review inputs and outputs with your supervisor before scaling up. Keep participant data in approved storage.
-
-[Get help](tutorials/getting-started.qmd#when-something-goes-wrong) · [All guides](library.qmd)
-
-</details>
-
+<div class="side-panel"><h2>Learning library</h2><p>Short reference pages explain the Colab notebook and its outputs.</p><a class="quick-link" href="library.html">Browse the library <i class="bi bi-arrow-right" aria-hidden="true"></i></a></div>
+<div class="side-panel"><h2>Where results go</h2><p>Run the notebook in Google Colab and save outputs to the folder shared by your supervisor.</p></div>
 :::
 :::

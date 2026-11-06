@@ -1,37 +1,26 @@
 # Contributing
 
-## Student workflow
+## Student tasks
 
-1. Agree a small task with the supervisor. Open a **Student task** issue with a question, expected output, acceptance criteria, and target date; assign yourself.
-2. Clone the repository (or fork it if you have not been invited as a collaborator).
-3. Start from updated `main` and create a branch such as `student/alex-dataset-notes`:
+Students use the private portal to view assigned tasks and mark them complete. They run the assigned Google Colab notebook and save outputs to the supervisor-shared Drive folder. Students do not need a GitHub account, Git, or Quarto.
 
-```sh
-git switch main
-git pull --ff-only
-git switch -c student/alex-dataset-notes
-```
+## Maintainer changes
 
-4. Copy a template from `templates/` into the appropriate section. Keep paths lowercase with hyphens. Add the page to `_quarto.yml` navigation.
-5. Run your analysis separately, document dependencies and exact commands, inspect quality and results, then run `quarto render`.
-6. Commit focused changes, push your branch, and open a draft PR to `main`. Link the issue and include figures or evidence of checks.
-7. When ready, mark the PR ready for review and request @Donggyurim. Address feedback and rerun checks. Any new commits require renewed approval.
-8. After approval and a passing **Build site** check, squash-merge the PR and delete its branch. The website updates automatically.
+This workflow is for people maintaining the repository source, not for student task completion.
 
-Never push directly to `main`. An approval is a review decision; collaborators can merge only after the required supervisor approval and checks. If a PR edits CODEOWNERS or workflows, explicitly explain why.
+1. Create a branch from the latest <code>main</code>.
+2. Edit the relevant Quarto page, notebook, or portal source.
+3. Preview or render the Quarto site when changing documentation.
+4. Keep generated outputs and raw imaging data out of the repository.
+5. Open a pull request to <code>main</code> for review.
+6. Merge only after the required repository checks and review pass.
 
-## Reproducibility and writing
+The repository has branch protection and GitHub Pages deployment from <code>main</code>. Changes to the public library are visible after an approved merge and successful site deployment.
 
-- Explain purpose, prerequisites, expected outputs, and common failures.
-- Include dataset accession, immutable version, citation, access terms, and sample-selection rationale.
-- Document software versions, environment setup, commands, parameters, seeds, quality checks, and limitations.
-- Distinguish tutorial examples from validated research findings.
-- Keep downloadable data and large generated outputs outside Git; link to approved storage.
-- Do not add sensitive data or credentials. Review screenshots and figure labels too.
-- Do not copy third-party material without permission and attribution.
+## Data and writing
 
-The site uses `execute: enabled: false` so rendering never downloads datasets or runs costly analysis. Code examples are displayed; analyses must be verified separately and the verification recorded in the PR.
-
-## Supervisor setup
-
-Invite students through Settings → Collaborators after agreeing access. Create a GitHub Project if needed and add repository issues. No students are invited automatically. Keep @Donggyurim as the owner of every path in `.github/CODEOWNERS`. Review scientific validity as well as writing; the build only checks rendering.
+- Use the dataset and subject assigned for the task.
+- Keep private Drive links, participant data, and credentials out of public pages.
+- Keep analysis outputs in the approved shared Drive folder.
+- Distinguish instructional material from validated research findings.
+- Cite OpenNeuro datasets and other sources where required.
