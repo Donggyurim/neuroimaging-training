@@ -1,10 +1,9 @@
 "use server";
 
-import { clerkClient, currentUser } from "@clerk/nextjs/server";
-import { auth } from "@clerk/nextjs/server";
+import { auth, clerkClient, currentUser } from "@clerk/nextjs/server";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
-import { createTask, completeTask } from "../../lib/tasks";
+import { completeTask, createTask } from "../../lib/tasks";
 
 function requiredText(formData: FormData, name: string): string {
   const value = formData.get(name);
@@ -14,9 +13,7 @@ function requiredText(formData: FormData, name: string): string {
 export async function assignTask(formData: FormData) {
   const { userId } = await auth();
   const supervisor = await currentUser();
-  if (!userId || supervisor?.publicMetadata?.role !== "supervisor") {
-    redirect("/dashboard");
-  }
+  if (!userId || supervisor?.publicMetadata?.role !== "supervisor") redirect("/dashboard");
 
   const studentUsername = requiredText(formData, "studentUsername").toLowerCase();
   const datasetId = requiredText(formData, "datasetId");
@@ -26,8 +23,7 @@ export async function assignTask(formData: FormData) {
   if (
     !studentUsername ||
     datasetId !== "ds004144" ||
-    !/^[A-Za-z0-9_-]{1,80}$/.test(subjectId) ||
-
+    !/^[A-Za-z0-9_-]{1,80}$/.test(subjectId)
   ) {
     redirect("/dashboard?error=storage");
   }
@@ -69,9 +65,7 @@ export async function assignTask(formData: FormData) {
 export async function markTaskComplete(formData: FormData) {
   const { userId } = await auth();
   const student = await currentUser();
-  if (!userId || student?.publicMetadata?.role !== "student") {
-    redirect("/dashboard");
-  }
+  if (!userId || student?.publicMetadata?.role !== "student") redirect("/dashboard");
 
   const taskId = requiredText(formData, "taskId");
   if (!/^[0-9a-f-]{36}$/i.test(taskId)) redirect("/dashboard");
