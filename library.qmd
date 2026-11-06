@@ -8,7 +8,7 @@ include-after-body:
       <script src="assets/workspace.js" defer></script>
 ---
 
-<div class="library-toolbar"><label for="lesson-search" class="visually-hidden">Search lessons</label><div class="search-field"><i class="bi bi-search" aria-hidden="true"></i><input id="lesson-search" disabled type="search" placeholder="Search guides…" aria-describedby="lesson-count" autocomplete="off"></div><span id="lesson-count" class="small-note" role="status">8 guides</span></div>
+<div class="library-toolbar"><label for="lesson-search" class="visually-hidden">Search lessons</label><div class="search-field"><i class="bi bi-search" aria-hidden="true"></i><input id="lesson-search" disabled type="search" placeholder="Search guides…" aria-describedby="lesson-count" autocomplete="off"></div><span id="lesson-count" class="small-note" role="status">7 guides</span></div>
 <noscript><p class="small-note">Use your browser’s Find command.</p></noscript>
 <div class="library-grid" id="lesson-library">
 <article class="lesson-card" data-search="colab notebook structural imaging brain volumes segmentation one scan"><span class="icon-tile"><i class="bi bi-journal-code" aria-hidden="true"></i></span><span class="card-label">Notebook</span><h2><a href="tutorials/first-regional-brain-volumes.html">First brain volumes</a></h2><p>Run the assigned Colab notebook.</p></article>
@@ -18,7 +18,6 @@ include-after-body:
 <article class="lesson-card" data-search="regional volumes voxel count volume"><span class="icon-tile"><i class="bi bi-table" aria-hidden="true"></i></span><span class="card-label">Measure</span><h2><a href="techniques/regional-volume-analysis.html">Regional volumes</a></h2><p>Understand the volume table.</p></article>
 <article class="lesson-card" data-search="figures batch notebook plots visualisation"><span class="icon-tile"><i class="bi bi-bar-chart" aria-hidden="true"></i></span><span class="card-label">Visualise</span><h2><a href="techniques/brain-visualisation.html">Make figures</a></h2><p>Plan figures from batch outputs.</p></article>
 <article class="lesson-card" data-search="handover finish outputs drive task complete"><span class="icon-tile"><i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></span><span class="card-label">Finish</span><h2><a href="projects/structural-mri-handover.html">Project handover</a></h2><p>Confirm outputs and finish the task.</p></article>
-<article class="lesson-card" data-search="sources citations attribution permissions"><span class="icon-tile"><i class="bi bi-info-circle" aria-hidden="true"></i></span><span class="card-label">About</span><h2><a href="sources-and-contributions.html">Sources &amp; credit</a></h2><p>Attribution and permissions.</p></article>
 </div>
 <p id="no-lessons" class="empty-state" hidden>No guides found. Try another word.</p>
 <p class="small-note library-note">The assigned workflow uses Google Colab and a supervisor-shared Drive folder.</p>
