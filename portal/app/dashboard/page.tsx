@@ -96,7 +96,7 @@ export default async function DashboardPage({
 
   if (isConfigured && role === "student") {
     try {
-      [tasks, progress] = await Promise.all([listTasksForUser(userId), getTeamProgress()]);
+      [tasks, progress] = await Promise.all([listTasksForUser(userId, username), getTeamProgress()]);
     } catch {
       loadFailed = true;
     }

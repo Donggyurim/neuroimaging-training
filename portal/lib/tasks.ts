@@ -41,13 +41,29 @@ async function requestTasks(query: Record<string, string>, init: RequestInit = {
   return response;
 }
 
-export async function listTasksForUser(userId: string): Promise<Task[]> {
-  const response = await requestTasks({
-    select: fields,
-    assigned_to_user_id: "eq." + userId,
-    order: "created_at.desc",
-  });
-  return response.json() as Promise<Task[]>;
+export async function listTasksForUser(userId: string, username: string): Promise<Task[]> {
+  const usernameFilter = username.trim().toLowerCase();
+  const [userResponse, usernameResponse] = await Promise.all([
+    requestTasks({
+      select: fields,
+      assigned_to_user_id: "eq." + userId,
+      order: "created_at.desc",
+    }),
+    usernameFilter
+      ? requestTasks({
+          select: fields,
+          assigned_to_username: "eq." + usernameFilter,
+          order: "created_at.desc",
+        })
+      : Promise.resolve(null),
+  ]);
+  const [userTasks, usernameTasks] = await Promise.all([
+    userResponse.json() as Promise<Task[]>,
+    usernameResponse ? usernameResponse.json() as Promise<Task[]> : Promise.resolve([]),
+  ]);
+  const tasksById = new Map<string, Task>();
+  for (const task of [...userTasks, ...usernameTasks]) tasksById.set(task.id, task);
+  return [...tasksById.values()].sort((a, b) => b.created_at.localeCompare(a.created_at));
 }
 
 export async function listAllTasks(): Promise<Task[]> {
@@ -75,14 +91,22 @@ export async function createTask(task: Omit<Task, "id" | "status" | "completed_a
   }
 }
 
-export async function completeTask(taskId: string, userId: string): Promise<void> {
-  await requestTasks({
-    id: "eq." + taskId,
-    assigned_to_user_id: "eq." + userId,
-    status: "eq.assigned",
-  }, {
-    method: "PATCH",
-    headers: { Prefer: "return=minimal" },
-    body: JSON.stringify({ status: "completed", completed_at: new Date().toISOString() }),
-  });
+export async function completeTask(taskId: string, userId: string, username: string): Promise<void> {
+  const body = JSON.stringify({ status: "completed", completed_at: new Date().toISOString() });
+  const update = async (filters: Record<string, string>) => {
+    const response = await requestTasks({ id: "eq." + taskId, status: "eq.assigned", select: "id", ...filters }, {
+      method: "PATCH",
+      headers: { Prefer: "return=representation" },
+      body,
+    });
+    return response.json() as Promise<Array<{ id: string }>>;
+  };
+
+  const updatedById = await update({ assigned_to_user_id: "eq." + userId });
+  if (updatedById.length > 0) return;
+
+  const usernameFilter = username.trim().toLowerCase();
+  if (!usernameFilter) throw new Error("Task was not assigned to this student");
+  const updatedByUsername = await update({ assigned_to_username: "eq." + usernameFilter });
+  if (updatedByUsername.length === 0) throw new Error("Task was not assigned to this student");
 }

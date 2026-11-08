@@ -73,7 +73,7 @@ export async function markTaskComplete(formData: FormData) {
   if (!/^[0-9a-f-]{36}$/i.test(taskId)) redirect("/dashboard");
 
   try {
-    await completeTask(taskId, userId);
+    await completeTask(taskId, userId, student.username ?? "");
   } catch (error) {
     const message = error instanceof Error ? error.message : "Unknown error";
     console.error("[portal] task completion storage failure:", message);
