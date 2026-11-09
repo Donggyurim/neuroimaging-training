@@ -14,3 +14,9 @@ The first pilot is pinned to the ds004144 dataset commit
 The supervisor reports a successful mock-student Colab run for ds004144 sub-002, with outputs saved to the shared folder. This verifies Drive authorization and the output path for that account and subject. It does not certify image QC or the scientific method; review the saved outputs before scaling up. The notebook checks each assigned subject against the pinned snapshot. Hard-label regional volumes are distinct from cortical thickness, partial-volume-corrected statistics, and head-size-normalised measures.
 
 Read `tutorials/first-regional-brain-volumes.qmd` for the student workflow, expected outputs, and review checkpoints.
+
+## Full FreeSurfer `aseg.stats` notebook
+
+`First_aseg_stats.ipynb` is a separate student task that runs FreeSurfer 7.4.1 `recon-all -all` on one assigned T1w scan from the same pinned ds004144 snapshot. It exports the original `stats/aseg.stats`, every global `# Measure` record, and every structure row and column, with QC previews, a pipeline log, provenance, and a handover saved to the shared Drive folder. It requires a FreeSurfer license and a Colab Ubuntu 22 runtime; the GPU is not used.
+
+This full-pipeline notebook has not yet been run end-to-end in Colab. It should be tested with a mock student account and reviewed by the supervisor before broad assignment. The regional-volume notebook remains a separate fallback, but it does not produce the full `aseg.stats` measures or eTIV.
