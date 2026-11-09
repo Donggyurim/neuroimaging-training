@@ -4,6 +4,7 @@ import { auth, clerkClient, currentUser } from "@clerk/nextjs/server";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { completeTask, createTask } from "../../lib/tasks";
+import { getAssignableNotebookUrl } from "../../lib/notebooks";
 
 function requiredText(formData: FormData, name: string): string {
   const value = formData.get(name);
@@ -18,7 +19,8 @@ export async function assignTask(formData: FormData) {
   const studentUsername = requiredText(formData, "studentUsername").toLowerCase();
   const datasetId = requiredText(formData, "datasetId");
   const subjectId = requiredText(formData, "subjectId");
-  const notebookUrl = requiredText(formData, "notebookUrl");
+  const notebookId = requiredText(formData, "notebookId");
+  const notebookUrl = getAssignableNotebookUrl(notebookId) ?? requiredText(formData, "notebookUrl");
 
   if (
     !studentUsername ||
