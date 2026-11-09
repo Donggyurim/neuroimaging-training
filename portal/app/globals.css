@@ -43,20 +43,23 @@ a:hover {
 
 a,
 button,
-input {
+input,
+select {
   -webkit-tap-highlight-color: transparent;
 }
 
 a:focus-visible,
 button:focus-visible,
-input:focus-visible {
+input:focus-visible,
+select:focus-visible {
   outline: 3px solid #9cbaff;
   outline-offset: 4px;
   border-radius: 5px;
 }
 
 button,
-input {
+input,
+select {
   font: inherit;
 }
 
@@ -416,7 +419,8 @@ input {
   font-size: 0.82rem;
   font-weight: 620;
 }
-.portal-form input {
+.portal-form input,
+.portal-form select {
   width: 100%;
   min-height: 42px;
   padding: 8px 11px;
