@@ -7,9 +7,9 @@ export const ASSIGNABLE_NOTEBOOKS = [
   },
   {
     id: "aseg_stats",
-    label: "Full aseg.stats (pilot; license and long runtime)",
+    label: "Full FreeSurfer aseg.stats (pilot; license and long runtime)",
     taskType: "Aseg.stats measures",
-    url: "https://colab.research.google.com/github/Donggyurim/neuroimaging-training/blob/2b99e276e8fbc96955b0b3002120be7d9228bd62/notebooks/First_aseg_stats.ipynb",
+    url: "https://colab.research.google.com/github/Donggyurim/neuroimaging-training/blob/d86b2e1e91dbecefb3edbdfbcd0345633a495f93/notebooks/First_aseg_stats.ipynb",
   },
 ] as const;
 
