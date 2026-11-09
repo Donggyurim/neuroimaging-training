@@ -10,7 +10,7 @@ import {
   taskStoreConfigured,
   type Task,
 } from "../../lib/tasks";
-import { ASSIGNABLE_NOTEBOOKS } from "../../lib/notebooks";
+import { ASSIGNABLE_NOTEBOOKS, getNotebookTaskType } from "../../lib/notebooks";
 
 type PortalRole = "student" | "supervisor";
 
@@ -41,6 +41,7 @@ function StudentTask({ task, isNext }: { task: Task; isNext: boolean }) {
         <div>
           <h3>{task.title}</h3>
           <p className="task-meta">{task.dataset_id} <span aria-hidden="true">·</span> {task.subject_id}</p>
+          <p className="task-meta">Task type: {getNotebookTaskType(task.notebook_url)}</p>
         </div>
         <TaskStatus status={task.status} />
       </div>
@@ -69,6 +70,7 @@ function SupervisorTask({ task }: { task: Task }) {
           <p className="task-meta">
             {task.assigned_to_username} <span aria-hidden="true">·</span> {task.dataset_id} <span aria-hidden="true">·</span> {task.subject_id}
           </p>
+          <p className="task-meta">Task type: {getNotebookTaskType(task.notebook_url)}</p>
         </div>
         <TaskStatus status={task.status} />
       </div>
