@@ -10,6 +10,7 @@ import {
   taskStoreConfigured,
   type Task,
 } from "../../lib/tasks";
+import { ASSIGNABLE_NOTEBOOKS } from "../../lib/notebooks";
 
 type PortalRole = "student" | "supervisor";
 
@@ -173,12 +174,19 @@ export default async function DashboardPage({
                 <div className="panel-grid">
                   <section className="panel">
                     <h2>Assign a task</h2>
-                    <p>For now, this notebook supports OpenNeuro ds004144. Enter the student’s username and assigned subject.</p>
+                    <p>Choose a notebook for the assigned ds004144 subject.</p>
                     <form className="portal-form" action={assignTask}>
                       <label>Student username<input name="studentUsername" autoComplete="off" placeholder="e.g. kong" required /></label>
                       <label>OpenNeuro dataset<input name="datasetId" value="ds004144" readOnly /></label>
                       <label>Subject ID<input name="subjectId" placeholder="e.g. sub-002" required /></label>
-                      <label>Colab notebook URL<input name="notebookUrl" type="url" defaultValue="https://colab.research.google.com/github/Donggyurim/neuroimaging-training/blob/codex/student-colab-workflow/notebooks/First_regional_brain_volumes.ipynb" required /></label>
+                      <label>Colab notebook
+                        <select name="notebookId" defaultValue="regional_volumes" required>
+                          {ASSIGNABLE_NOTEBOOKS.map((notebook) => (
+                            <option key={notebook.id} value={notebook.id}>{notebook.label}</option>
+                          ))}
+                        </select>
+                      </label>
+                      <p className="small-note">The regional notebook is the tested fallback. The full aseg.stats pilot needs a FreeSurfer license and at least 25 GB of Colab disk space; if it errors, assign a follow-up task using the regional notebook.</p>
                       <button className="action-link primary-action" type="submit">Assign task <span aria-hidden="true">→</span></button>
                     </form>
                   </section>
