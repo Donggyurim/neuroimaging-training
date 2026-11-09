@@ -18,5 +18,7 @@ export function getAssignableNotebookUrl(id: string): string | undefined {
 }
 
 export function getNotebookTaskType(url: string): string {
+  if (url.includes("First_aseg_stats.ipynb")) return "Aseg.stats measures";
+  if (url.includes("First_regional_brain_volumes.ipynb")) return "Regional brain volumes";
   return ASSIGNABLE_NOTEBOOKS.find((notebook) => notebook.url === url)?.taskType ?? "Assigned Colab notebook";
 }
