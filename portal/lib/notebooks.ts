@@ -9,7 +9,7 @@ export const ASSIGNABLE_NOTEBOOKS = [
     id: "aseg_stats",
     label: "Full aseg.stats (pilot; license and long runtime)",
     taskType: "Aseg.stats measures",
-    url: "https://colab.research.google.com/github/Donggyurim/neuroimaging-training/blob/f3c52b9f62fbeac3e192eb0775c400a26db94f52/notebooks/First_aseg_stats.ipynb",
+    url: "https://colab.research.google.com/github/Donggyurim/neuroimaging-training/blob/2b99e276e8fbc96955b0b3002120be7d9228bd62/notebooks/First_aseg_stats.ipynb",
   },
 ] as const;
 
