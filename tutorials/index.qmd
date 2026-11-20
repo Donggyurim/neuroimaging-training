@@ -7,13 +7,9 @@ page-layout: full
 
 ::: {.launch-list}
 
-[<i class="bi bi-rocket-takeoff" aria-hidden="true"></i> Get started →](getting-started.qmd){.launch-row}
-
 [<i class="bi bi-journal-code" aria-hidden="true"></i> First brain volumes →](first-regional-brain-volumes.qmd){.launch-row}
 
-[<i class="bi bi-signpost-split" aria-hidden="true"></i> Your MRI project →](structural-mri-pathway.qmd){.launch-row}
-
-[<i class="bi bi-cloud" aria-hidden="true"></i> Run on brainlife →](brainlife-first-run.qmd){.launch-row}
+[<i class="bi bi-signpost-split" aria-hidden="true"></i> Define your question →](structural-mri-pathway.qmd){.launch-row}
 :::
 
 [← Library](../library.qmd)

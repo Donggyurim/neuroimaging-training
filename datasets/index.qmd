@@ -7,7 +7,7 @@ page-layout: full
 
 ::: {.launch-list}
 
-[<i class="bi bi-database" aria-hidden="true"></i> Choose a scan →](openneuro-t1w.qmd){.launch-row}
+[<i class="bi bi-database" aria-hidden="true"></i> Use the assigned dataset →](openneuro-t1w.qmd){.launch-row}
 :::
 
 [← Library](../library.qmd)

@@ -5,11 +5,11 @@ toc: false
 page-layout: full
 ---
 
-No completed reports yet. [Use the project template](https://github.com/Donggyurim/neuroimaging-training/blob/main/templates/student-project.qmd).
+Student task outputs are saved in the supervisor-shared Drive folder. Task status is recorded in the private portal.
 
 ::: {.launch-list}
 
-[<i class="bi bi-box-arrow-up-right" aria-hidden="true"></i> Project handover →](structural-mri-handover.qmd){.launch-row}
+[<i class="bi bi-box-arrow-up-right" aria-hidden="true"></i> Finish your task →](structural-mri-handover.qmd){.launch-row}
 :::
 
 [← Library](../library.qmd)

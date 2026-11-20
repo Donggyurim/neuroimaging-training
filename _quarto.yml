@@ -12,6 +12,9 @@ project:
     - "projects/**/*.qmd"
     - "!notebooks/**"
     - "!templates/**"
+    - "!supervisor.qmd"
+    - "!tutorials/getting-started.qmd"
+    - "!tutorials/brainlife-first-run.qmd"
 
 website:
   title: "Neuroimaging Training"
@@ -19,25 +22,16 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - href: student.qmd
-        text: Students
-      - href: supervisor.qmd
-        text: Supervisors
       - href: library.qmd
         text: Library
-    right:
-      - href: https://github.com/Donggyurim/neuroimaging-training
-        text: GitHub
-        icon: github
   search:
     location: navbar
     type: overlay
   page-footer:
-    left: "Neuroimaging Training · Donggyurim"
+    left: "Neuroimaging Training · OpenNeuro · Google Colab"
     right:
       - href: sources-and-contributions.qmd
         text: About
-  repo-url: https://github.com/Donggyurim/neuroimaging-training
 
 format:
   html:

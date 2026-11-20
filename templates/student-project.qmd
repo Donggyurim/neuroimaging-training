@@ -1,24 +1,15 @@
 ---
-title: "Project title"
-author: "Student name (with permission)"
+title: "Task handover"
 ---
 
-## Question and scope
+## Research question
 
-## Dataset, access terms, and selection
+## Assigned dataset and subject
 
-## Environment and reproducible workflow
+## Colab notebook
 
-## Quality checks
+## Outputs in the shared Drive folder
 
-## Results
+## Alignment check
 
-## Interpretation and limitations
-
-## Next steps
-
-## References and attribution
-
-## Handover
-
-Link the task issue and PR; record where approved outputs are stored and what was verified.
+## Notes for the supervisor
